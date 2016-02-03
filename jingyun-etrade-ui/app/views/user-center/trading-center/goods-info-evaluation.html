@@ -1,0 +1,25 @@
+<div class="comment-bd" ng-controller="GoodInfoController">
+	<div class="goods-info-shd">
+		<p>商品信息</p>
+		<p>评价状态</p>
+	</div>
+	<div class="clear"></div>
+	<div class="goods-info-sbd">
+		<div class="goods-info-box1 gi-box" ng-repeat="good in ordergoods">
+			<a href="#/product/detail/{{good.gid}}/description">
+				<img class="gi-img fl" ng-src="{{good.imgpath}}">
+			</a>
+			<div class="gi-text fl">
+			<a href="#/product/detail/{{good.gid}}/description" title="{{good.gname}}">
+				<p class="gi-p text-omitted">{{good.gname}}</p>
+			</a>
+				<p class="gi-p text-omitted">{{good.addtimeStr}}</p>
+
+			</div>
+			<div class="gi-comment">
+				<p ng-click="savecomment(good)">立即评价</p>
+			</div>
+		</div> 
+	
+	</div>
+</div>

@@ -1,0 +1,229 @@
+<header-top></header-top>
+<div class="clear"></div>
+<header-search></header-search>
+<div class="clear"></div>
+<header-nav></header-nav>
+<div class="clear"></div>
+
+<div>
+<!--     <div class="center-view " >
+	<p class="pd-position">阿胶商城>{{goods.merchantName}}>{{goods.brandName}}</p> 
+	</div>  -->
+
+</div>
+<login-dialog></login-dialog>
+<div class="center-view"  ng-controller="GoodsDetailController as goodsDetailCtrl">
+	<div class="product-detail-top">
+	<div class="pd-gallery fl">
+		<div class="pd-g-booth">
+			<ul class="pd-g-tuul">
+				<li class="pd-tuli cur" ><img class="pd-gb-img" ng-src="{{goods.thumbpath1}}@400h_400w.jpg"/></li>
+				<li class="pd-tuli" ><img class="pd-gb-img" ng-src="{{goods.thumbpath2}}@400h_400w.jpg"/></li>
+				<li class="pd-tuli" ><img class="pd-gb-img" ng-src="{{goods.thumbpath3}}@400h_400w.jpg"/></li>
+				<li class="pd-tuli" ><img class="pd-gb-img" ng-src="{{goods.thumbpath4}}@400h_400w.jpg"/></li>
+				<li class="pd-tuli" ><img class="pd-gb-img" ng-src="{{goods.thumbpath5}}@400h_400w.jpg"/></li>
+			</ul>
+		</div>
+		<ul class="pd-g-thumb">
+			<li class="pd-g-dot cur" ><img class="pd-gt-img" ng-src="{{goods.thumbpath1}}@66h_66w.jpg"/></li>							
+			<li class="pd-g-dot" ><img class="pd-gt-img" ng-src="{{goods.thumbpath2}}@66h_66w.jpg"/></li>
+			<li class="pd-g-dot" ><img class="pd-gt-img" ng-src="{{goods.thumbpath3}}@66h_66w.jpg"/></li>
+			<li class="pd-g-dot" ><img class="pd-gt-img" ng-src="{{goods.thumbpath4}}@66h_66w.jpg"/></li>
+			<li class="pd-g-dot" ><img class="pd-gt-img" ng-src="{{goods.thumbpath5}}@66h_66w.jpg"/></li>
+		</ul>
+		<div class="clear"></div>
+		<div class="pd-g-action">
+			<p class="pd-product-no fl">商品编号：{{goods.goodsCode}}</p>
+
+
+			<div class="pd-share fl">
+				<div class="green-share-icon fl"></div>
+				分享
+				<div class="share-inner">
+					<!-- 分享代码 -->
+					<div class="jiathis_style"  style="">
+						<a class="jiathis_button_qzone"></a>
+						<a class="jiathis_button_tsina"></a>
+						<a class="jiathis_button_tqq"></a>
+						<a class="jiathis_button_weixin"></a>
+						<a class="jiathis_button_renren"></a>
+						<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+						<a class="jiathis_counter_style"></a>
+					
+					<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+					<!-- JiaThis Button END -->
+					</div>
+				</div>
+			</div>
+		    
+
+			<div class="pd-save fr" ng-click="collectGoods(goods.gid)"><div class="mid-orange-star-icon fl"></div>收藏商品</div>
+		</div>
+		<div class="clear"></div>
+		<success-dialog message="{{sucMessage}}"></success-dialog>
+	</div>
+	<div class="pd-property fl">
+		<div class="pd-p-hd">
+			<p class="pd-ph-up">{{goods.goodsName}} {{goods.specifications}}</p>
+			<p class="pd-ph-down">{{goods.goodsDesc}}</p>
+		</div>
+		<div class="pd-p-price" >
+			<div ng-show="priceShow">
+			<spn class="pd-promo-price" ng-show="goods.onSale == '0'"><span class="pd-promo-price-txt">独享价：</span>￥{{goods.price}}</spn>
+			<spn class="pd-promo-price" ng-show="goods.onSale == '1'"><span class="pd-promo-price-txt">独享价：</span>￥{{goods.promotionPrice}}</spn>
+			<span class="pd-shop-price" ng-show="goods.onSale == '1'">市场价：{{goods.price}}元</span>
+			</div>
+		</div>
+		<div class="pd-p-discount">
+			<!-- <p>优惠：<span class="pd-full-cut">满减</span>满300减20元，满500减50元</p> -->
+		</div>
+		<div class="pd-p-freight">
+			<!-- <p>配送至：<select name="" id=""><option value ="volvo">山东济南市历下区</option></select> -->
+			邮费：<!-- <font ng-show="postage_no">{{goods.postage}} &nbsp;元</font> 
+				  <font ng-show="postage_not_zero">卖家包邮</font> 
+				  <font ng-show="postage_yes">满&nbsp;99&nbsp;元包邮</font>
+				  &nbsp;&nbsp;&nbsp;&nbsp;卖家承诺24小时发货 -->
+				 满&nbsp;99&nbsp;元包邮   &nbsp;  &nbsp;偏远地区满&nbsp;199&nbsp;元包邮
+				  &nbsp; &nbsp;
+				  <a href="#/helpcenter/FjzarKbZRTmELU6gqaFJ4A/SAVY5lSASGuUHoyJ0aAMGQ">配送费用</a>
+
+		</div>
+		<div class="pd-p-service">
+			<!-- <p>服务：由<span class="pd-p-shop-name">{{goods.merchantName}}</span> 发货，并提供售后服务。</p> --> 
+			<p>口味：<span class="product-taste">{{goods.taste}}</span>
+		</div>
+		<div class="pd-p-count">
+			<p>数量：
+				<span ng-class="{disabled: goodscount == 1}" class="pd-pc-reduce" ng-click="countdown(goods)">-</span>
+				<input class="pd-pc-amount-input" ng-model="goodscount" type="text">
+				<span ng-class="{disabled: goodscount >= goods.count ||goods.count==0}" class="pd-pc-add" 
+				ng-click="countup(goods)">+</span>
+				&nbsp;&nbsp;&nbsp;
+				库存：{{goods.count}} 件
+				&nbsp;&nbsp;&nbsp;
+				销量：{{goods.volume}} 件
+			</p>
+		</div>
+
+		<div class="pd-p-cart-btn" ng-click="addToCart(goods)" ng-show="addCartShow">加入购物车</div>
+		<div class="pd-p-service-promise">
+			<p>服务承诺：
+				<span class="pd-psp-red-txt">100%正品</span>保证<span class="pd-psd-distance"></span>
+				<span class="pd-psp-red-txt">7天</span>退换货<span class="pd-psd-distance"></span>
+				<span class="pd-psp-red-txt">7X12</span>在线客服
+			</p>
+		</div>
+	</div>
+
+	<div class="pd-shop-info fr">
+		<div class="pd-shop-img">
+			<img ng-src="{{goods.merchantImg}}@80h_80w.jpg"/>
+		</div>
+		<div class="pd-shop-name">{{goods.merchantName}}</div>
+		<div class="pd-shop-level">
+			<p>综合评分</p>
+			<!-- <div class="pd-shop-progress"></div> -->
+			 <!-- <progressbar class="progress-striped active" max="100" value="10" type="danger"><i>10%</i></progressbar> -->
+			 <div>
+			 	<div class="progress progress-striped pd-shop-progress fl">
+			 		<progress-bar level="grade.levelGrade"></progress-bar> 
+			 	</div>
+			 	<div class="pd-shop-progress-value fl">{{level}}</div>
+			 </div>
+			 <div class="clear"></div>
+		</div>
+		<div class="pd-shop-comment">累计点评：{{personCount}}</div>
+		<div class="pd-shop-links">
+			<p class="pd-sl-tel">免费客服：4008000815</p>
+			<!--///////////////////////////////-->
+		<a target=blank href=http://wpa.qq.com/msgrd?V=3&uin=2774697871&Site=中华阿胶网&Menu=yes target="_blank">
+		<div class="pd-shop-inline"><div class="small-black-qq-icon fl"></div>在线咨询</div>
+		</a>	
+
+		</div>
+		<div class="pd-shop-enter-btn" ng-click="toMerchant(goods)">进入店铺</div>
+	</div>
+	</div>
+
+
+<illegal-request-dialog messagehd="{{messagehd}}" ></illegal-request-dialog>
+
+
+<div class="clear"></div>
+
+<div class="center-view pd-main" >
+	<div class="pd-main-left fl">
+		<div class="pd-ml-related-classfication">
+			<div class="pd-ml-hd">相关分类</div>
+			<ul class="pd-mlrc-list" > 
+				<li ng-repeat="type in localtypes">
+				<a href="#/mall?flag=3&tid={{type.tid}}&tname={{type.typeName}}">{{type.typeName}}</a>
+				</li>
+				
+			</ul>
+		</div>
+
+		<div class="clear"></div>
+		<!-- GoodsadCtrl  begin-->
+		<div ng-controller="GoodsadCtrl as goodsadCtrl">
+				<!-- <div class="pd-ml-recommend-product" >
+					<div class="pd-ml-hd">推荐产品</div>
+					<ul class="pd-mlrp-list">
+						<li ng-repeat="rg in recommendlist">
+						    <a href="#/product/detail/{{rg.gid}}/description">
+							   <img class="pd-mlrp-img" ng-src="{{rg.thumbpath1}}">
+							</a>
+						</li>
+						<li><img class="pd-mlrp-img" src="../images/product-detail/jttj2.png"></li>
+					</ul>
+				</div> -->
+				<div class="clear"></div>
+				<div class="pd-ml-goods-ranking">
+					<div class="pd-ml-hd">宝贝排行 <!-- <a  class="pd-ml-hd-more" href="">更多</a> --> </div>
+					<ul class="pd-mlgr-list" >
+						<li ng-repeat="hg in honeygoods">
+							<div class="pd-ml-gr-item">
+								<div class="pd-ml-gri fl">
+								    <a href="#/product/detail/{{hg.gid}}/description">
+									   <img class="pd-ml-gri-img" ng-src="{{hg.thumbpath1}}">
+									</a>
+								</div>
+								<div class="pd-ml-gri-info fl">
+									<a   href="#/product/detail/{{hg.gid}}/description"  title="{{hg.goodsName}}">
+									<p class="pd-ml-gri-name text-omitted">{{hg.goodsName}}</p>
+									</a>
+									<p class="pd-ml-gri-price" ng-show="hg.onSale == '0'">￥{{hg.price}}</p>
+									<p class="pd-ml-gri-price" ng-show="hg.onSale == '1'">￥{{hg.promotionPrice}}</p>
+									<p class="pd-ml-gri-sales-volume">销售{{hg.volume}}笔</p>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		<!-- GoodsadCtrl  end-->
+	</div>
+	<div class="pd-main-right fr">
+		<div class="pd-mr-hd">
+			<ul>
+				<li class="pd-mrh-item" ui-sref-active="pd-mrh-item-selected" ui-sref="product-detail.description">商品介绍</li>
+				<li class="pd-mrh-item" ui-sref-active="pd-mrh-item-selected" ui-sref="product-detail.comment">累计评价<span class="pd-mrhc-count">({{goods.comment}})</span></li>
+				<li class="pd-mrh-item" ui-sref-active="pd-mrh-item-selected" ui-sref="product-detail.trade-record">交易记录</li>
+				<li class="pd-mrh-dispaly-none"></li>
+			</ul>
+		</div>
+		<div ui-view=""></div>
+	</div>
+
+</div>
+
+
+<add-cart-success-dialog gid="{{goods.gid}}"></add-cart-success-dialog>
+</div>
+
+
+</div>
+<div class="clear"></div>
+<illegal-request-dialog messagehd="{{messagehd}}" ></illegal-request-dialog>
+<footer></footer>

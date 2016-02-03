@@ -1,0 +1,32 @@
+@import "../common";
+
+.page-not-found-recommend-hd{
+	height: 45px;
+    line-height: 45px;
+    background-color: #ff3433;
+    color: @white-color;
+    font-size: 24px;
+    text-align: center;
+}
+
+ul.page-not-found-recommend-list{
+	margin: 20px 40px;
+    overflow: hidden;
+    border-top: 1px solid @gray-border;
+}
+
+.page-not-found-recommend-item{
+	width: 170px;
+    text-align: center;
+    height: 240px;
+    font-size:@t5-size;
+    padding: 0 5px;
+    border-bottom: 1px solid @gray-border;
+    border-right: 1px solid @gray-border;
+    margin-top: -3px;
+	overflow: hidden;
+}
+
+ul.page-not-found-recommend-list >li:nth-child(6n+1) .page-not-found-recommend-item{
+	border-left:1px solid @gray-border;
+}

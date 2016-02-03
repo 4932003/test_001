@@ -1,0 +1,31 @@
+<div class="information" style="margin-left:30px;">
+	<div class="sg-top-title">
+		交易管理&gt评价管理
+	</div>
+	<div class="content">
+		<ul class="querys">
+			<li>
+				<span style="margin-left:30px;">名称</span>
+				<span>标题</span>
+				<span>时间</span>
+				<span>内容</span>
+				<span>操作</span>
+			</li>
+		
+			<li ng-repeat="detail in allComment">
+				<div class="divcontent" style="width:100px;float:left;">{{detail.name}}</div>
+				<div class="divcontent" style="width:150px;float:left;margin-left:90px;">{{detail.title}}</div>
+				<div class="" style="width:150px;float:left;margin-left:60px;">{{detail.addtime}}</div>
+				<div class="" style="width:200px;float:left;margin-left:25px;" ng-bind-html="detail.content"></div>
+				<div style="width:100px;float:left;margin-left:80px;height:30px;line-height:30px;"><input type="button" value="删除" ng-click="deletedetails(detail)"></div>
+			</li>
+			<!-- <li>
+				<span style="margin-left:30px;">名称</span>
+				<span>标题</span>
+				<span>时间</span>
+				<span>内容</span>
+				<span>操作</span>
+			</li> -->
+		</ul>
+	</div>
+</div>

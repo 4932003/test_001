@@ -1,0 +1,63 @@
+<header-top></header-top>
+<div class="clear"></div>
+
+<div class="logo-sec center-view">
+	<div class="logo-icon top-logo fl" ui-sref="index"></div>
+</div>
+
+<div class="payment-success-main" ng-controller="PaySuccController">
+	<div class="payment-success-info">
+		<div class="center-view">
+			<div class="payment-success-sum">
+				<div >
+					<div class="small-right-icon fl"></div>
+					<div class="payment-success-sum-txt fl">恭喜您，订单支付成功！</div>
+				</div>
+				<div class="clear"></div>
+				<div>
+					<span id="remaining-seconds" class="payment-success-sum-red">10</span>秒后将自动返回订单页面或<span class="payment-success-sum-red payment-success-return"><a href="#/user/center/orders">立即返回</a></span>
+				</div>
+			</div>
+			<!-- <div class="payment-success-detail">
+				<ul class="payment-success-detail-list">
+					<li>
+						<div class="payment-success-detail-txt fl">您的支付方式：</div>
+						<div class="payment-success-detail-value fl">支付宝</div>
+						<div class="clear"></div>
+					</li>
+					<li>
+						<div class="payment-success-detail-txt fl">您的订单号：</div>
+						<div class="payment-success-detail-value fl">5004002200<a href="" class="psd-order-detail">(点击查看订单详情)</a></div>
+						<div class="clear"></div>
+					</li>
+					<li>
+						<div class="payment-success-detail-txt fl">您的帐号：</div>
+						<div class="payment-success-detail-value fl">56256553525</div>
+						<div class="clear"></div>
+					</li>
+					<li>
+						<div class="payment-success-detail-txt fl">您的支付金额：</div>
+						<div class="payment-success-detail-value fl">￥<span class="payment-success-price">230</span></div>
+						<div class="clear"></div>
+					</li>
+					<li class="payment-success-btns">
+						<div class="payment-success-btn payment-success-btn-continue fl">继续购物</div>
+						<div class="payment-success-btn payment-success-btn-service fl">联系客服</div>
+					</li>
+				</ul>
+
+			</div> -->
+		</div>
+	</div>
+
+	<recommend-product-for-you></recommend-product-for-you>
+
+</div>
+
+
+
+<div class="clear"></div>
+<div ui-view="user-center-bottom"></div>
+
+<div class="clear"></div>
+<footer></footer>

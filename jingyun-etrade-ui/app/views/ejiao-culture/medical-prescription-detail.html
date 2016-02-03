@@ -1,0 +1,34 @@
+<header-top></header-top>
+<div class="clear"></div>
+<header-search></header-search>
+<div class="clear"></div>
+<header-nav></header-nav>
+<div class="clear"></div>
+
+<div class="story-detail center-view" ng-controller="StoryDetailController">
+	<div class="detail-img detail-img-top">
+		<img src="../images/ejiao-culture/mpd-b1.jpg">
+	</div>
+	
+	<div class="sd-bd">
+		<div class="sd-bd-left">
+			<div class="sd-title">{{storyDetail.title}}</div>
+			<div class="sd-text">
+				<p class="sd-cir">
+					<img src="../images/ejiao-school/circle.png">
+					{{storyDetail.name}}
+				</p>
+			</div>
+			<div class="sd-content" ng-bind-html='storyContent'>
+				
+			</div>
+		</div>
+		<div class="fr">
+			<promotion-product></promotion-product>
+		</div>
+	</div>
+</div>
+
+
+<div class="clear"></div>
+<footer></footer>

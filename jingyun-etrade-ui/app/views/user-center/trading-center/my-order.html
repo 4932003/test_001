@@ -1,0 +1,52 @@
+<div class="my-order-main" ng-controller="MyOrderController">
+	<div class="user-center-mr-hd my-order-main-hd">
+		<div class="user-center-mr-title-icon fl"></div>
+		<div class="user-center-mr-title fl">
+			<p>我的订单</p>
+		</div>
+		<div class="my-order-hd-right fr">
+			<div class="my-order-search-input fr">
+				<input class="my-order-search-key fl" ng-model="keywords" placeholder="订单编号、商品名称">
+				<div class="my-order-search-btn fr" ng-click="filterByDateAndStatus()">查询</div>
+			</div>
+			<select class="my-order-select fr" ng-model="currentdate" ng-change="filterByDateAndStatus()" ng-options="date.name for date in dateranges">
+			</select>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="my-order-th">
+		<table class="my-order-th-tb">
+			<tbody >
+				<tr>
+					<th class="my-order-product-hd">商品</th>
+					<th class="my-order-amount-hd">数量</th>
+					<th class="my-order-product-action-hd">商品操作</th>
+					<th class="my-order-receiver-hd">收货人</th>
+					<th class="my-order-sum-hd">总计(元)</th>
+					<th class="my-order-state-hd">
+						<select class="my-order-state-select" ng-model="currentstatus" ng-change="filterByDateAndStatus()" ng-options="status.name for status in orderstatus">
+						</select>
+					</th>
+					<th class="my-order-action-hd">交易操作</th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="clear"></div>
+	<myorderitem></myorderitem>
+	
+	<div class="myaccount-new myaccount-no-order" style="line-height:300px;" ng-show="empty">
+		<img src="../images/myaccount/jtno.png">
+		您还没有订单哦，<a ui-sref="mall">快去挑选合适的商品吧！</a>
+	</div>
+	
+	<div ng-click="listMore()" ng-show="hasMore" style="text-align: center;cursor:pointer;">查看更多&gt;&gt;</div>
+
+	<illegal-request-dialog></illegal-request-dialog>
+	<success-dialog message="取消订单成功！"></success-dialog>
+	<my-order-cancel-confirm-dialog></my-order-cancel-confirm-dialog>
+</div>
+
+
+<my-refund-confirm-dialog></my-refund-confirm-dialog>
+

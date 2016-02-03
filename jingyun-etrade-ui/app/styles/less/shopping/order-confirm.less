@@ -1,0 +1,422 @@
+@import "../common";
+
+ul.step-d-step-list{
+	margin-right:-60px;
+    margin-top: 18px;
+    /***this is comment**/
+}
+
+
+ul.step-d-step-list > li{
+	width:200px;
+	text-align:center;
+}
+
+.step-name {
+    padding: 3px 0px;
+    font-weight: 700;
+    color: #888;
+    height: 30px;
+    line-height: 30px;
+}
+
+.step-no {
+    height: 40px;
+    line-height: 40px;
+    background: transparent url("../images/step-icon.png") no-repeat scroll 50% -120px;
+}
+
+.step-done .step-no {
+    background-position: 50% -80px;
+}
+
+.step-first .step-done .step-no {
+    background-position: 50% 0px;
+}
+
+.step-last .step-no {
+    background-position: 50% -160px;
+}
+
+.step-last .step-done .step-no {
+    background-position: 50% -40px;
+}
+
+.order-confirm-main{
+	border: 1px solid @gray-border;
+    overflow: hidden;
+    margin-bottom:20px;
+}
+
+.od-main-hd{
+	height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+}
+
+.od-mh-title{
+	font-size:@t2-size;
+    font-weight: bold;
+}
+
+.od-ra-list{
+	width: 100%;
+    overflow: hidden;
+    background-color: @light-gray-bg;
+    padding: 0 20px;
+}
+
+ul.od-ra-list-ul >li.od-ra-item{
+	width: 248px;
+	height:140px;
+    margin-right: 20px;
+    background-color: @white-color;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 4px solid @gray-border;
+    position: relative;
+}
+
+ul.od-ra-list-ul >li.od-ra-selected{
+	border-color:#ffcccb;
+}
+
+.od-ra-default-note{
+    width: 73px;
+    height: 17px;
+    line-height: 15px;
+    background-color: #ffcccb;
+    font-size:@t5-size;
+    text-align: right;
+    
+    border-radius: 0 0 0 17px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.od-ra-set-default{
+    cursor:pointer;
+    display:none;
+}
+
+ul.od-ra-list-ul >li.od-ra-item:hover{
+    border-color:#ffcccb;
+}
+
+ul.od-ra-list-ul >li.od-ra-item:hover .od-ra-set-default{
+    display:block;
+}
+
+ul.od-ra-list-ul >li.od-ra-item:nth-child(4n){
+    margin-right: 0px;   
+}
+
+.od-ra-hd{
+	padding: 15px 20px 5px;
+    border-bottom: 1px solid @gray-border;
+}
+
+.od-ra-name{
+	margin-right: 10px;
+    width: 98px;
+    float:left;
+    text-overflow: clip;
+    white-space: nowrap;
+}
+
+.od-ra-detail{
+	padding: 5px 20px;
+    height: 50px;
+}
+
+.od-ra-action{
+	padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.od-ra-update,.od-ra-delete{
+	color:@aid-orange;
+	cursor:pointer;
+}
+
+.od-ra-update{
+	margin-right:20px;
+}
+
+.od-ra-add{
+	text-align: center;
+	line-height: 129px;
+    cursor: pointer;
+    padding-left: 20px;
+}
+
+.od-ra-add-img{
+    margin-top: 45px;
+    margin-left: 50px;
+}
+
+.od-mh-go-cart{
+	height: 50px;
+    line-height: 55px;
+    margin-left: 30px;
+    color: #f93;
+    cursor: pointer;
+}
+
+.od-oi-item{
+    margin-bottom: 20px;
+}
+
+.od-oi-item:last-child{
+    margin-bottom: 0px;
+}
+
+.od-oi-shop{
+	text-align: right;
+    padding-right: 30px;
+    line-height: 30px;
+}
+
+.od-ois-table th{
+	background-color: @light-gray-bg;
+    height: 40px;
+    line-height: 40px;
+    font-weight: 400;
+    text-align:center;
+    width:150px;
+}
+
+.od-ois-table .od-ois-hd-product{
+	text-align:left;
+	width:350px;
+	padding-left:20px;
+}
+
+
+.od-ois-grid-main td{
+	text-align:center;
+	height:140px;
+    width:150px;
+}
+
+.od-ois-grid-main .od-ois-gm-product{
+	width:350px;
+	padding-left:20px;
+}
+.od-ois-gmp-img{
+    width:110px;
+    height:110px;
+}
+.od-gmp-p{
+    width: 155px;
+    color: @txt-color;
+    text-align: left;
+    margin-left: 25px;
+    margin-top:30px;
+}
+.od-ois-grid-main .od-ois-gm-price{
+	color:@price-color;
+}
+
+.od-ois-grid-main .od-ois-gm-sum{
+	width:200px;
+	color:@price-color;
+}
+
+.od-ois-tfoot td{
+	background-color:#EAFAEF;
+}
+
+.od-oism-title{
+    padding-left: 20px;
+    font-weight: bold;
+    line-height: 50px;
+}
+
+.od-oism-textarea{
+	height: 30px;
+    width: 350px;
+    margin-top: 10px;
+}
+
+.od-oism-tip{
+	padding-left: 10px;
+    margin-top: 15px;
+}
+
+.od-ois-tfoot .od-ois-postage{
+	text-align: right;
+}
+
+.od-ois-tfoot .od-ois-promo{
+	padding-left: 100px;
+}
+
+ul.od-pm-list{
+	background-color: @light-gray-bg;
+    overflow: hidden;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+ul.od-pm-list > li {
+	width: 100%;
+    margin-bottom: 15px;
+}
+
+.od-pm-txt,.od-id-txt{
+	font-weight:bold;
+}
+
+.od-pm-desc{
+	padding-left:50px;
+}
+
+.od-invoice-detail{
+	background-color: @light-gray-bg;
+    overflow: hidden;
+    padding-left: 20px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.od-id-txt{
+	padding-right:20px;
+}
+
+.od-id-desc{
+	padding-left:20px;
+}
+
+.od-id-explain{
+	color:@aid-orange;
+	cursor:pointer;
+}
+
+.od-settle-voucher,.od-shopping-money{
+	padding: 0 20px;
+	margin-bottom:20px;
+}
+
+.od-sv-hd,.od-sm-hd{
+	margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.od-settle-title{
+	font-weight: bold;
+    margin-right: 5px;
+}
+
+.od-settle-add{
+	margin-left: 5px;
+    color: @aid-orange;
+    cursor: pointer;
+}
+
+.od-settle-main{
+	background-color: #EAFAEF;
+    overflow: hidden;
+    padding: 10px 5px;
+}
+
+ul > li.od-settle-item{
+	width: 150px;
+    margin-bottom: 5px;
+}
+
+input.od-si-input{
+	margin-top:10px;
+}
+
+.od-settle-value{
+	margin-left: 20px;
+    width: 100px;
+    padding: 5px 0;
+    border-radius: 4px;
+    color: @white-color;
+    text-align: center;
+}
+.od-settle-value-cash{
+    width: 110px;
+}
+.od-settle-hd-right{
+	border: 1px solid @gray-border;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.od-settle-hd-right a{
+    color:@txt-color;
+}
+
+.od-summary-info{
+	text-align: right;
+    padding-right: 20px;
+    margin-top: 50px;
+}
+
+.od-rl-sum{
+	font-size: 30px;
+    font-weight: bold;
+    color: @price-color;
+}
+
+.od-si-btn div{
+	color: @white-color;
+    height: 40px;
+    line-height: 40px; 
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    cursor:pointer;
+    font-size:@t2-size;
+}
+
+.od-si-btn div a{
+    color: @white-color;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+.od-sib-go-cart{
+	width: 110px;
+	background-color:@dark-gray-bg;
+	margin-right:15px;
+}
+
+.od-sib-submit{
+	width: 300px;
+	background-color: @price-color;
+}
+
+.five-point-color{
+    background-color:#f66;
+}
+
+.twenty-point-color{
+    background-color:#f90;
+}
+.twenty-point-color .tip{
+   font-size: 10px;
+}
+
+.fifty-point-color{
+    background-color:#0cf;
+}
+
+.one-hundred-point-color{
+    background-color:#3c3;
+}
+
+.cash-counpon-point-color{
+    background-color:#f66;
+}
+.cash-counpon-point-color .tip{
+   font-size: 10px;
+}

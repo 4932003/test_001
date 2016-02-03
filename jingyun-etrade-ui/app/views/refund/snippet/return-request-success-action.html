@@ -1,0 +1,29 @@
+<div class="refund-action-info">
+	<div class="refund-action-hd">
+		我要退货
+	</div>
+	<div class="refund-action-detail">
+		<div class="refund-action-note-info">
+			<div class="refund-action-action-hd">
+				<div class="red-round-warning-icon fl"></div>
+				<div class="refund-action-action-hd-txt fl">等待商家处理退货申请</div>
+			</div>
+			<div class="clear"></div>
+			<div class="refund-action-note-detail">
+				<ul class="refund-action-note-detail-list">
+					<li>您已选择“{{refund.reason}}”此项退款原因，请确保已按要求提供有物流凭证。<a data-target="#rgsh-voucher-requirement-dialog" data-toggle="modal">查看凭证要求</a></li>
+					<li>如果商家同意，退货申请将达成并需要您退货给商家。</li>
+					<li>如果商家拒绝，将需要您修改退货申请。</li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+			<div class="refund-action-note-others">
+				<div class="refund-action-note-others-hd">您还可以</div>
+				<div class="refund-action-note-others-action">
+					<a href="#/return/request?oid={{goods.oid}}&mid={{goods.mid}}&ogid={{goods.id}}&rid={{refund.id}}">修改退款申请</a>
+					<a data-target="#confirm-dialog" data-toggle="modal">撤销退款申请</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

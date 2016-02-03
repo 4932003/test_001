@@ -1,0 +1,76 @@
+@import "common";
+
+body{
+	font-family: "Microsoft Yahei","hiragino sans gb","STHeiti","WenQuanYi Zen Hei",arial;
+	color:@txt-color;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.align-left{
+	text-align: left;
+}
+.align-right{
+	text-align: right;
+}
+.align-center{
+	text-align: center;
+}
+.clr, .clear{
+	clear:both;
+	display: block;
+	font-size: 0;
+	height: 0;
+	line-height: 0;
+	overflow: hidden;
+}
+ul{
+	list-style: none;
+}
+ul > li{
+	float:left;
+}
+
+a:visited,a:link,a:hover,a:focus{
+	text-decoration: none;
+	outline:none;
+}
+
+input,select,textarea{
+	outline:none;
+}
+
+input[type="checkbox"],input[type="checkbox"]:focus,
+input[type="radio"],input[type="radio"]:focus,
+input[type="text"],input[type="text"]:focus,
+input[type="button"],input[type="button"]:focus{
+	outline:none;
+}
+
+.center-view{
+	width:@center-view-width;
+	margin:0 auto;
+}
+
+.disabled{
+	cursor: no-drop !important;
+}
+
+*{
+	margin:0;
+	padding:0;
+}
+
+.product-hover:hover{
+	border:1px solid @base-color !important;
+}
+.text-omitted{
+	white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.text-cross{
+	text-decoration: line-through;
+	color: @gray-txt-color;
+}

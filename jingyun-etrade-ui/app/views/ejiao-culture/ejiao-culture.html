@@ -1,0 +1,176 @@
+<header-top></header-top>
+<div class="clear"></div>
+<header-search></header-search>
+<div class="clear"></div>
+<header-nav></header-nav>
+<div class="clear"></div>
+
+<div class="ejiao-culture-main" ng-controller="InformationController">
+	<div class="ejiao-culture-img"></div>
+	<div class="center-view">
+		<div class="ejiao-culture-history">
+			<div class="ejiao-culture-hd">
+				<a name="history">
+				<div class="ejiao-culture-hd-img ejiao-culture-hd-history fl"></div>
+				</a>
+				<!-- <div class="ejiao-culture-hd-more fr" ui-sref="ejiao-history">
+					更多
+				</div> -->
+			</div>
+			<div class="clear"></div>
+			<div class="ejiao-culture-history-main">
+				<ul class="ejiao-culture-history-list" >
+					<li ng-repeat="datails in historyDetails">
+						<div class="ejiao-culture-history-item">
+							<div class="ejiao-culture-history-hd">
+								<div class="ejio-culture-hh-round fl"></div>
+								{{datails.title}}
+							</div>
+							<p class="ejiao-culture-history-summary" style="white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow:hidden;">
+								{{datails.abstracts}}
+								<!-- {{datails.content}} -->
+							</p>
+						<!--  ui-sref="story-detail" -->
+							<div class="ejiao-culture-histroy-more fr" ng-click="historyDetail(datails)">
+								更多
+							</div>
+						</div>						
+					</li>
+					
+				</ul>
+			</div>			
+		</div>
+
+		<div class="clear"></div>
+
+		<div class="ejiao-culture-technology">
+			<div class="ejiao-culture-hd">
+				<div class="ejiao-culture-hd-img ejiao-culture-hd-technology fl"></div>
+				<div class="ejiao-culture-hd-more fr" ui-sref="ejiao-technology">
+					更多
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="ejiao-culture-technology-main">
+				<img src="../images/ejiao-culture/ejiao-culture-t-bg.png">
+			</div>
+			
+
+		</div>
+
+		<div class="ejiao-culture-medical-prescription">
+			<div class="ejiao-culture-hd">
+				<div class="ejiao-culture-hd-img ejiao-culture-hd-medical-pres fl"></div>
+				<div class="ejiao-culture-hd-more fr" ui-sref="ejiao-medical-prescription">
+					更多
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="ejiao-culture-mp-main">
+				<ul class="ejiao-culture-mp-list">
+					<li ng-repeat="old in oldDetails">
+						<div  ng-click="drugDetail(old)">
+							<img class="ejiao-culture-mp-img" ng-src="{{old.picture}}@390h_310w.jpg">
+						</div>
+						<div class="ejiao-culture-mp-info"  ng-click="drugDetail(old)">
+							<div class="ejiao-culture-mp-hd">
+								{{old.title}}
+							</div>
+							<div class="ejiao-culture-mp-desc">
+								<p>【处方】：</p>
+								<p class="ejiao-culture-mp-detail">{{old.recipe}}</p>
+								<p>【功能主治】：</p>
+								<p class="ejiao-culture-mp-detail">{{old.function}}</p>
+							</div>							
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="clear"></div>
+
+		<div class="ejiao-culture-figure-story">
+			<div class="ejiao-culture-hd">
+				<div class="ejiao-culture-hd-img ejiao-culture-hd-figure-story fl"></div>
+				<div class="ejiao-culture-hd-more fr" ui-sref="ejiao-figure-story">
+					更多
+				</div>
+				<div class="clear"></div>
+				<div class="ejiao-culture-fs-summary">
+					<div class="ejiao-culture-fs-s-left fl"></div>
+					<div class="ejiao-culture-fs-summary-txt fl">阿胶传承3000多年，与众多历史名流结缘，民间流传着许多故事，听我慢慢道来……</div>
+					<div class="ejiao-culture-fs-s-right fl"></div>
+				</div>
+			</div>
+
+			<div class="ejiao-culture-fs-up">
+				<div class="ejiao-culture-fs-up-left fl">
+					<img class="ejiao-culture-fs-up-left-img" ng-src="{{story1.picture}}@160h_400w.jpg">
+				</div>
+				<div class="ejiao-culture-fs-up-right fr">
+					<div class="ejiao-culture-fsu-hd">
+						<div class="ejiao-culture-fsu-hd-left fl">
+							{{story1.title}}
+						</div>
+						<!-- ui-sref="story-detail" -->
+						<div class="ejiao-culture-fsu-right fr" ng-click="storyDetail(story1)">
+							查看更多
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="ejiao-culture-fsu-info" style="height:110px;margin-top:10px;">
+						{{story1.abstracts}}
+						<!-- <P>“肤若凝脂”用于描述美人白皙晶莹吹弹得破的肌肤，形象到充满了质感。读过唐诗的人都知道，那位被赋予如此美妙形容的女子不是别人，就是列为“中国古代四大美女”之一的杨贵妃杨玉环。</P>
+						<p>那么，这位杨玉环又何以会独独拥有“凝脂”般艳冠群芳的好皮肤？</p> -->
+					</div>
+					
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="ejiao-culture-fs-down">
+				<div class="ejiao-culture-fs-item fl">
+					<div class="ejiao-culture-fsi-left fl">
+						<img class="ejiao-culture-fsi-left-img" style="width:250px;" src="../images/ejiao-culture/122.png">
+					</div>
+					<div class="ejiao-culture-fsi-right fr">
+						<div class="ejiao-culture-fsi-hd">
+							<p>{{story2.title}}</p>
+						</div>
+						<div class="ejiao-culture-fsi-info" ng-bind-html="story2.abstracts">
+							<!-- <p>唐太宗出生高官家庭，本人从基层小吏做起，直到夺得天下，开创了一个大唐盛世。这番经历使他阅人无数，自然也阅物无数，与凭空继承一个花花江山，生于深宫，长于妇人之手的后代帝王不可同日而语。</p> -->
+						</div>
+						
+						<div class="ejiao-culture-fsi-more fr" ng-click="story2detail(story2)">
+							查看更多
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="ejiao-culture-fs-item fr">
+					<div class="ejiao-culture-fsi-left fl">
+						<img class="ejiao-culture-fsi-r-left-img" style="margin-right:5px;" src="../images/ejiao-culture/123.png">
+					</div>
+					<div class="ejiao-culture-fsi-r-right fr">
+						<div class="ejiao-culture-fsi-hd">
+							<p>{{story3.title}}</p>
+						</div>
+						<div class="ejiao-culture-fsi-info">
+							{{story3.abstracts}}
+							<!-- {{story3.content}} -->
+							<!-- <p>前边说道，《全唐诗〈宫词补遗〉卷五》中有个无名氏，跳将出来挑战白居易，说那杨贵妃之所以妖娆妩媚，不是因为洗温泉浴，而是因为“暗服阿胶”，只不过那位美女服了又不认账，拒绝承认是靠着阿胶养颜固宠，却到处说自己天生丽质……</p> -->
+						</div>
+						
+						<div class="ejiao-culture-fsi-more fr" ng-click="story3detail(story3)">
+							查看更多
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="clear"></div>
+<footer></footer>

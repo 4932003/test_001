@@ -1,0 +1,368 @@
+
+<header-top></header-top>
+<div class="clear"></div>
+<header-search></header-search>
+<div class="clear"></div>
+<header-nav></header-nav>
+<div class="clear"></div>
+
+<banner></banner>
+<div class="clear"></div>
+
+<div class="center-view" >
+  <div class="seller-recomend ">
+      <!-- <div class="seller-recomend-title">
+        <div class="white-star-right-icon seller-recomend-img"></div>
+        商家推荐
+      </div> -->
+      <div class="seller-recomend-title">
+        <img src="../images/seller-recomend.jpg" alt="">
+      </div>
+      <ul>
+        <li class="seller-recomend-item product-hover" ng-repeat="merchant in merchants">
+          <a href="{{merchant.linkpath}}"><img ng-src="{{merchant.imgpath}}@136h_136w.jpg" ></a>
+        </li>    
+      </ul>
+  </div>
+</div>
+<div class="clear"></div>
+
+<div class="center-view">
+  <div class="main-hot-recommend fl">
+    <div class="main-block-title">
+        <div class="main-block-title-icon fl"></div>
+        <p class="fl"><a href="" class="main-block-title-txt">热门推荐</a>&nbsp;&nbsp;<!-- <a href="" class="main-block-title-txt-more">更多</a> --></p>
+    </div>
+    <div class="clear"></div>
+    <div class="main-hot-content" >
+      <ul>
+        <li class="main-hot-item" ng-repeat="merchant in hootgoods">
+          <div class="main-hot-shop fl">
+            <div>
+              <img class="main-hot-shop-img" ng-src="{{merchant.merchantVO.imgPath}}@80h_80w.jpg">
+            </div>
+
+            <div class="main-hot-shop-level">
+              <div class="full-star-icon fl" ng-repeat="full in merchant.fullImgList" ></div>
+              <div class="empty-star-icon fl" ng-repeat="empty in merchant.emptyImgList" ></div>
+            </div>
+            <div class="clear"></div>
+
+            <p title="{{merchant.merchantVO.name}}" class="main-hot-shop-name text-omitted">
+              <img src="../images/index/shop-icon.png">
+              {{merchant.merchantVO.name}}
+            </p>
+          <input class="main-go-shop" type="button" value="进店逛逛" 
+            ng-click="toMerchantPage('{{merchant.merchantVO.id}}')"
+          ></input>
+          <input class="main-save-shop" type="button" ng-click="collectMerchant('{{merchant.merchantVO.id}}')" value="收藏店铺"></input>
+          </div>
+          <div class="main-hot-products">
+            <ul>
+              <li ng-repeat="gvo in merchant.goodsList">
+                <div class="main-hot-product-item product-hover">
+                  <div class="main-hot-product-desc">
+                    <a href="#/product/detail/{{gvo.gid}}/description">
+                      <img class="main-hot-product-img" ng-src="{{gvo.thumbpath1}}@155h_155w.jpg" />
+                    </a>
+                  </div>
+                  
+                  <div class="main-hot-product-desc">
+                  <a   href="#/product/detail/{{gvo.gid}}/description" title="{{gvo.goodsName}}">
+                    <p class="main-hp-name text-omitted fl">{{gvo.goodsName}}</p>
+                  </a>
+                    <p class="main-hp-scale fr">{{gvo.specifications}}</p>
+                    <div class="clear"></div>
+                    <!--dACWJyWXTV-DWGMZ7srkdg-->
+                    <div  ng-show="merchant.merchantVO.id != 'dACWJyWXTV-DWGMZ7srkdg'">
+                    <p class="main-hp-price fl" ng-show="gvo.onSale == '0'">￥{{gvo.price}}</p>
+                    <p class="main-hp-price fl" ng-show="gvo.onSale == '1'">￥{{gvo.promotionPrice}}</p>
+                    <p class="main-hp-old-price fr" ng-show="gvo.onSale == '1'">原价{{gvo.price}}</p>
+                    </div>
+                  </div>
+                  
+                </div>                
+              </li>
+
+            </ul>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="main-good-recommend fr">
+    <div class="main-block-title">
+        <div class="main-block-title-icon fl"></div>
+        <p class="fl"><a href="" class="main-block-title-txt">热门促销</a></p>
+    </div>
+    <div class="clear"></div>
+    <ul>
+      <li ng-repeat="rg in recommendlist">
+        <div class="main-good-product-item product-hover">
+          <a href="{{rg.linkpath}}">
+            <img class="main-good-product-img" ng-src="{{rg.imgpath}}@295h_228w.jpg" />
+          </a>
+          <div class="main-gp-img-hover">
+            <p class="main-gp-name text-omitted">{{rg.attr1}}</p>
+            <p class="main-gp-shop fl text-omitted">{{rg.attr2}}</p>
+            <P class="main-gp-shop-icon fr"><img src="../images/index/shop-full-icon.png"/></P>
+          </div>
+
+        </div>       
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<!--not online in v1 start-->
+<!--<div class="clear"></div>
+
+<div class="center-view">
+  <img src="../images/index/11.png" class="main-focus-img">
+</div>
+
+<div class="clear"></div>
+<div class="center-view">
+  <ul>
+    <li class="main-good-accessories">
+      <div class="main-hot-shop fl main-ga-width">
+          <p class="main-gc-title">优质辅料</p>
+          <p  class="main-gc-desc">[好食材、无添加]</p>
+          <input class="main-go-shop" type="button" value="进店逛逛"></input>
+          </div>
+          <div class="main-hot-products">
+            <ul>
+              <li>
+                <div class="main-hot-product-item main-ga-width product-hover">
+                  <a href="">
+                    <img class="main-hot-product-img" src="../images/index/jtsp1.png"/>
+                  </a>
+                  <div class="main-hot-product-desc main-ga-desc-width">
+                    <p class="main-hp-name text-omitted fl">东方阿胶复方阿胶浆</p>
+                    <p class="main-hp-scale fr">125ml</p>
+                    <div class="clear"></div>
+                    <p class="main-hp-price fl">￥129.00</p>
+                    <p class="main-hp-old-price fr">原价200：00</p>
+                  </div> 
+                </div>                
+              </li>
+              <li>
+                <div class="main-hot-product-item main-ga-width product-hover">
+                  <a href="">
+                    <img class="main-hot-product-img" src="../images/index/jtsp1.png"/>
+                  </a>
+                  <div class="main-hot-product-desc main-ga-desc-width">
+                    <p class="main-hp-name text-omitted fl">东方阿胶复方阿胶浆</p>
+                    <p class="main-hp-scale fr">125ml</p>
+                    <div class="clear"></div>
+                    <p class="main-hp-price fl">￥129.00</p>
+                    <p class="main-hp-old-price fr">原价200：00</p>
+                  </div> 
+                </div>                
+              </li>
+              <li>
+                <div class="main-hot-product-item main-ga-width product-hover">
+                  <a href="">
+                    <img class="main-hot-product-img" src="../images/index/jtsp1.png"/>
+                  </a>
+                  <div class="main-hot-product-desc main-ga-desc-width">
+                    <p class="main-hp-name text-omitted fl">东方阿胶复方阿胶浆</p>
+                    <p class="main-hp-scale fr">125ml</p>
+                    <div class="clear"></div>
+                    <p class="main-hp-price fl">￥129.00</p>
+                    <p class="main-hp-old-price fr">原价200：00</p>
+                  </div> 
+                </div>                
+              </li>
+              <li>
+                <div class="main-hot-product-item main-ga-width product-hover">
+                  <a href="">
+                    <img class="main-hot-product-img" src="../images/index/jtsp1.png"/>
+                  </a>
+                  <div class="main-hot-product-desc main-ga-desc-width">
+                    <p class="main-hp-name text-omitted fl">东方阿胶复方阿胶浆</p>
+                    <p class="main-hp-scale fr">125ml</p>
+                    <div class="clear"></div>
+                    <p class="main-hp-price fl">￥129.00</p>
+                    <p class="main-hp-old-price fr">原价200：00</p>
+                  </div> 
+                </div>                
+              </li>
+              <li>
+                <div class="main-hot-product-item main-ga-width product-hover">
+                  <a href="">
+                    <img class="main-hot-product-img" src="../images/index/jtsp1.png"/>
+                  </a>
+                  <div class="main-hot-product-desc main-ga-desc-width">
+                    <p class="main-hp-name text-omitted fl">东方阿胶复方阿胶浆</p>
+                    <p class="main-hp-scale fr">125ml</p>
+                    <div class="clear"></div>
+                    <p class="main-hp-price fl">￥129.00</p>
+                    <p class="main-hp-old-price fr">原价200：00</p>
+                  </div> 
+                </div>                
+              </li>
+            </ul>
+          </div>
+    </li>
+    <li class="main-good-accessories">
+      <div class="main-hot-shop fl main-ga-width">
+          <p class="main-gc-title">优质辅料</p>
+          <p  class="main-gc-desc">[好食材、无添加]</p>
+          <input class="main-go-shop" type="button" value="进店逛逛"></input>
+          </div>
+          <div class="main-hot-products">
+            <ul>
+              <li>
+                <div class="main-hot-product-item main-ga-width product-hover">
+                  <a href="">
+                    <img class="main-hot-product-img" src="../images/index/jtsp2.png"/>
+                  </a>
+                  <div class="main-hot-product-desc main-ga-desc-width">
+                    <p class="main-hp-name text-omitted fl">东方阿胶复方阿胶浆</p>
+                    <p class="main-hp-scale fr">125ml</p>
+                    <div class="clear"></div>
+                    <p class="main-hp-price fl">￥129.00</p>
+                    <p class="main-hp-old-price fr">原价200：00</p>
+                  </div> 
+                </div>                
+              </li>
+              <li>
+                <div class="main-hot-product-item main-ga-width product-hover">
+                  <a href="">
+                    <img class="main-hot-product-img" src="../images/index/jtsp2.png"/>
+                  </a>
+                  <div class="main-hot-product-desc main-ga-desc-width">
+                    <p class="main-hp-name text-omitted fl">东方阿胶复方阿胶浆</p>
+                    <p class="main-hp-scale fr">125ml</p>
+                    <div class="clear"></div>
+                    <p class="main-hp-price fl">￥129.00</p>
+                    <p class="main-hp-old-price fr">原价200：00</p>
+                </div>                
+              </li>
+              <li>
+                <div class="main-hot-product-item main-ga-width product-hover">
+                  <a href="">
+                    <img class="main-hot-product-img" src="../images/index/jtsp2.png"/>
+                  </a>
+                  <div class="main-hot-product-desc main-ga-desc-width">
+                    <p class="main-hp-name text-omitted fl">东方阿胶复方阿胶浆</p>
+                    <p class="main-hp-scale fr">125ml</p>
+                    <div class="clear"></div>
+                    <p class="main-hp-price fl">￥129.00</p>
+                    <p class="main-hp-old-price fr">原价200：00</p>
+                </div>                
+              </li>
+              <li>
+                <div class="main-hot-product-item main-ga-width product-hover">
+                  <a href="">
+                    <img class="main-hot-product-img" src="../images/index/jtsp2.png"/>
+                  </a>
+                  <div class="main-hot-product-desc main-ga-desc-width">
+                    <p class="main-hp-name text-omitted fl">东方阿胶复方阿胶浆</p>
+                    <p class="main-hp-scale fr">125ml</p>
+                    <div class="clear"></div>
+                    <p class="main-hp-price fl">￥129.00</p>
+                    <p class="main-hp-old-price fr">原价200：00</p>
+                </div>                
+              </li>
+              <li>
+                <div class="main-hot-product-item main-ga-width product-hover">
+                  <a href="">
+                    <img class="main-hot-product-img" src="../images/index/jtsp2.png"/>
+                  </a>
+                  <div class="main-hot-product-desc main-ga-desc-width">
+                    <p class="main-hp-name text-omitted fl">东方阿胶复方阿胶浆</p>
+                    <p class="main-hp-scale fr">125ml</p>
+                    <div class="clear"></div>
+                    <p class="main-hp-price fl">￥129.00</p>
+                    <p class="main-hp-old-price fr">原价200：00</p>
+                </div>                
+              </li>
+            </ul>
+          </div>
+    </li>
+  </ul>
+</div>-->
+<!--not online in v1 end-->
+
+<div class="clear"></div>
+<div class="main-banner-two">
+</div>
+
+
+
+<div class="center-view" ng-controller="InfoMainController">
+  <div class="main-one-left fl">
+    <div class="main-one-block">
+      <div class="main-block-title">
+        <div class="main-block-title-icon fl"></div>
+        <p class="fl"><a href="" class="main-block-title-txt main-block-tt-active" ng-click="school()">阿胶学堂</a>&nbsp;|&nbsp;<a href="" class="main-block-title-txt " ng-click="wenhua()">阿胶文化</a></p>
+      </div>
+      <div class="clear"></div>
+      <div class="main-one-b-content">
+        <div class="main-obc-left fl">
+          <img class="main-obc-left-img" src="../images/index/jt1.png">
+          <div class="main-obc-op"></div>
+          <p>&lt&lt神农本草经&gt&gt钦点阿胶列为上品</p>
+        </div>
+        <div class="main-obc-right fl">
+          <ul>
+            <li class="main-obc-item text-omitted" ng-repeat="schools in schoolss">
+              <a href="" ng-click="xuexiao(schools)" title="[{{schools.name}}] {{schools.titles}}">[{{schools.name}}] {{schools.titles}}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="main-one-block">
+      <div class="main-block-title">
+        <div class="main-block-title-icon fl"></div>
+        <p class="fl"><a href="" class="main-block-title-txt main-block-tt-active" ng-click="station()">站内资讯</a>&nbsp;|&nbsp;<a href="" class="main-block-title-txt " ng-click="inner()">行业动态</a></p>
+      </div>
+      <div class="clear"></div>
+      <div class="main-one-b-content">
+        <div class="main-obc-left fl">
+          <img class="main-obc-left-img" src="../images/index/jt2.png">
+          <div class="main-obc-op"></div>
+          <p>&lt&lt神农本草经&gt&gt钦点阿胶列为上品</p>
+        </div>
+        <div class="main-obc-right fl">
+          <ul>
+            <li class="main-obc-item text-omitted" ng-repeat="station in stations">
+              <a href="" ng-click="statusDetail(station)" title="{{station.title}}">{{station.title}} </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-one-right fr">
+    <div class="main-block-title">
+        <div class="main-block-title-icon fl"></div>
+        <p class="fl"><a href="" class="main-block-title-txt">国宝阿胶</a></p>
+    </div>
+    <div class="clear"></div>
+     <ul>
+      <li class="main-or-item  product-hover"><a href="#/ejiao/school#quality
+"><img class="main-or-img " src="../images/index/jtgb1.jpg"></a></li>
+      <li class="main-or-item  product-hover"><a href="#/ejiao/school#recipes"><img class="main-or-img " src="../images/index/jtgb2.jpg"></a></li>
+      <li class="main-or-item  product-hover"><a href="" ui-sref="ejiao-technology"><img class="main-or-img " src="../images/index/jtgb3.jpg"></a></li>
+      <li class="main-or-item  product-hover"><a href="#/ejiao/culture#history"><img class="main-or-img " src="../images/index/jtgb4.jpg"></a></li>
+
+    </ul>
+
+  </div>
+  
+  
+</div>
+
+<div class="clear"></div>
+<login-dialog></login-dialog>
+<success-dialog message="{{sucMessage}}"></success-dialog>
+<illegal-request-dialog messagehd="{{messagehd}}" ></illegal-request-dialog>
+<footer></footer>

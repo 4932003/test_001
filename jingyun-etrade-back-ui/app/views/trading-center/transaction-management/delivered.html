@@ -1,0 +1,71 @@
+<div class="merchant-list" ng-controller="OrderController">
+	<div class="ml-top-title">已发货</div>
+	<div class="ml-mid-detail">
+		<ul class="ml">
+			<li class="ml-detail">
+				<p>所属商家</p>
+			</li>
+			<li class="ml-detail">
+			<select  ng-model="mid" ng-options="m.mid as m.merchantName for m in merchantlist"></select>
+			</li>
+		</ul>
+		
+		<div class="clear h10"></div>
+	
+		<div class="ml-ser" ng-click="searchDelivered()">查询</div>
+	</div>
+	<div class="sg-content">
+		<div class="sg-bd">
+			<div class="sgb-item" ng-repeat="order in orders">
+				<table  class="sgb-hd">
+					<tbody>
+						<tr class="sgb-info">
+							<td class="sgb-no">
+								<span >订单号：</span>
+								<span class="sgb-no-info">{{order.orderno}}</span>
+							</td>
+							<td class="sgb-date">
+								<span>下单时间：{{order.addtime | date: 'yyyy-MM-dd HH:mm:ss'}}</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table  class="sgb-bd">
+					<tbody class="sgb-products">
+						<tr>
+							<td class="sgb-products-item">
+								<table class="sgb-clu">
+									<tbody>
+										<tr ng-repeat="goods in order.goods">
+											<td class="sgb-product">
+												<div class="sgb-fl">
+													<img class="sgb-p-img" ng-src="../images/seller-center/g1.png"></div>
+												<div class="sgb-p-name fl">
+													<p>
+														{{goods.gname}}
+													</p>
+												</div>
+											</td>
+											<td class="sgb-pri">{{goods.pprice?goods.pprice:goods.price}}</td>
+											<td class="sgb-amount">{{goods.count}}</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+							<td class="sgb-receiver" >
+								<p>{{order.receiver}}</p>
+							</td>
+							<td class="sgb-receiver" >
+								<p>{{order.mname}}</p>
+							</td>
+							<td class="sgb-state" >
+								<p class="sgb-close"><a href="#/trading-center/order/detail?oid={{order.id}}">订单详情</a></p>
+								{{order.statusName}}
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

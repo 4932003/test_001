@@ -1,0 +1,51 @@
+<div class="login center-view" ng-controller="LoginController as lgctrl">	
+		<div class=" login-inner">
+			<div class="clear h117"></div>
+	        <a href="/#/">
+		        <div class="logo-img fl">
+		          <img src="../images/logo.png">
+		        </div>
+		        <div class="hd-txt fl">
+		          卖家中心
+		        </div>
+	        </a>
+      		<div class="clear h142"></div>
+			<div class="hd">
+				
+				<div class="account-login on" >
+					<p>管理员登录</p>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			
+			<div class="bd">
+				<form ng-submit="login(user)" name='myForm'>
+					<div class="account tab-bd cur">
+						<div class="account-user">
+							<div class="icon1">
+								<div class="pic1"></div>
+							</div>
+							<input ng-model="user.key" name='userLoginKey' class="account-user" type="text"  placeholder="用户名" required>
+						</div>
+
+						<div class="account-password">
+							<div class="icon2">
+								<div class="pic2"></div>
+							</div>
+							<input ng-model="user.password" name='userLoginPsw' class="account-password" type="password"  placeholder="请输入密码" required>
+						</div>
+						<div class="select-item">
+							<input class="select-checkbox cur" type="checkbox" class="checkbox" name="remember">
+							<p class="remember">记住我</p>
+							<!-- <p class="forget"><a class="login-a" href >忘记密码</a></p> -->
+						</div>
+					</div>
+					
+					<input type="submit" class="login-btn" value="登录" ng-disabled="myForm.userLoginKey.$error.required || myForm.userLoginPsw.$error.required">
+				</form>
+			</div>
+		</div>
+		<illegal-request-dialog messagehd="{{messagehd}}"></illegal-request-dialog>
+	</div>
+	<div class="clear"></div>
+	<footer></footer>

@@ -1,0 +1,109 @@
+@import "../../common";
+
+.my-coupon{
+	width:900px;
+	height: 432px;
+}
+.my-coupon .coupon-bd{
+	height: 367px;
+	border: 1px solid @gray-border;
+	padding-left: 19px;
+	padding-right: 21px;
+	margin-top: 20px;
+}
+.my-coupon .coupon-bd .coupon-box{
+	height: 177px;
+	border-bottom: 1px solid @gray-border;
+	padding-left: 63px;
+	position: relative;
+	padding-top: 74px;
+	padding-bottom: 79px;
+}
+.my-coupon .coupon-bd .coupon-box p{
+	float: left;
+	font-size:@t4-size;
+	color:#5d5d5d; 
+	line-height: 24px;
+}
+.my-coupon .coupon-bd .coupon-box p:nth-child(1){
+	font-size:@t2-size;
+	margin-right: 89px;
+}
+.my-coupon .coupon-bd .coupon-box p:nth-child(1)::before{
+	content:"";
+	position: absolute;
+	top:73px;
+	left:29px;
+	width:25px ;
+	height:25px;
+	background: url(../images/icons.png) no-repeat -141px -318px;
+}
+.my-coupon .coupon-bd .coupon-box p:nth-child(1):hover::before{
+	background: url(../images/icons.png) no-repeat -113px -318px;
+}
+.my-coupon .coupon-bd .coupon-box p:nth-child(2){
+	width:256px;
+}
+.my-coupon .coupon-bd .coupon-box p:nth-child(2) a.bl:link,a.bl:visited{
+	text-decoration: none;
+	color: #5d5d5d;
+}
+.my-coupon .coupon-bd .coupon-box p:nth-child(3){
+	margin-right:100px;
+}
+.my-coupon .coupon-bd .coupon-box p:nth-child(3) a.red:link,a.red:visited{
+	text-decoration: none;
+	color:#fd4040;
+}
+.my-coupon .coupon-bd .coupon-box input.recharge-voucher{
+	float: left;
+	width:91px;
+	height:24px;
+	border: 1px solid @gray-border;
+	border-radius: 4px;
+	background-color: @white-color;
+	outline: none;
+	font-size:@t4-size;
+	margin-right:72px;
+}
+.my-coupon .coupon-bd .coupon-box input.recharge-voucher:hover{
+	border: 1px solid  #33cc66;
+}
+.my-coupon .coupon-bd .coupon-box a.voucher-intro:link,a.voucher-intro:visited{
+	text-decoration: none;
+	color:#5d5d5d;
+}
+.my-coupon .coupon-bd .shopping-gold-box{
+	height: 190px;
+	border-bottom:none;
+}
+.my-coupon .coupon-bd .shopping-gold-box input.recharge-shopping-gold{
+	float: left;
+	width:91px;
+	height:24px;
+	border: 1px solid @gray-border;
+	border-radius: 4px;
+	background-color: @white-color;
+	outline: none;
+	font-size:@t4-size;
+	margin-right:72px;
+}
+.my-coupon .coupon-bd .shopping-gold-box input.recharge-shopping-gold:hover{
+	border: 1px solid  #33cc66;
+}
+.my-coupon .coupon-bd .shopping-gold-box a.shopping-gold-intro:link,a.shopping-gold-intro:visited{
+	text-decoration: none;
+	color:#5d5d5d;
+}
+.my-coupon .coupon-bd .shopping-gold-box p:nth-child(1)::before{
+	content:"";
+	position: absolute;
+	top:73px;
+	left:29px;
+	width:22px ;
+	height:23px;
+	background: url(../images/icons.png) no-repeat -86px -319px;
+}
+.my-coupon .coupon-bd .shopping-gold-box p:nth-child(1):hover::before{
+	background: url(../images/icons.png) no-repeat -59px -319px;
+}

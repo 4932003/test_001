@@ -1,0 +1,141 @@
+<header-top></header-top>
+<div class="clear"></div>
+<!-- <header-search></header-search>
+<div class="clear"></div>
+<header-nav></header-nav>
+<div class="clear"></div> -->
+
+<div class="logo-sec center-view">
+	<div class="logo-icon top-logo fl" ui-sref="index"></div>
+	<div class="order-d-step fr">
+		<ul class="step-d-step-list">
+			<li class="step-first">
+				<div class="step-done">
+					<div class="step-no"></div>
+					<div class="step-name">我的购物车</div>
+				</div>
+			</li>
+			<li>
+				<div>
+					<div class="step-no"></div>
+					<div class="step-name">确认订单信息</div>
+			    </div>
+			</li>
+			<li class="step-last">
+				<div>
+					<div class="step-no"></div>
+					<div class="step-name">提交订单</div>
+				</div>	
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class="clear"></div>
+
+<div class="settle-cart center-view" ng-controller="CartController as cartctrl">
+		
+	<h3>全部商品（<span ng-bind="goodsCount()"></span>）</h3>
+	<!--<div class="dispatch">
+		<p>
+			配送至:
+			<select>
+				<option value="">山东济南市历下区</option>
+				<option value="">山东济南市历下区</option>
+				<option value="">山东济南市历下区</option>
+				<option value="">山东济南市历下区</option>
+				<option value="">山东济南市历下区</option>
+			</select>
+		</p>
+	</div>-->
+		
+	<div class="cl h13"></div>
+	<div class="cart-main">
+		<div class="cart-th">
+				<div class="select">
+					<input type="checkbox" class="checkbox-all" ng-change="selectGoodsInCart()" ng-model="allSelected" ng-true-value="true" ng-false-value="false">&nbsp&nbsp全选
+				</div>
+				<div class="goods">商品</div>
+				<div class="price">单价（元）</div>
+				<div class="amount">数量</div>
+				<div class="sum">小计（元）</div>
+				<div class="handle">操作</div>
+		</div>
+		<div class="bd">
+			<div class="shop1" ng-repeat="order in carts.orders" ng-show="order.goods && order.goods.length > 0">
+				<div class="title1">
+					<input type="checkbox" class="cart-checkbox" ng-change="selectGoodsInOrder(order)" ng-model="order.selected" ng-true-value="true" ng-false-value="false">
+					<p>
+						<span>店铺:</span>
+						<a class="no2" href="#/mall?mid={{order.mid}}">{{order.mname}}</a>
+					</p>
+				</div>
+				<div class="info1">
+					<div class="product1 product" ng-repeat="gs in order.goods">
+						<input type="checkbox" ng-class="{disabled: gs.stock == 0}" ng-disabled="gs.stock==0" class="cart-checkbox" ng-change="selectOneGoods(gs)" ng-model="gs.selected" ng-true-value="true" ng-false-value="false">
+						<div class="picture">
+							<a href="#/product/detail/{{gs.gid}}/description">
+								<img ng-src="{{gs.imgpath}}@90h_90w.jpg" alt="" class="cart-img">
+							</a>
+						</div>
+						<div class="introduce">
+							<a class="no3"  href="#/product/detail/{{gs.gid}}/description">
+								<p class="intro-p">{{gs.gname}}</p>
+							</a>
+						</div>
+						<div class="right">
+							<div class="price">
+								<span class="text-cross" ng-show="gs.pprice">{{gs.price}}</span>&nbsp;
+								<span>{{gs.pprice?gs.pprice: gs.price}}</span>
+							</div>
+							<div class="amount">
+								<span ng-class="{disabled: gs.count <= 1 || gs.stock <= 0}" class="reduce" ng-click="countdown(gs, order)">-</span>
+								<input class="amount-input" type="text" ng-model="gs.count" ng-change="countupdate(gs, order)"/>
+								<span ng-class="{disabled: (gs.count == gs.stock || gs.stock == 0)}" class="add" ng-click="countup(gs, order)">+</span>
+							</div>
+							<div class="sum">{{(gs.pprice?gs.pprice: gs.price) * gs.count | number:2}}</div>
+							<div class="handle">
+								<span class="delete" ng-click="delCartGs(gs, order)">删除</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="myaccount-new myaccount-no-order" style="line-height:300px;" ng-show="empty">
+				<img src="../images/myaccount/jtno.png">
+				您的购物车里还空空如也呢，<a ui-sref="mall">快去挑选合适的商品吧！</a>
+			</div>
+
+		</div>
+		<div class="ft">
+			<input type="checkbox" class="cart-checkbox" ng-change="selectGoodsInCart()" ng-model="allSelected" ng-true-value="true" ng-false-value="false">
+			<div class="checkall">全选</div>
+			<div class="delete" ng-click="clearCarts()">清空购物车</div>
+			<div class="empty" ng-click="delCartGses()">删除选中商品</div>
+			<div class="amount-list">
+				共<span ng-bind="goodsCount()">0</span>件商品
+			</div>
+			<div class="sum-list">
+				合计（不含运费）:
+				<span ng-bind="goodsPrice()">0.00</span>
+			</div>
+		</div>
+		<div class="ft-btn">
+			<div class="right-btn">
+				<input class="button2" type="button" value="去结算&nbsp&nbsp&nbsp&gt" ng-click="submit(carts)">
+			</div>
+			<div class="left-btn">
+				<input class="button1" ui-sref="mall" type="button" value="&lt&nbsp&nbsp&nbsp继续购物">
+			</div>
+		</div>
+	</div>
+	<illegal-request-dialog messagehd="{{messagehd}}" ></illegal-request-dialog>
+	<success-dialog message="{{sucMessage}}"></success-dialog>
+</div>
+
+<div class="clear"></div>
+<div ui-view="user-center-bottom"></div>
+
+<div class="clear"></div>
+<footer></footer>

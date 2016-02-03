@@ -1,0 +1,225 @@
+@import "../../common";
+.cl{
+	clear: both;
+}
+
+.setting{
+	float: right;
+	width:910px;
+	height:613px;
+	margin-bottom: 20px;
+	margin-left: 8px;
+}
+.setting .setting-hd{
+	height:105px; 
+	margin-bottom: 10px;
+	border: 1px solid #e9e9e9;
+}
+.setting .setting-hd .top-title{
+	height:42px; 
+	padding-top: 12px;
+	padding-bottom:13px;
+	padding-left: 21px;
+	border-bottom: 1px dashed #E9E9E9;
+}
+.setting .setting-hd .top-title p{
+	height:17px; 
+	font-size:@t2-size;
+	border-left: 3px solid @price-color;
+	padding-left: 6px;
+}
+.setting .setting-hd .level{
+	height:62px;
+	padding-top: 21px;
+	padding-bottom: 21px;
+	padding-left:43px;
+}
+.setting .setting-hd .level p{
+	float: left;
+	height: 20px;
+	font-size:@t4-size;
+	color:#666464;
+	line-height: 20px;
+	margin-right:17px;  
+}
+.setting .setting-hd .level p span{
+	color:#FF8A16;
+}
+.setting .setting-hd .level progress{
+	float: left;
+	width: 197px;
+	height: 20px;
+	border-radius:4px;
+	margin-right: 17px;
+}
+.setting .setting-bd{
+	float: right;
+	width:910px; 
+	height:498px; 
+	border: 1px solid #e9e9e9;
+}
+.setting .setting-bd .box{
+	height: 117px;
+	padding-top: 57px;
+	position: relative;	
+	border-bottom: 1px dashed #e9e9e9;
+	padding-left:82px;
+	padding-right: 41px;
+}
+.setting .setting-bd .box:last-child{
+	border-bottom: none;
+}
+.setting .setting-bd .box::before{
+	content:"";
+	position: absolute;
+	top:59px;
+	left:27px; 
+	width: 29px;
+	height: 21px;
+	background: url(../images/icons.png) no-repeat -49px -283px;
+}
+
+.setting .setting-bd .lp1::before{
+	content:"";
+	position: absolute;
+	top:59px;
+	left:27px; 
+	width: 29px;
+	height: 21px;
+	background: url(../images/icons.png) no-repeat -49px -283px;
+}
+
+.setting .setting-bd .vm1::before{
+	content:"";
+	position: absolute;
+	top:59px;
+	left:27px; 
+	width: 26px;
+	height: 21px;
+	background: url(../images/icons.png) no-repeat -8px -280px;
+}
+.setting .setting-bd .vm2::before{
+	content:"";
+	position: absolute;
+	top:59px;
+	left:27px; 
+	width: 29px;
+	height: 21px;
+	background: url(../images/icons.png) no-repeat -49px -283px;
+}
+
+.setting .setting-bd .mv1::before{
+	content:"";
+	position: absolute;
+	top:59px;
+	left:27px; 
+	width: 26px;
+	height: 21px;
+	background: url(../images/icons.png) no-repeat -8px -280px;
+}
+.setting .setting-bd .mv2::before{
+	content:"";
+	position: absolute;
+	top:59px;
+	left:27px; 
+	width: 29px;
+	height: 21px;
+	background: url(../images/icons.png) no-repeat -49px -283px;
+}
+.setting .setting-bd .pp1::before{
+	content:"";
+	position: absolute;
+	top:59px;
+	left:27px; 
+	width: 26px;
+	height: 21px;
+	background: url(../images/icons.png) no-repeat -8px -280px;
+}
+.setting .setting-bd .pp2::before{
+	content:"";
+	position: absolute;
+	top:59px;
+	left:27px; 
+	width: 29px;
+	height: 21px;
+	background: url(../images/icons.png) no-repeat -49px -283px;
+}
+.setting .setting-bd .box .p1{
+	float: left;
+	font-size:@t2-size;
+	font-weight: bold;
+	color:#323232;
+	margin-right: 55px; 
+}
+.setting .setting-bd .box .p2{
+	float: left;
+	width: 525px;
+	height:43px;
+	font-size:@t4-size ;
+	color:#323232;
+	line-height:20px;
+}
+.setting .setting-bd .box .modify{
+	float: right;
+}
+.setting .setting-bd .box .modify input{
+	border: none;
+	outline: none;
+}
+.setting .setting-bd .box .modify input.modify{
+	width:90px;
+	height: 24px;
+	border: 1px solid  @txt-color;
+	border-radius: 4px;
+	font-size:@t4-size ;
+	color:@txt-color;
+	background-color:@white-color; 
+}
+.setting .setting-bd .box .modify input.modify.cur{
+	color:@white-color;
+	background-color:#FD4040; 
+	border: none;
+}
+.tip-ft{
+	height:106px;
+	background-color:#F0FDF4; 
+	border: 1px solid  #e9e9e9;
+	margin-bottom: 20px;
+}
+.tip-ft .tip-left{
+	float: left;
+	width: 180px;
+	height: 106px;
+	padding:60px 38px 30px 28px; 
+	text-align: center;
+	position: relative;
+	margin-right: 30px;
+}
+.tip-ft .tip-left h3{
+	font-size:@t2-size;
+	font-weight: bold;
+	color:#323232;
+	margin: 0 !important;  
+}
+.tip-ft .tip-left h3::before{
+	content:"";
+	position: absolute;
+	top:27px;
+	left:69px;
+	width: 29px;
+	height: 24px;
+	background: url(../images/icons.png) no-repeat -110px -280px;
+}
+.tip-ft .tip-right{
+	float: left;
+	width: 695px;
+	height: 106px;
+	padding-top: 21px;
+	padding-right: 25px;
+}
+.tip-ft .tip-right p{
+	font-size:@t4-size ;
+	line-height: 21px;
+	color:@txt-color;
+	margin-bottom: 7px; 
+}

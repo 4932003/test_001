@@ -1,0 +1,68 @@
+<header-top></header-top>
+<div class="clear"></div>
+<header-search></header-search>
+<div class="clear"></div>
+<header-nav></header-nav>
+<div class="clear"></div>
+
+<div class="center-view" ng-controller="InformationController">
+	<div class="ejiao-mp-img">
+		<img src="../images/ejiao-culture/ejiao-mp-img.png">
+	</div>
+
+	<div class="ejiao-mp-main">
+		<div class="ejiao-mp-left fl">
+			<ul class="ejiao-mp-list">
+				<li ng-repeat="drugAny in drugAnyDetails">
+					<div class="ejiao-mp-item">
+						<div class="ejiao-mp-item-left fl">
+							<div class="ejiao-mp-item-img" style="cursor:pointer" ng-click="drugDetail(drugAny)"></div>
+						</div>
+						<div class="ejiao-mp-item-right fr">
+							<p class="ejiao-mp-item-hd" style="cursor:pointer" ng-click="drugDetail(drugAny)">{{drugAny.title}}</p>
+							<p style="cursor:pointer" ng-click="drugDetail(drugAny)">{{drugAny.abstracts}}</p>
+							
+						</div>
+					</div>
+					<div class="clear"></div>
+				</li>
+				
+				<!-- <li>
+					<div class="ejiao-mp-item">
+						<div class="ejiao-mp-item-left fl">
+							<div class="ejiao-mp-item-img"></div>
+						</div>
+						<div class="ejiao-mp-item-right fr">
+							<p class="ejiao-mp-item-hd">阿胶补血膏</p>
+							<p>古方：阿胶、熟地黄、党参、黄芪、枸杞子、白术。</p>
+							<p>功效：益气补血，用于久病体弱、气虚血亏。</p>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</li>
+				
+				<li>
+					<div class="ejiao-mp-item">
+						<div class="ejiao-mp-item-left fl">
+							<div class="ejiao-mp-item-img"></div>
+						</div>
+						<div class="ejiao-mp-item-right fr">
+							<p class="ejiao-mp-item-hd">阿胶补血膏</p>
+							<p>古方：阿胶、熟地黄、党参、黄芪、枸杞子、白术。阿胶(250g)、去核红枣(500g)、核桃肉(50g)、黑芝麻(150g)、桂圆肉(150g)。</p>
+							<p>功效：益气补血，用于久病体弱、气虚血亏。</p>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</li>
+				 -->
+			</ul>
+		</div>
+
+		<div class="ejiao-mp-right fr">
+			<promotion-product></promotion-product>
+		</div>
+	</div>
+</div>
+
+<div class="clear"></div>
+<footer></footer>

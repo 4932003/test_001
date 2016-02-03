@@ -1,0 +1,111 @@
+<div class="user-center-left">
+
+<div class="user-center-left-nav">
+	<div class="uc-my-account" ui-sref="user-center.myaccount">我的账户</div>
+	<ul>
+		<li class="uc-first-menu">交易中心</li>
+		<li>
+			<div class="uc-second-menu-box">
+				<ul>
+					<li class="uc-second-menu-item" ui-sref="user-center.my-order" ui-sref-active="uc-second-menu-item-selected">我的订单
+						<div class="black-drop-down-arrow-icon uc-left-arrow-img fr"></div>
+					</li>
+					<li class="uc-second-menu-item" ui-sref="user-center.my-comment.goods-info-evaluation" ui-sref-active="uc-second-menu-item-selected">评价晒单
+						<div class="black-drop-down-arrow-icon uc-left-arrow-img fr"></div>
+					</li>
+					<li class="uc-second-menu-item" ui-sref="user-center.return-record" ui-sref-active="uc-second-menu-item-selected">退货记录
+						<div class="black-drop-down-arrow-icon uc-left-arrow-img fr"></div>
+					</li>
+					<li class="uc-second-menu-item" ui-sref="user-center.my-collection.my-collection-product" ui-sref-active="uc-second-menu-item-selected">我的收藏
+						<div class="black-drop-down-arrow-icon uc-left-arrow-img fr"></div>
+					</li>
+					<li class="uc-second-menu-item" ui-sref="user-center.my-message" ui-sref-active="uc-second-menu-item-selected">站内消息
+						<div class="black-drop-down-arrow-icon uc-left-arrow-img fr"></div>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li class="uc-first-menu">我的资产</li>
+		<li>
+			<div class="uc-second-menu-box">
+				<ul>
+					<!-- <li class="uc-second-menu-item" ui-sref="user-center.my-balance" ui-sref-active="uc-second-menu-item-selected">我的余额</li>
+					<li class="uc-second-menu-item" ui-sref="user-center.my-integal" ui-sref-active="uc-second-menu-item-selected">我的积分</li> -->
+					<li class="uc-second-menu-item" ui-sref="user-center.my-coupon" ui-sref-active="uc-second-menu-item-selected">我的优惠券
+						<div class="black-drop-down-arrow-icon uc-left-arrow-img fr"></div>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li class="uc-first-menu">个人设置</li>
+		<li>
+			<div class="uc-second-menu-box">
+				<ul>
+					<li class="uc-second-menu-item" ui-sref="user-center.user-info" ui-sref-active="uc-second-menu-item-selected">个人资料
+						<div class="black-drop-down-arrow-icon uc-left-arrow-img fr"></div>
+					</li>
+					<li class="uc-second-menu-item" ui-sref="user-center.safety-setting" ui-sref-active="uc-second-menu-item-selected">安全设置
+						<div class="black-drop-down-arrow-icon uc-left-arrow-img fr"></div>
+					</li>
+					<li class="uc-second-menu-item"  ui-sref="user-center.my-receive-address" ui-sref-active="uc-second-menu-item-selected">我的收货地址
+						<div class="black-drop-down-arrow-icon uc-left-arrow-img fr"></div>
+					</li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+</div>
+
+<div class="clear"></div>
+<div class="user-center-left-hot-selling" ng-controller="GoodsadCtrl as goodsadctrl">
+	<div class="uclhs-hd">24小时热卖推荐</div>
+	<ul>
+		<li ng-repeat="ag in ad24goods.goodsList">
+			<div class="uclhs-item">
+				<div >
+					<a href="#/product/detail/{{ag.gid}}/description">
+					<img class="uclhs-img" ng-src="{{ag.thumbpath1}}@160h_160w.jpg">
+					</a>
+				</div>
+				<a title="{{ag.goodsName}}" href="#/product/detail/{{ag.gid}}/description">
+				<p class="uclhs-name">{{ag.goodsName}}<!-- &nbsp;&nbsp;东阿阿胶阿胶糕即食固元膏特产... --></p>
+				</a>
+				<div class="uclhs-price">
+					<div class="uclhs-new-price fl" ng-show="ag.onSale == '1'">￥{{ag.promotionPrice}}</div>
+					<div class="uclhs-new-price fl" ng-show="ag.onSale == '0'">￥{{ag.price}}</div>
+					<div class="uclhs-old-price fr" ng-show="ag.onSale == '1'">原价：{{ag.price}}</div>
+				</div>
+			</div>
+		</li>
+		<div class="clear"></div>
+		<!-- 
+		<li>
+			<div class="uclhs-item">
+				<div >
+					<img class="uclhs-img" src="../images/product-detail/jtpj1.png">
+				</div>
+				<p class="uclhs-name">桃花姬&nbsp;&nbsp;东阿阿胶阿胶糕即食固元膏特产...</p>
+				<div class="uclhs-price">
+					<div class="uclhs-new-price fl">￥129.00</div>
+					<div class="uclhs-old-price fr">原价：200.00</div>
+				</div>
+			</div>
+		</li>
+		<div class="clear"></div>
+		<li>
+			<div class="uclhs-item">
+				<div>
+					<img class="uclhs-img" src="../images/product-detail/jtpj1.png">
+				</div>
+				<p class="uclhs-name">桃花姬&nbsp;&nbsp;东阿阿胶阿胶糕即食固元膏特产...</p>
+				<div class="uclhs-price">
+					<div class="uclhs-new-price fl">￥129.00</div>
+					<div class="uclhs-old-price fr">原价：200.00</div>
+				</div>
+			</div>
+		</li>
+		<div class="clear"></div>
+		-->
+	</ul>
+</div>
+</div>

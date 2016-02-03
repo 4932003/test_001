@@ -1,0 +1,9 @@
+<div class="my-shopping-gold-detail-used" ng-controller='CashCouponUsedController'>
+	<div class=" shopping-gold-detail" ng-repeat="item in coupons">
+		<div class="wdot"></div>
+		<p class="fifty">{{item.cashCoupon.value}}元<span class='tip'>({{item.cashCoupon.threshhold}}元起用)</span></p>
+		<p class="recharge-time">订单生成日期：{{item.consumeTime | date:'yyyy-MM-dd'}}</p>
+		<p class="recharge-time">折扣限额：{{item.cashCoupon.value}}元</p>
+	</div>
+	
+</div>

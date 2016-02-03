@@ -1,0 +1,51 @@
+@import "../common";
+
+ul > li.user-center-bt-item{
+	font-size:@t3-size;
+	font-weight:bold;
+	height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.ucbi-active{
+	color:@base-color;
+}
+
+ul.user-center-bd-list > li:first-child > div{
+	border-left:1px solid @gray-border;
+}
+
+.user-center-b-left{
+	position: absolute;
+	top:100px;
+	left:4px;
+	width:12px;
+	height: 21px;
+	background: url(../images/icons.png) no-repeat -195px -364px;
+	cursor: pointer;
+	z-index: 999;
+}
+.user-center-b-details{
+	width:@center-view-width;
+	height: 240px;
+	overflow: hidden;
+	position: relative;
+	margin-bottom: 20px;
+}
+.user-center-b-details>ul{
+	width: 101010px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.user-center-b-right{
+	position: absolute;
+	top: 100px;
+	right:4px;
+	width: 12px;
+	height: 21px;
+	background: url(../images/icons.png) no-repeat -196px -391px;
+	cursor: pointer;
+	z-index: 999;
+}

@@ -1,0 +1,270 @@
+@import "../common";
+
+
+.myaccount-summary,.myaccount-recent-orders,.myaccount-my-collection,.myaccount-my-footprints{
+	width: 910px;
+    border: 1px solid @gray-border;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.myaccount-amount{
+	cursor: pointer;
+	height:20px;
+}
+.myaccount-summary{
+    padding: 20px;
+}
+
+.myaccount-summary-left{
+	width: 50%;
+}
+
+.myaccount-welcome-info{
+	font-size:@t3-size;
+}
+
+.myaccount-tel{
+	color:@base-color;
+}
+
+.myaccount-unread-message{
+	font-size:@t4-size;
+	cursor: pointer;
+}
+
+.myaccount-safe-level,.myaccount-binding-info{
+	margin-top:20px;
+}
+
+.myaccount-safe-desc{
+	color:@aid-orange;
+	padding-left: 5px;
+}
+
+.myaccount-progress{
+	width:200px;
+	margin:0 5px;
+}
+
+.myaccount-progress .progress-bar{
+	background-color:@aid-orange;
+}
+
+.myaccount-summary-right{
+	width: 45%;
+}
+
+.myaccount-summary-right > ul >li{
+	width: 33.33%;
+    background-color: @light-gray-bg;
+    height: 100%;
+    text-align: center;
+    padding: 20px 0px;
+    float: right;
+}
+
+.myaccount-summary-item{
+	border-right: 1px solid @white-color;
+}
+
+.myaccount-summary-item-last{
+	border-right:none;
+}
+
+.myaccount-balance-amount{
+	color:@base-color;
+}
+
+.myaccount-si-hd{
+	margin-bottom: 5px;
+	height: 25px;
+}
+
+.myaccount-si-hd-ico{
+	margin-left: 30px;
+    margin-right: 5px; 
+}
+
+.myaccount-balance-hd-ico{
+	margin-top: -3px;
+}
+
+ul.myaccount-binding-info > li{
+	width:30%;
+}
+
+.myaccount-recent-orders, .myaccount-my-collection, .myaccount-my-footprints{
+	padding:10px;
+	position: relative;
+}
+
+
+.myaccount-title-item{
+	font-size: @t1-size;
+    border-left: 4px solid @base-color;
+    padding-left: 10px;
+    margin-right:20px;
+}
+
+ul > Li.myaccount-order-function-item{
+	line-height:30px;
+	padding-left:10px;
+}
+
+ul > Li.myaccount-order-function-item a{
+	color:@txt-color;
+}
+
+.myaccount-no{
+	padding: 0 10px;
+    color: red;
+}
+
+.myaccount-all-orders{
+	margin-top: -5px;
+}
+
+.myaccount-all-orders a{
+	color:@txt-color;
+}
+
+.myaccount-order-detail{
+	width: 842px;
+    margin: 10px 25px;	
+}
+
+.myaccount-order-detail > ul > li{
+	margin-bottom:20px;
+}
+
+ul > li.myaccount-order-info{
+    width: 140px;
+    height: 140px;
+    line-height:140px;
+    text-align:center;
+}
+
+ul > li.myaccount-oi-two-rows{
+	line-height: 15px;
+    padding-top: 50px;
+}
+	
+ul > li.myaccount-order-info:first-child{
+    border: 1px solid @gray-border;
+}
+
+
+.myaccount-order-img{
+	width: 120px;
+}
+
+.myaccount-new{
+	color:#bfbfbf;
+	font-size:@t2-size;
+	text-align:center;
+    width: 100%;
+}
+
+.myaccount-slider-img{
+	width: 780px;
+    margin: 0 53px;
+    position: relative;
+	height: 237px;
+	overflow: hidden;
+	margin-top: 10px;
+}
+.myaccount-slider-img > ul{
+	width: 101010px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.myaccount-slider-img > ul > li {
+	border: 1px solid @gray-border;
+    padding: 10px;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.myaccount-mc-img{
+	width:165px;
+}
+.myaccount-mc-hide{
+	width: 187px;
+	height: 187px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: black;
+	opacity: 0.3;
+	display: none;
+	}
+.myaccount-mc-hide-text{
+	position: absolute;
+	left:0;
+	bottom: 61px;
+	color: @white-color;
+	font-size:@t4-size ;
+	text-align: center;
+	display: none;
+	width: 187px;
+}
+.myaccount-mc-hide-text p{
+	margin: 0;
+}
+.hide-text{
+	width: 187px;
+}
+.myaccount-slider-img > ul > li:hover .myaccount-mc-hide{
+	display: block;
+}
+.myaccount-slider-img > ul > li:hover .myaccount-mc-hide-text{
+	display: block;
+}
+.myaccount-my-collection .myaccount-slider-left{
+	position: absolute;
+	top:126px;
+	left:21px;
+	width:12px;
+	height: 21px;
+	background: url(../images/icons.png) no-repeat -195px -364px;
+	cursor: pointer;
+	z-index: 999;
+}
+.myaccount-my-collection .myaccount-slider-right{
+	position: absolute;
+	top: 126px;
+	right:26px;
+	width: 12px;
+	height: 21px;
+	background: url(../images/icons.png) no-repeat -196px -391px;
+	cursor: pointer;
+	z-index: 999;
+}
+.myaccount-my-footprints .myaccount-slider-left{
+	position: absolute;
+	top:126px;
+	left:21px;
+	width:12px;
+	height: 21px;
+	background: url(../images/icons.png) no-repeat -195px -364px;
+	cursor: pointer;
+	z-index: 999;
+}
+.myaccount-my-footprints .myaccount-slider-right{
+	position: absolute;
+	top: 126px;
+	right:26px;
+	width: 12px;
+	height: 21px;
+	background: url(../images/icons.png) no-repeat -196px -391px;
+	cursor: pointer;
+	z-index: 999;
+}
+.myaccount-order-link{
+	color:@txt-color;
+}
+.ui_link{
+	cursor: pointer;
+}

@@ -1,0 +1,278 @@
+<div class="nav-bar" ng-controller="HeaderNavController">
+  <div class="center-view">
+    <ul class="nav-top-menu fl">
+      <li class="nav-tm-fli "  ng-class="{true: 'nav-tm-all', false: ''}[showMenuFlag]">
+        <a href="#">全部商品分类</a>
+         <div class="nav-tm-menu h350 visible" >
+          <div class="nav-tm-inner h175 visible">
+           <!--首页全部商品分类2级菜单  一期暂时隐藏-->
+            <div class="nav-li-detail" style="display: none;">
+                   <div class="nav-det-box1">
+                     <div class="nav-detail-hd">
+                        <div class="nav-title-left fl">东阿阿胶</div>
+                        <div class="nav-title-right fr">更多</div>
+                     </div>
+                     <div class="nav-detail-bd">
+                       <ul class="nav-bd-detail">
+                         <li class="nav-bd-details">OTC</li>
+                         <li class="nav-bd-details">阿胶块/片</li>
+                         <li class="nav-bd-details">阿胶块糕/固元膏</li>
+                         <li class="nav-bd-details">阿胶膏</li>
+                         <li class="nav-bd-details">复方阿胶浆</li>
+                         <li class="nav-bd-details">阿胶保健食品</li>
+                         <li class="nav-bd-details">阿胶金丝枣</li>
+                         <li class="nav-bd-details">阿胶补血膏/颗粒</li>
+                         <li class="nav-bd-details">阿胶（液体）/口服液</li>
+                         <li class="nav-bd-details">阿胶神口服液</li>
+                         <li class="nav-bd-details">阿胶蜂蜜膏</li>
+                         <li class="nav-bd-details">药食同源-膳食粉</li>
+                         <li class="nav-bd-details">阿胶驴肉-即食</li>
+                         <li class="nav-bd-details">辅料包</li>
+                         <li class="nav-bd-details">阿胶零食</li>
+                       </ul>
+                     </div>
+                   </div>
+                   <div class="clear h11"></div>
+                   <div class="nav-det-box2">
+                      <div class="nav-detail-hd">
+                        <div class="nav-title-left fl">品牌分类</div>
+                        <div class="nav-title-right fr">更多</div>
+                     </div>
+                      <div class="nav-detail-bd">
+                       <ul class="nav-bd-detail">
+                         <li class="nav-bd-details-brand">
+                           <div class="nav-brand-pic">
+                             <img src="../images/index/seller1.png" alt="" class="brand-pics">
+                           </div>
+                           <div class="nav-brand-text">福牌阿胶</div>
+                         </li>
+                         <li class="nav-bd-details-brand">
+                            <div class="nav-brand-pic">
+                             <img src="../images/index/seller1.png" alt="" class="brand-pics">
+                           </div>
+                           <div class="nav-brand-text">福牌阿胶</div>
+                         </li>
+                         <li class="nav-bd-details-brand">
+                            <div class="nav-brand-pic">
+                            <img src="../images/index/seller1.png" alt="" class="brand-pics">
+                           </div>
+                           <div class="nav-brand-text">福牌阿胶</div>
+                         </li>
+                         <li class="nav-bd-details-brand">
+                            <div class="nav-brand-pic">
+                            <img src="../images/index/seller1.png" alt="" class="brand-pics">
+                           </div>
+                           <div class="nav-brand-text">福牌阿胶</div>
+                         </li>
+                         <li class="nav-bd-details-brand">
+                            <div class="nav-brand-pic">
+                            <img src="../images/index/seller1.png" alt="" class="brand-pics">
+                           </div>
+                           <div class="nav-brand-text">福牌阿胶</div>
+                         </li>
+                       </ul>
+                     </div>
+                   </div>
+                 </div>
+              <!--///////////////////////////////////////////////////-->
+            <ul class="nav-tm-s-menu fl">
+              <li class="nav-tm-sli">
+                <div class="nav-icon-1"></div>
+                <a href="">品牌</a>
+              </li>
+            </ul>
+
+             <ul class="nav-tm-s-menu fl" ng-repeat="brand in brandTree">
+              <li class="nav-tm-sli">
+                <a href="#/mall?bid={{brand.bid}}&flag=3&bname={{brand.brandName}}" >
+                    {{brand.brandName}}</a>
+                 <div class="nav-icon"></div>
+                 <div class="nav-icon-3"></div>
+              </li>
+            </ul> 
+          </div>
+          <div class="nav-tm-inner h173 visible">
+            <!--首页全部商品分类2级菜单  一期暂时隐藏-->
+            <div class="nav-li-detail nav-li-detail-2" style="display: none;">
+                   <div class="nav-det-box2">
+                      <div class="nav-detail-hd">
+                        <div class="nav-title-left fl">品牌分类</div>
+                        <div class="nav-title-right fr">更多</div>
+                     </div>
+                      <div class="nav-detail-bd">
+                       <ul class="nav-bd-detail">
+                         <li class="nav-bd-details-brand">
+                           <div class="nav-brand-pic">
+                            <img src="../images/index/seller1.png" alt="" class="brand-pics">
+                           </div>
+                           <div class="nav-brand-text">福牌阿胶</div>
+                         </li>
+                         <li class="nav-bd-details-brand">
+                            <div class="nav-brand-pic">
+                            <img src="../images/index/seller1.png" alt="" class="brand-pics">
+                           </div>
+                           <div class="nav-brand-text">福牌阿胶</div>
+                         </li>
+                         <li class="nav-bd-details-brand">
+                            <div class="nav-brand-pic">
+                            <img src="../images/index/seller1.png" alt="" class="brand-pics">
+                            </div>
+                           <div class="nav-brand-text">福牌阿胶</div>
+                         </li>
+                         <li class="nav-bd-details-brand">
+                            <div class="nav-brand-pic">
+                             <img src="../images/index/seller1.png" alt="" class="brand-pics">
+                             </div>
+                           <div class="nav-brand-text">福牌阿胶</div>
+                         </li>
+                         <li class="nav-bd-details-brand">
+                            <div class="nav-brand-pic">
+                            <img src="../images/index/seller1.png" alt="" class="brand-pics">
+                           </div>
+                           <div class="nav-brand-text">福牌阿胶</div>
+                         </li>
+                          <li class="nav-bd-details-brand">
+                            <div class="nav-brand-pic">
+                            <img src="../images/index/seller1.png" alt="" class="brand-pics">
+                           </div>
+                           <div class="nav-brand-text">福牌阿胶</div>
+                         </li>
+                          <li class="nav-bd-details-brand">
+                            <div class="nav-brand-pic">
+                             <img src="../images/index/seller1.png" alt="" class="brand-pics">
+                           </div>
+                           <div class="nav-brand-text">福牌阿胶</div>
+                         </li>
+                          <li class="nav-bd-details-brand">
+                            <div class="nav-brand-pic">
+                            <img src="../images/index/seller1.png" alt="" class="brand-pics">
+                           </div>
+                           <div class="nav-brand-text">福牌阿胶</div>
+                         </li>
+                       </ul>
+                     </div>
+                   </div>
+                 </div>
+                <!--//////////////////////////////////////////////-->
+              <ul class="nav-tm-s-menu fl">
+                <li  class="nav-tm-sli">
+                  <div class="nav-icon-2"></div>
+                  <a href="">类别</a>
+                </li>
+              </ul>
+
+            <ul class="nav-tm-s-menu fl" ng-repeat="type in typeTree">
+               <li class="nav-tm-sli">
+                <a href="#/mall?tid={{type.tid}}&flag=3&tname={{type.typeName}}" >{{type.typeName}}</a>
+                <div class="nav-icon"></div>
+                <div class="nav-icon-3"></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </li>
+      <li class="nav-tm-fli">
+        <a ui-sref="index">首页</a>
+      </li>
+      <li class="nav-tm-fli">
+        <a ui-sref="mall">阿胶商城</a>
+      </li>
+      <li class="nav-tm-fli">
+        <a ui-sref="ejiao-school">阿胶学堂</a>
+        <div class="nav-tm-menu" >
+          <div class="nav-tm-inner">
+            <ul class="nav-tm-s-menu fl">
+              <li  class="nav-tm-sli">
+                <a class="nav-tm-sli-a" href="#/ejiao/school#allusion">功效研究</a>
+              </li>
+              <li class="nav-tm-sli">
+                <a class="nav-tm-sli-a" href="#/ejiao/school#quality">品质鉴别</a>
+              </li>
+              <li class="nav-tm-sli">
+                <a class="nav-tm-sli-a" href="#/ejiao/school#recipes">健康食谱</a>
+              </li>
+              <li class="nav-tm-sli">
+                <a class="nav-tm-sli-a" href="">中医养生</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="nav-tm-fli">
+        <a ui-sref="ejiao-culture">阿胶文化</a>
+        <div class="nav-tm-menu" >
+          <div class="nav-tm-inner">
+            <ul class="nav-tm-s-menu fl">
+            
+              <li class="nav-tm-sli">
+               
+
+                <a class="nav-tm-sli-a" href="#/ejiao/culture#history">阿胶历史</a>
+              </li>
+              <li class="nav-tm-sli">
+                <a class="nav-tm-sli-a" href="" ui-sref="ejiao-technology">阿胶工艺</a>
+
+              </li>
+              <li class="nav-tm-sli">
+
+                <a class="nav-tm-sli-a" href="" ui-sref="ejiao-medical-prescription">名医古方</a>
+
+              </li>
+              <li class="nav-tm-sli">
+
+                <a class="nav-tm-sli-a" href=""  ui-sref="ejiao-figure-story">阿胶故事</a>
+
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="nav-tm-fli">
+        <a ui-sref="brand-news">品牌新闻</a>
+        <div class="nav-tm-menu" >
+          <div class="nav-tm-inner">
+            <ul class="nav-tm-s-menu fl">
+              <li  class="nav-tm-sli">
+                <a class="nav-tm-sli-a" href="#/brandnews#sotry">品牌故事</a>
+              </li>
+              <li class="nav-tm-sli">
+                <a class="nav-tm-sli-a" href="#/brandnews#stationinfo">站内资讯</a>
+              </li>
+              <li class="nav-tm-sli">
+                <a class="nav-tm-sli-a" href="#/brandnews#industrytrends">行业动态</a>
+              </li>
+
+             <!--  <li class="nav-tm-sli">
+                <a href="">中医养生</a>
+              </li> -->
+
+            </ul>
+          </div>
+        </div>
+      </li>
+     <!--  <li class="nav-tm-fli">
+        <a ui-sref="#">养生社区</a>
+        <div class="nav-tm-menu" >
+          <div class="nav-tm-inner">
+            <ul class="nav-tm-s-menu fl">
+              <li  class="nav-tm-sli">
+                <a href=""></a>
+              </li>
+              <li class="nav-tm-sli">
+                <a href=""></a>
+              </li>
+              <li class="nav-tm-sli">
+                <a href=""></a>
+              </li>
+              <li class="nav-tm-sli">
+                <a href=""></a>
+              </li>
+            </ul>
+          </div>
+        </div> 
+      </li>-->
+    </ul>
+  </div>
+  <div class="clear"></div>
+</div>

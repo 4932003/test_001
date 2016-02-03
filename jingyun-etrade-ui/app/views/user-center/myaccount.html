@@ -1,0 +1,182 @@
+		<div class="myaccount-summary" ng-controller='MyAccountController' >
+			<div class="myaccount-summary-left fl">
+				<div class="myaccount-welcome-info">欢迎您，
+					<span class="myaccount-tel" >{{user.username}}！</span>
+					<span class="myaccount-unread-message" ui-sref="user-center.my-message">未读短消息（{{messageAmount}}）</span></div>
+				<div class="myaccount-safe-level">
+					<div class="myaccount-safe-txt fl">账户安全:</div>
+					<div class="myaccount-safe-desc fl">{{levelName}}</div>
+					<div class="progress myaccount-progress fl">
+					    <progress-bar level="level"></progress-bar>
+					</div>
+					<div class="fl"><a href="#" ui-sref="user-center.safety-setting">[提升]</a></div>										
+				</div>
+				<div class="clear"></div>
+				<ul class="myaccount-binding-info">
+					<li  ng-if="user.mobile">
+						<div class="red-phone-icon fl"></div>手机：<span>已绑定</span>
+					</li>
+					<li  ng-if="!user.mobile" ui-sref="user-center.verify-mobile" class='ui_link'>
+						<div class="black-phone-icon fl"></div>手机：<span>未绑定</span>
+					</li>
+					<li ng-if="user.email">
+						<div class="red-small-mail-ocon fl"></div>邮箱：<span>已绑定</span>
+					</li>
+					<li  ng-if="!user.email" ui-sref="user-center.verify-email" class='ui_link'>
+						<div class="black-small-mail-icon fl"></div>邮箱：<span>未绑定</span>
+					</li>
+				</ul>
+			</div>
+			<div class="myaccount-summary-right fr">
+				<ul>
+					
+					
+					<li>
+						<div class="myaccount-summary-item myaccount-summary-item-last">
+							<div class="myaccount-si-hd">
+								<div class="coupon-icon myaccount-si-hd-ico fl"></div>
+								<div class="fl">优惠券</div>
+							</div>
+							<p class="myaccount-amount" ui-sref="user-center.my-coupon">{{couponAmount}}</p>
+						</div>
+					</li>
+					<li>
+						<div class="myaccount-summary-item">
+							<div class="myaccount-si-hd">
+								<div class="integral-icon myaccount-si-hd-ico fl"></div>
+								<div class="fl">积分</div>
+							</div>
+							<p class="myaccount-amount">{{point}}</p>
+						</div>
+					</li>
+					<li style="display: none;">
+						<div class="myaccount-summary-item">
+							<div class="myaccount-si-hd">
+								<div class="money-icon myaccount-si-hd-ico myaccount-balance-hd-ico fl"></div>
+								<div class="fl">余额</div>
+							</div>
+							<p class="myaccount-balance-amount">￥0.00</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="clear" ></div>
+		<div class="myaccount-recent-orders" ng-controller='MyRecentlyOrderController'>
+			<div class="myaccount-title">
+				<div class="myaccount-title-item fl">最近订单</div>
+				<ul>
+					<li class="myaccount-order-function-item"><a href="" ng-click="getMyNewOrder()">待付款<span class="myaccount-no">{{newAmount}}</span></a>|</li>
+					<li class="myaccount-order-function-item"><a href="" ng-click="getMyDeliveredOrder()">待收货<span class="myaccount-no">{{deliveredAmount}}</span></a>|</li>
+					<li class="myaccount-order-function-item"><a href="" ng-click="getMyUnCommenOrder()">待评价<span class="myaccount-no">{{unCommentAmount}}</span></a>|</li>
+				</ul>
+				<div class="myaccount-all-orders fr"><a ui-sref='user-center.my-order'>查看全部订单></a></div>
+			</div>
+			<div class="clear" style='margin-bottom: 5px;'></div>
+
+			<myorderitem></myorderitem>
+
+			<div class="clear"></div>
+			<div class="myaccount-new myaccount-no-order" ng-if="orders.length==0">
+				<img src="../images/myaccount/jtno.png">
+				您买的东西太少了，这里空空的，快去挑选合适的商品吧！
+			</div>
+		</div>
+		<div ng-controller="RightTrackCtrl as rightTrackCtrl">
+		<div class="clear"></div>
+		<div class="myaccount-my-collection" >
+			<div class="myaccount-title">
+				<div class="myaccount-title-item fl">我的收藏</div>
+			</div>
+			<div class="clear"></div>
+			<div class="myaccount-slider-left" ng-click="getFavoritesGoods(-1)" ng-show="!showfav"></div>
+			<div class="myaccount-slider-img" ng-show="!showfav">
+				<ul>
+					<li ng-repeat="fg in fgoods">
+					    <a href="#/product/detail/{{fg.gid}}/description">
+						<img class="myaccount-mc-img" ng-src="{{fg.thumbpath1}}@165h_165w.jpg" >
+						<div class="myaccount-mc-hide"></div>
+						<div class="myaccount-mc-hide-text">
+						<p class="hide-text text-omitted">{{fg.goodsName}}</p>
+						<p>￥188.00</p>
+						</div>
+						</a>
+				    </li>
+				    
+				    <!--<li>
+						<img class="myaccount-mc-img" src="../images/myaccount/jtsc.png">
+						<div class="myaccount-mc-hide"></div>
+						<div class="myaccount-mc-hide-text">桃花姬阿胶糕405g<br>￥188.00</div>
+				    </li>
+				    <li>
+						<img class="myaccount-mc-img" src="../images/myaccount/jtsc.png">
+						<div class="myaccount-mc-hide"></div>
+						<div class="myaccount-mc-hide-text">桃花姬阿胶糕405g<br>￥188.00</div>
+				    </li>
+				    <li>
+						<img class="myaccount-mc-img" src="../images/myaccount/jtsc.png">
+						<div class="myaccount-mc-hide"></div>
+						<div class="myaccount-mc-hide-text">桃花姬阿胶糕405g<br>￥188.00</div>
+				    </li>
+				    <li>
+						<img class="myaccount-mc-img" src="../images/myaccount/jtsc.png">
+						<div class="myaccount-mc-hide"></div>
+						<div class="myaccount-mc-hide-text">桃花姬阿胶糕405g<br>￥188.00</div>
+				    </li>-->
+				   
+			    </ul>
+			</div>
+			<div class="myaccount-slider-right" ng-click="getFavoritesGoods(1)" ng-show="!showfav"></div>
+			<div class="clear"></div>
+			<div class="myaccount-new myaccount-no-save" ng-show="showfav">
+				<img src="../images/myaccount/jtnsc.png">
+				您还没收藏任何商品，看到感兴趣的商品就果断收藏吧！
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div class="myaccount-my-footprints" >
+			<div class="myaccount-title">
+				<div class="myaccount-title-item fl">我的足迹</div>
+			</div>
+			<div class="clear"></div>
+			<div class="myaccount-slider-left" ng-click="getFootprintGoods(-1)"></div>
+			<div class="myaccount-slider-img">
+				<ul>
+					
+					<li ng-repeat="pg in pgoods.goodsList">
+					    <a href="#/product/detail/{{pg.gid}}/description">
+						   <img class="myaccount-mc-img" ng-src="{{pg.thumbpath1}}@165h_165w.jpg" >
+						
+						<div class="myaccount-mc-hide"></div>
+						<div class="myaccount-mc-hide-text">
+						<p class="hide-text text-omitted">{{pg.goodsName}}</p>
+						<p>￥188.00</p>
+						</div>
+						</a>
+				    </li>
+				    <!-- <li>
+						<img class="myaccount-mc-img" src="../images/myaccount/jtsc.png">
+						<div class="myaccount-mc-hide"></div>
+						<div class="myaccount-mc-hide-text">桃花姬阿胶糕405g<br>￥188.00</div>
+				    </li>
+				    <li>
+						<img class="myaccount-mc-img" src="../images/myaccount/jtsc.png">
+						<div class="myaccount-mc-hide"></div>
+						<div class="myaccount-mc-hide-text">桃花姬阿胶糕405g<br>￥188.00</div>
+				    </li>
+				    <li>
+						<img class="myaccount-mc-img" src="../images/myaccount/jtsc.png">
+						<div class="myaccount-mc-hide"></div>
+						<div class="myaccount-mc-hide-text">桃花姬阿胶糕405g<br>￥188.00</div>
+				    </li>
+				     <li>
+						<img class="myaccount-mc-img" src="../images/myaccount/jtsc.png">
+						<div class="myaccount-mc-hide"></div>
+						<div class="myaccount-mc-hide-text">桃花姬阿胶糕405g<br>￥188.00</div>
+				    </li>-->
+				    
+			    </ul>
+			</div>	
+			<div class="myaccount-slider-right" ng-click="getFootprintGoods(1)"></div>
+		</div>
+		</div>

@@ -1,0 +1,282 @@
+<header-top></header-top>
+<div class="clear"></div>
+<header-search></header-search>
+<div class="clear"></div>
+<header-nav></header-nav>
+<div class="clear"></div>
+
+<div ng-controller="goodsController as goodsCtl">
+	<banner></banner>
+	<div class="clear"></div>
+
+
+	<div class="center-view mall-select" >
+		<div class="mall-selected">
+			<div class="fl">
+				<span class="mall-selected-text" >您已选择：</span>
+			</div>
+			
+			<div class="mall-selected-list fl">
+				<div class="mall-selected-item mall-selected-brand fl" style="display:none;" 
+				ng-click="delbrand()">
+					
+				</div>
+				<div class="mall-selected-item mall-selected-price fl" style="display:none;"
+				ng-click="delpriceflag()">
+					
+				</div>
+				<div class="mall-selected-item mall-selected-type fl" style="display:none;"
+				ng-click="deltype()">
+					
+				</div>
+
+				<div class="mall-selected-item mall-selected-name fl" style="display:none;"
+				ng-click="delgoodsname()">
+					
+				</div>
+		    </div>
+		</div>
+
+		<div class="clear"></div>	
+
+		<div class="mall-select-types">
+			<ul>
+				<li class="mall-select-type-item">
+					<div class="mall-st-item">
+						<div class="mall-st-item-left fl">
+							品牌：
+						</div>
+						<div class="mall-st-item-right fr">
+							 <ul class="mall-st-list mall-st-brand" >
+								<li ng-class="{'active': brand.bid == brandparams[0]}" class="mall-st-name" ng-click='queryBrand(brand)' ng-repeat="brand in mallbrands">
+								 	{{brand.brandName}}
+								</li>
+							</ul> 
+							<!-- <ul class="mall-st-list mall-st-brand">
+								<li class="mall-st-name" ng-click='queryBrand(brand)'>
+								 	东阿阿胶
+								</li>
+								<li class="mall-st-name" ng-click='queryBrand(brand)'>
+								 	福牌阿胶
+								</li>
+							</ul> -->
+							<!-- <div class="mall-st-item-more">
+								<a href="">更多</a>
+							</div> -->
+						</div>
+					</div>
+				</li>
+				<li class="mall-select-type-item">
+					<div class="mall-st-item">
+						<div class="mall-st-item-left fl">
+							价格：
+						</div>
+						<div class="mall-st-item-right fr">
+							<ul class="mall-st-list mall-st-price">
+								<li class="mall-st-name" ng-click='queryPrice(1)'
+								 ng-class="{'active': priceFlag == 1}">
+									0-69
+								</li>
+								<li class="mall-st-name" ng-click='queryPrice(2)'
+								ng-class="{'active': priceFlag == 2}">
+									70-199
+								</li>
+								<li class="mall-st-name" ng-click='queryPrice(3)'
+								ng-class="{'active': priceFlag == 3}">
+									200-399
+								</li>
+								<li class="mall-st-name" ng-click='queryPrice(4)'
+								ng-class="{'active': priceFlag == 4}">
+									400-799
+								</li>
+								<li class="mall-st-name" ng-click='queryPrice(5)'
+								ng-class="{'active': priceFlag == 5}">
+									800-1199
+								</li>
+								<li class="mall-st-name" ng-click='queryPrice(6)'
+								ng-class="{'active': priceFlag == 6}">
+									1200以上
+								</li>
+							</ul>
+							<!-- <div class="mall-st-item-more">
+								<a href="">更多</a>
+							</div> -->
+						</div>
+					</div>
+				</li>
+				<li class="mall-select-type-item">
+					<div class="mall-st-item">
+						<div class="mall-st-item-left fl">
+							类别：
+						</div>
+						<div class="mall-st-item-right fr">
+							 <ul class="mall-st-list mall-st-type" >
+								<li  ng-class="{'active': type.tid == typeparams[0]}" 
+								  class="mall-st-name" ng-click="queryType(type)" ng-repeat="type in malltypes">
+									{{type.typeName}}
+								</li>
+							</ul> 
+							<!-- <ul class="mall-st-list mall-st-type" >
+								<li class="mall-st-name" ng-click="queryType(type)">
+									阿胶块
+								</li>
+								<li class="mall-st-name" ng-click="queryType(type)">
+									阿胶膏
+								</li>
+							</ul> -->
+							<!-- <div class="mall-st-item-more">
+								<a href="">更多</a>
+							</div> -->
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="clear"></div>
+	<div class="center-view mall-main">
+		<div class="mall-main-left fl">
+			<div class="mall-ml-top">
+			<div>
+				<div class="mall-sort fl">
+					<ul class="mall-sort-list">
+						<li class="mall-sort-item active" ng-click="queryOrder(0)">综合排序</li>
+						<li class="mall-sort-item" ng-click="queryOrder(1)">销量</li>
+						<li class="mall-sort-item" ng-click="queryOrder(2)">价格</li>
+						<li class="mall-sort-item" ng-click="queryOrder(3)">评价数</li>
+						<li class="mall-sort-item" ng-click="queryOrder(4)">新品</li>
+					</ul>
+				</div>
+				<div class="mall-search fl">
+					<input class="mall-search-input"type="text" placeholder="在结果中搜索" ng-model="gnames"/>
+					<button class="mall-search-btn" ng-click="serchByresult()">搜索</button>
+				</div>
+			</div>
+				<div class="mall-filter-type fr">
+					<ul>
+						<li class="mall-filter-item mall-filter-shop" ng-click="queryByMetchant()">
+							<div class="small-red-shop-icon mall-filter-img fl"></div>店铺
+						</li>
+						<li class="mall-filter-item mall-filter-product" ng-click="queryByGoods()">
+							<div class="small-red-product-icon mall-filter-img fl"></div>商品
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<success-dialog message="{{sucMessage}}"></success-dialog>
+			<illegal-request-dialog messagehd="{{messagehd}}" ></illegal-request-dialog>
+			<div class="mall-ml-center" >
+				<div class="mall-shops" ng-repeat="merchant in merchants"  ng-show="MshowFlag" >
+					<div class="mall-shop-item"  >
+						<div class="mall-shop" >
+							<div class="clear"></div>
+							<div class="mall-shop-img fl">
+								<img class="mall-si" ng-src="{{merchant.merchantImg}}@90h_90w.jpg"></img>
+							</div>
+							<div class="mall-shop-info fl">
+								<p class="mall-shop-name">{{merchant.merchantName}}</p>
+								<p class="mall-shop-brand">
+								主营品牌：{{merchant.brands[0].name}}&nbsp;&nbsp;{{merchant.brands[1].name}}
+										&nbsp;&nbsp;{{merchant.brands[2].name}}
+								</p>
+								<p class="mall-shop-desc text-omitted">店铺简介：{{merchant.merchantDesc}}</p>
+								<div class="mall-shop-focus" ng-click="collectMerchant('{{merchant.mid}}')">+收藏</div>
+							</div>
+							<div class="mall-shop-enter fr">
+								<a href="#/mall?mid={{merchant.mid}}&flag=1">
+								<div class="mall-se-btn">进入店铺></div>
+								</a>
+								<div class="mall-se-related-product" ng-click="queryInMerchantGoods(merchant)">
+									<span class="mall-serp-count">{{merchant.goodscount}}
+									</span>件相关产品
+								</div>
+							</div>
+						
+						</div>
+						<div class="clear"></div>
+						<div class="mall-shop-products"  ng-show="merchant.mid==index"> 
+							<div class="mall-product-item fl"  ng-repeat="goods in InMerchantGoods" >
+								<div class="mall-desc-width mall-shop-desc-width">
+									<a href="#/product/detail/{{goods.gid}}/description">
+										<img class="mall-product-img mall-shop-product-img" ng-src="{{goods.thumbpath1}}@210h_210w.jpg">
+									</a>
+								</div>
+								<div class="mall-desc-width mall-shop-desc-width">
+								<a    title="{{goods.goodsName}}" href="#/product/detail/{{goods.gid}}/description">
+									<p class="main-hp-name text-omitted fl">{{goods.goodsName}}</p>
+								</a>
+
+									<p class="main-hp-scale fr">{{goods.specifications}}</p>
+
+									<div class="clear"></div>
+
+									<p class="main-hp-price fl"  ng-show="goods.onSale == '0'">￥{{goods.price}}</p>
+									<p class="main-hp-price fl" ng-show="goods.onSale == '1'">￥{{goods.promotionPrice}}</p>
+									<p class="main-hp-old-price fr" ng-show="goods.onSale == '1'">原价{{goods.price}}</p>
+									<div class="clear"></div>
+									<p class="mall-pi-evaluate">已有<span class="mall-pi-evaluate-count">{{goods.comment}}</span>人评价</p>
+								</div>
+							</div>
+							<div class="mall-sp-more" ng-show="merchantlenth>=4"> <a href="#/mall?mid={{merchant.mid}}&flag=1">更多相关商品></a></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="mall-products"  ng-show="GshowFlag">
+					<div class="mall-product-item mall-pi-border product-hover fl" ng-repeat="goods in goodslist">
+						<div class="mall-img-width">
+							<a href="#/product/detail/{{goods.gid}}/description">
+								<img class="mall-product-img" ng-src="{{goods.thumbpath1}}@210h_210w.jpg">
+							</a>
+							 
+						</div>
+						 <div class="mall-desc-width">
+						 <a    title="{{goods.goodsName}}" href="#/product/detail/{{goods.gid}}/description">
+							<p class="main-hp-name text-omitted fl">{{goods.goodsName}}</p>
+
+						</a>
+							<p class="main-hp-scale fr">{{goods.specifications}}</p>
+
+							<div class="clear"></div>
+							<p class="main-hp-price fl"ng-show="goods.onSale == '0'">￥{{goods.price}}</p>
+							<p class="main-hp-price fl"ng-show="goods.onSale == '1'">￥{{goods.promotionPrice}}</p>
+							<p class="main-hp-old-price fr" ng-show="goods.onSale == '1'">原价{{goods.price}}</p>
+
+							<div class="clear"></div>
+							<p class="mall-pi-evaluate">已有<span class="mall-pi-evaluate-count">{{goods.comment}}</span>人评价</p>
+						 </div> 
+	                </div>
+				</div> 
+				<div class="clear"></div>
+				<div class="mall-more"><span ng-click="nextMax()" ng-show="max" >查看更多&gt;&gt;</span></div>
+				<div class="mall-not-found" ng-show="notshow">
+					<img src="../images/mall/not-found.png">
+					<p class="mall-not-found-txt">没有找到与“<span>{{searchName}}</span>”相关的宝贝</p>
+				</div>
+			</div>
+		</div>
+		<div class="fr">
+			<promotion-product></promotion-product>
+		</div>
+	</div>
+
+	<div class="center-view">
+		<div class="ui-page">
+			
+		</div>
+	</div>
+
+	<div class="clear"></div>
+	<div class="center-view" ng-controller="FootTrackCtrl as footTrackCtrl">
+		<div class="mall-guess-like-hd">
+			根据浏览猜你喜欢
+		</div>
+		<guess-like></guess-like>
+	</div>
+
+</div>
+
+<div class="clear"></div>
+<footer></footer>

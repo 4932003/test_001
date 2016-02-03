@@ -1,0 +1,25 @@
+<div class="logo-sec center-view" ng-controller="ToSerchController">
+  <div class="logo-icon top-logo fl" ui-sref="index"></div>
+  <div class="search-box fr">
+    <label class="search-input">
+      <input class="search-key fr" name="" value="" ng-model="goodsname" placeholder="请输入查询条件"
+      ng-keypress="enter($event)"/>
+      <div class="search-icon-bg"  ng-click="serch()"></div>
+    </label>
+    <div class="clear"></div>
+       <ul class="search-type-list">
+         <li  ng-repeat="brand in brands" class="search-type-item">
+           <a href="#/mall?bid={{brand.bid}}&flag=3&bname={{brand.brandName}}"  >
+           {{brand.brandName}}
+           </a>
+         </li>
+         
+         <li  ng-repeat="type in types" class="search-type-item" > 
+            <a href="#/mall?tid={{type.tid}}&flag=3&tname={{type.typeName}}"   >
+            {{type.typeName}} 
+            </a>
+          </li>
+       </ul>
+  </div>
+  <div class="clear"></div>
+</div>

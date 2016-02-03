@@ -1,0 +1,199 @@
+<header-top></header-top>
+<div class="clear"></div>
+<header-search></header-search>
+<div class="clear"></div>
+<header-nav></header-nav>
+<div class="clear"></div>
+
+<div class="center-view" ng-controller="InformationController">
+	<div class="ejiao-fs-img">
+		<img src="../images/ejiao-culture/ejiao-fs-img.png">
+	</div>
+	<div>
+		<ul class="ejiao-fs-list">
+			<li ng-repeat="storyany in storyanyDetails">
+				<div class="ejiao-fs-item">
+					<div class="ejiao-fs-item-left fl">
+						<div>
+							<img class="ejiao-fs-item-img" ng-src="{{storyany.picture}}@160h_340w.jpg">
+						</div>
+						<div class="ejiao-fs-item-img-desc text-omitted">{{storyany.title}}</div>
+					</div>
+
+					<div class="ejiao-fs-item-right fr">
+						<a href="#/storydetail/{{storyany.id}}">
+						<div class="ejiao-fs-item-hd">
+							<div class="ejiao-fs-item-hd-round fl"></div>
+							{{storyany.name}}
+						</div></a>
+						<div class="ejiao-fs-item-summary">
+							{{storyany.abstracts}}
+							<!-- {{storyany.content}} -->
+							<!-- <p>“肤若凝脂”用于描述美人白皙晶莹吹弹得破的肌肤，形象到充满了质感。读过唐诗的人都知道，那位被赋予如此美妙形容的女子不是别人，就是列为“中国古代四大美女”之一的杨贵妃杨玉环。</p>
+							<p>那么，这位杨玉环又何以会独独拥有“凝脂”般艳冠群芳的好皮肤？对于今天喜欢扮靓、护肤不遗余力的女性，这可是一个饶有兴味的悬念。</p> -->
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</li>
+			
+			<!-- <li>
+				<div class="ejiao-fs-item">
+					<div class="ejiao-fs-item-left fl">
+						<div>
+							<img class="ejiao-fs-item-img" src="../images/ejiao-culture/201.png">
+						</div>
+						<div class="ejiao-fs-item-img-desc">助力李世民金戈铁马</div>
+					</div>
+					<div class="ejiao-fs-item-right fr">
+						<div class="ejiao-fs-item-hd">
+							<div class="ejiao-fs-item-hd-round fl"></div>
+							“洗尽铅华依丰盈，雨落荷叶珠难停。暗服阿胶不肯道，却说生来为君容。”
+						</div>
+						<div class="ejiao-fs-item-summary">
+							<p>“肤若凝脂”用于描述美人白皙晶莹吹弹得破的肌肤，形象到充满了质感。读过唐诗的人都知道，那位被赋予如此美妙形容的女子不是别人，就是列为“中国古代四大美女”之一的杨贵妃杨玉环。</p>
+							<p>那么，这位杨玉环又何以会独独拥有“凝脂”般艳冠群芳的好皮肤？对于今天喜欢扮靓、护肤不遗余力的女幸福，这可是一个饶有兴味的悬念。</p>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</li>
+			<li>
+				<div class="ejiao-fs-item">
+					<div class="ejiao-fs-item-left fl">
+						<div>
+							<img class="ejiao-fs-item-img" src="../images/ejiao-culture/202.png">
+						</div>
+						<div class="ejiao-fs-item-img-desc">杨氏姐妹美色垄断</div>
+					</div>
+
+					<div class="ejiao-fs-item-right fr">
+						<div class="ejiao-fs-item-hd">
+							<div class="ejiao-fs-item-hd-round fl"></div>
+							“洗尽铅华依丰盈，雨落荷叶珠难停。暗服阿胶不肯道，却说生来为君容。”
+						</div>
+						<div class="ejiao-fs-item-summary">
+							<p>“肤若凝脂”用于描述美人白皙晶莹吹弹得破的肌肤，形象到充满了质感。读过唐诗的人都知道，那位被赋予如此美妙形容的女子不是别人，就是列为“中国古代四大美女”之一的杨贵妃杨玉环。</p>
+							<p>那么，这位杨玉环又何以会独独拥有“凝脂”般艳冠群芳的好皮肤？对于今天喜欢扮靓、护肤不遗余力的女性，这可是一个饶有兴味的悬念。</p>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</li>
+
+			<li>
+				<div class="ejiao-fs-item">
+					<div class="ejiao-fs-item-left fl">
+						<div>
+							<img class="ejiao-fs-item-img" src="../images/ejiao-culture/203.png">
+						</div>
+						<div class="ejiao-fs-item-img-desc">龙种安然无恙，兰贵人终成慈禧太后</div>
+					</div>
+
+					<div class="ejiao-fs-item-right fr">
+						<div class="ejiao-fs-item-hd">
+							<div class="ejiao-fs-item-hd-round fl"></div>
+							“洗尽铅华依丰盈，雨落荷叶珠难停。暗服阿胶不肯道，却说生来为君容。”
+						</div>
+						<div class="ejiao-fs-item-summary">
+							<p>“肤若凝脂”用于描述美人白皙晶莹吹弹得破的肌肤，形象到充满了质感。读过唐诗的人都知道，那位被赋予如此美妙形容的女子不是别人，就是列为“中国古代四大美女”之一的杨贵妃杨玉环。</p>
+							<p>那么，这位杨玉环又何以会独独拥有“凝脂”般艳冠群芳的好皮肤？对于今天喜欢扮靓、护肤不遗余力的女性，这可是一个饶有兴味的悬念。</p>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</li>
+			<li>
+				<div class="ejiao-fs-item">
+					<div class="ejiao-fs-item-left fl">
+						<div>
+							<img class="ejiao-fs-item-img" src="../images/ejiao-culture/204.png">
+						</div>
+						<div class="ejiao-fs-item-img-desc">曾国藩家书与特殊孝母方式</div>
+					</div>
+
+					<div class="ejiao-fs-item-right fr">
+						<div class="ejiao-fs-item-hd">
+							<div class="ejiao-fs-item-hd-round fl"></div>
+							“洗尽铅华依丰盈，雨落荷叶珠难停。暗服阿胶不肯道，却说生来为君容。”
+						</div>
+						<div class="ejiao-fs-item-summary">
+							<p>“肤若凝脂”用于描述美人白皙晶莹吹弹得破的肌肤，形象到充满了质感。读过唐诗的人都知道，那位被赋予如此美妙形容的女子不是别人，就是列为“中国古代四大美女”之一的杨贵妃杨玉环。</p>
+							<p>那么，这位杨玉环又何以会独独拥有“凝脂”般艳冠群芳的好皮肤？对于今天喜欢扮靓、护肤不遗余力的女性，这可是一个饶有兴味的悬念。</p>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</li>
+			<li>
+				<div class="ejiao-fs-item">
+					<div class="ejiao-fs-item-left fl">
+						<div>
+							<img class="ejiao-fs-item-img" src="../images/ejiao-culture/205.png">
+						</div>
+						<div class="ejiao-fs-item-img-desc ejiao-fs-item-img-desc-two-line" >一位江西移民与“怀德堂”<br/>的多种创意</div>
+					</div>
+
+					<div class="ejiao-fs-item-right fr">
+						<div class="ejiao-fs-item-hd">
+							<div class="ejiao-fs-item-hd-round fl"></div>
+							“洗尽铅华依丰盈，雨落荷叶珠难停。暗服阿胶不肯道，却说生来为君容。”
+						</div>
+						<div class="ejiao-fs-item-summary">
+							<p>“肤若凝脂”用于描述美人白皙晶莹吹弹得破的肌肤，形象到充满了质感。读过唐诗的人都知道，那位被赋予如此美妙形容的女子不是别人，就是列为“中国古代四大美女”之一的杨贵妃杨玉环。</p>
+							<p>那么，这位杨玉环又何以会独独拥有“凝脂”般艳冠群芳的好皮肤？对于今天喜欢扮靓、护肤不遗余力的女性，这可是一个饶有兴味的悬念。</p>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</li>
+			<li>
+				<div class="ejiao-fs-item">
+					<div class="ejiao-fs-item-left fl">
+						<div>
+							<img class="ejiao-fs-item-img" src="../images/ejiao-culture/207.png">
+						</div>
+						<div class="ejiao-fs-item-img-desc">《大宅门》白憬琦的商场第一战</div>
+					</div>
+
+					<div class="ejiao-fs-item-right fr">
+						<div class="ejiao-fs-item-hd">
+							<div class="ejiao-fs-item-hd-round fl"></div>
+							“洗尽铅华依丰盈，雨落荷叶珠难停。暗服阿胶不肯道，却说生来为君容。”
+						</div>
+						<div class="ejiao-fs-item-summary">
+							<p>“肤若凝脂”用于描述美人白皙晶莹吹弹得破的肌肤，形象到充满了质感。读过唐诗的人都知道，那位被赋予如此美妙形容的女子不是别人，就是列为“中国古代四大美女”之一的杨贵妃杨玉环。</p>
+							<p>那么，这位杨玉环又何以会独独拥有“凝脂”般艳冠群芳的好皮肤？对于今天喜欢扮靓、护肤不遗余力的女性，这可是一个饶有兴味的悬念。</p>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</li>
+			<li>
+				<div class="ejiao-fs-item">
+					<div class="ejiao-fs-item-left fl">
+						<div>
+							<img class="ejiao-fs-item-img" src="../images/ejiao-culture/208.png">
+						</div>
+						<div class="ejiao-fs-item-img-desc">昔日怀德堂，今天犹何在？</div>
+					</div>
+
+					<div class="ejiao-fs-item-right fr">
+						<div class="ejiao-fs-item-hd">
+							<div class="ejiao-fs-item-hd-round fl"></div>
+							“洗尽铅华依丰盈，雨落荷叶珠难停。暗服阿胶不肯道，却说生来为君容。”
+						</div>
+						<div class="ejiao-fs-item-summary">
+							<p>“肤若凝脂”用于描述美人白皙晶莹吹弹得破的肌肤，形象到充满了质感。读过唐诗的人都知道，那位被赋予如此美妙形容的女子不是别人，就是列为“中国古代四大美女”之一的杨贵妃杨玉环。</p>
+							<p>那么，这位杨玉环又何以会独独拥有“凝脂”般艳冠群芳的好皮肤？对于今天喜欢扮靓、护肤不遗余力的女性，这可是一个饶有兴味的悬念。</p>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</li> -->
+		</ul>
+	</div>
+</div>
+
+<div class="clear"></div>
+<footer></footer>

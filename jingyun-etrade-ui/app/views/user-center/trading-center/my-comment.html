@@ -1,0 +1,28 @@
+<div class="my-comment" ng-controller="MyCommentController">
+	<div class="user-center-mr-hd my-collection-main-hd">
+		<div class="user-center-mr-title-icon fl"></div>
+		<div class="user-center-mr-title fl">
+			<p>评价晒单</p>
+		</div>
+	</div>
+	<div class="comment-mid">
+		<ul>
+			<li class="cm-item" ui-sref-active="cm-item-selected" ui-sref="user-center.my-comment.goods-info-evaluation">
+				<p>
+					待评价
+					<span class="red">{{nocommentcount}}</span>
+				</p>
+			</li>
+			<li class="my-collection-type-seperator">|</li>
+			<li class="cm-item" ui-sref-active="cm-item-selected" ui-sref="user-center.my-comment.evaluated">
+				<p >
+					已评价
+					<span class="red">{{commentcount}}</span>
+				</p>
+			</li>
+			<li class="my-collection-type-seperator">|</li>
+		</ul>
+	</div>
+
+	<div ui-view=""></div>
+</div>

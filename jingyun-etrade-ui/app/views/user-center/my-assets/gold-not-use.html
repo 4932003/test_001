@@ -1,0 +1,16 @@
+<div class="my-shopping-gold-detail" ng-controller='CashCouponUnusedController'>
+	<div class=" shopping-gold-detail" ng-repeat="item in coupons">
+		<div class="wdot"></div>
+		<p class="fifty">{{item.cashCoupon.value}}元<span class='tip'>({{item.cashCoupon.threshhold}}元起用)</span></p>
+		<p class="valid-term" ng-if='item.cashCoupon.end!=null'>有效期限：{{item.cashCoupon.end | date:'yyyy-MM-dd'}}前使用</p>
+		<p class="valid-term" ng-if='item.cashCoupon.end==null'>有效期限：长期有效</p>
+		<p class="recharge-time">充值时间：{{item.addTime | date:'yyyy-MM-dd'}}</p>
+	</div>	
+	<div class="add-shopping-gold shopping-gold-detail" data-target="#recharge-shopping-gold-dialog" data-toggle="modal">
+		<p class="adds">购物金充值</p>
+	</div>
+
+	<recharge-shopping-gold-dialog></recharge-shopping-gold-dialog>
+	<illegal-request-dialog messagehd="{{messagehd}}" ></illegal-request-dialog>
+</div>
+

@@ -1,0 +1,134 @@
+<div class="center-view" ng-controller="AddetailEditController as addetailEditController">
+<ng-form  name='saveForm'>
+
+	<div class="commodity-main">
+		<div class="commodity-main-hd">
+			推广管理&gt;新建广告
+		</div>
+		<div class="commodity-base-info">
+			<div class="release-commodity-hd">
+				基本信息
+			</div>
+			<div class="release-commodity-info">
+				<ul class="release-commodity-info-list">
+					<li>
+						<div class="release-commodity-info-label fl">模块：</div>
+						<div class="release-commodity-info-txt fl">
+							<select class="release-commodity-select-length" required
+							ng-model="obj.adModuleId" 
+							ng-options="m.id as m.name for m in admodulelist"
+							name="adModuleId">
+							</select>
+						</div>
+						<p ng-show="saveForm.adModuleId.$error.required" style="color: red" >&nbsp;&nbsp;&nbsp;*必填</p>
+					</li>
+					<div class="clear"></div>
+					<li>
+						<div class="release-commodity-info-label fl">广告名称：</div>
+						<div class="release-commodity-info-txt fl">
+							<input class="release-commodity-code"  type="text" ng-model="obj.name" name="name" required>
+						</div>
+						<p ng-show="saveForm.name.$error.required" style="color: red" >&nbsp;&nbsp;&nbsp;*必填</p>
+					</li>
+					<div class="clear"></div>
+					<!-- <li>
+						<div class="release-commodity-info-label fl">图片路径：</div>
+						<div class="release-commodity-info-txt fl">
+							<input class="release-commodity-code"  type="text" ng-model="obj.imgpath" name="imgpath" required>
+							<form  id="fileinfo">
+							<input class="release-commodity-upload-img" type="file" id="file" name="file" onchange="$('#sub1').trigger('click')" />
+							<input id="sub1" type="hidden" ng-click="doUpload()"/>
+							</form>
+						</div>
+					</li>
+					<div class="clear"></div> -->
+					<li>
+						<div class="release-commodity-info-label fl">链接地址：</div>
+						<div class="release-commodity-info-txt fl">
+							<input class="release-commodity-code"  type="text" ng-model="obj.linkpath" name="linkpath" required>
+						</div>
+						<p ng-show="saveForm.linkpath.$error.required" style="color: red" >&nbsp;&nbsp;&nbsp;*必填</p>
+					</li>
+					<div class="clear"></div>
+					<li>
+						<div class="release-commodity-info-label fl">描述：</div>
+						<div class="release-commodity-info-txt fl">
+							<input class="release-commodity-code"  type="text" ng-model="obj.description" name="description" required>
+						</div>
+						<p ng-show="saveForm.description.$error.required" style="color: red" >&nbsp;&nbsp;&nbsp;*必填</p>
+					</li>
+					<div class="clear"></div>
+					<li>
+						<div class="release-commodity-info-label fl">排序：</div>
+						<div class="release-commodity-info-txt fl">
+							<input class="release-commodity-code"  type="text" ng-model="obj.sortNum" name="sortNum" required>
+						</div>
+					</li>
+					<div class="clear"></div>
+					<li>
+						<div class="release-commodity-info-label fl">属性1：</div>
+						<div class="release-commodity-info-txt fl">
+							<input class="release-commodity-code"  type="text" ng-model="obj.attr1" name="attr1" required>
+						</div>
+						商品推荐：商品名称 
+					</li>
+					<div class="clear"></div>
+					<li>
+						<div class="release-commodity-info-label fl">属性2：</div>
+						<div class="release-commodity-info-txt fl">
+							<input class="release-commodity-code"  type="text" ng-model="obj.attr2" name="attr2" required>
+						</div> 
+						商品推荐：商品所属店铺名称
+					</li>
+					<div class="clear"></div>
+					<li>
+						<div class="release-commodity-info-label fl">属性3：</div>
+						<div class="release-commodity-info-txt fl">
+							<input class="release-commodity-code"  type="text" ng-model="obj.attr3" name="attr3" required>
+						</div> 
+					</li>
+					<div class="clear"></div>
+					<li>
+						<div class="release-commodity-info-label fl">属性4：</div>
+						<div class="release-commodity-info-txt fl">
+							<input class="release-commodity-code"  type="text" ng-model="obj.attr4" name="attr4" required>
+						</div> 
+					</li>
+					<div class="clear"></div>
+				</ul>
+			</div>
+			<div class="release-commodity-hd">
+				图片信息
+			</div>
+			<div class="release-commodity-info">
+				<ul class="release-commodity-info-list">
+				<li>
+						<div class="release-commodity-info-label fl">图片路径：</div>
+						<div class="release-commodity-info-txt fl">
+							<form  id="fileinfo">
+							<input class="release-commodity-upload-img" type="file" id="file" name="file" onchange="$('#sub1').trigger('click')" />
+							<input id="sub1" type="hidden" ng-click="doUpload()"/>
+							</form>
+						</div>
+						<br><br><br>
+						<div class="release-commodity-desc-img">
+							 <img src="{{obj.imgpath}}">
+						</div>
+					</li>
+				</ul>
+					<div class="clear"></div>
+			</div>
+		</div>
+		<input type="hidden" ng-model="obj.id"/>
+		<input type="hidden" ng-model="obj.imgpath"/>
+		<div class="release-commodity-footer" >
+			<button class="release-commodity-btn" ng-click="saveorupdate(obj)"
+			ng-disabled="saveForm.$invalid"
+			>新增
+			</button>
+		</div>
+	</div>
+
+</ng-form>
+</div>
+

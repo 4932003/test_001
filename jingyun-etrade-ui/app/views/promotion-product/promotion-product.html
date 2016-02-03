@@ -1,0 +1,20 @@
+<div ng-controller="GoodsExpandController as goodsExCtl" class="promotion-product-main">
+	<div class="mall-main-right-title">
+		推广商品
+	</div>
+	<div class="mall-main-right-item" ng-repeat="goods in expandlist" >
+	    <a href="#/product/detail/{{goods.gid}}/description">
+		<img class="mall-product-img mall-shop-product-img" ng-src="{{goods.thumbpath1}}@210h_210w.jpg">
+		</a>
+	    <p class="mall-mri-bargain-price">特价：<span class="mall-mribp-value">
+	    ￥{{goods.nowPrice}}</span></p>
+	    
+	  	<a title="{{goods.goodsName}} - {{goods.specifications}}" href="#/product/detail/{{goods.gid}}/description">
+	    <p class="mall-mri-desc text-omitted">{{goods.goodsName}} - {{goods.specifications}}</p>
+	    </a>
+	    <div class="clear"></div>
+	    <!--
+		<p class="mall-pi-evaluate">已有<span class="mall-pi-evaluate-count">{{goods.comment}}</span>人评价</p>
+		-->
+	</div>
+</div>

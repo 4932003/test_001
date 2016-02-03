@@ -1,0 +1,153 @@
+<header-top></header-top>
+<div class="clear"></div>
+<header-search></header-search>
+<div class="clear"></div>
+<header-nav></header-nav>
+<div class="clear"></div>
+
+<div class="center-view" ng-controller="BrandNewsController">
+	<div class="brand-news-sotry">
+		<a name="sotry">
+		<div class="brand-news-hd">
+			<ul>
+				<li class="brand-news-hd-name">品牌故事</li>
+				<li class="brand-news-hd-none">
+				</li>
+			</ul>
+		</div>
+		</a>
+		<div class="brand-news-main">
+			<div class="brand-news-story-item"  ng-repeat="news in newsdetail">
+				<div>
+					<img class="brand-news-story-img" ng-src="{{news.picture}}@900h_500w.jpg">
+				</div>
+				<div class="brand-news-story-hd">
+					<div class="brand-news-story-hd-name fl">
+						<div class="ejio-culture-hh-round fl"></div>
+						{{news.title}}
+					</div>
+					<div class="brand-news-story-hd-note fr">
+						滋补|养生|乐活引领者
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="brand-news-story-detail">
+					<p>
+					{{news.abstracts}}	
+					</p>
+					<div class="brand-news-story-more">
+						<div class="brand-news-story-more-btn fr" ng-click="readNews(news)">阅读全文</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+
+	<div class="clear"></div>
+
+	<div class="brand-news-station-info">
+		<a name="stationinfo">
+		<div class="brand-news-hd">
+			<ul>
+				<li class="brand-news-hd-name">站内资讯</li>
+				<li class="brand-news-hd-none">
+					<!-- <div class="brand-news-hd-more-btn fr">
+						更多&gt;
+					</div> -->
+				</li>
+			</ul>
+		</div>
+		</a>
+		<div class="brand-news-main">
+			<div class="brand-news-si-left fl">
+				<img class="brand-news-si-left-img" src="../images/brand-news/12.jpg">
+			</div>
+
+			<div class="brand-news-si-right fr">
+				<ul>
+					<li class="brand-news-si-item brand-news-si-item-selected">
+						<div class="ejio-culture-hh-round fl"></div>
+						<div class="brand-news-si-item-div fr">
+							<div class="brand-news-si-item-hd" ng-click="station(infodetail1)">
+								{{infodetail1.title}}
+						    </div>
+						    <div class="brand-news-si-item-detail">
+						    	<div class="brand-news-si-item-left fl">
+						    		<img ng-click="station(infodetail1)" class="brand-news-si-item-left-img" ng-src="{{infodetail1.picture}}@110h_165w.jpg">
+						    	</div>
+						    	<div ng-click="station(infodetail1)" class="brand-news-si-item-right fr">
+						    		<p>
+						    			{{infodetail1.abstracts}}
+						    		</p>
+						    	</div>
+						    </div>
+						</div>
+						
+					</li>
+					<div class="clear"></div>
+					<li class="brand-news-si-item" ng-repeat="infodetail3 in infodetail2">
+						<div class="ejio-culture-hh-round fl"></div>
+						<div class="brand-news-si-item-div fr">
+							<div ng-click="station(infodetail3)" class="brand-news-si-item-hd">
+								{{infodetail3.title}}
+						    </div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="clear"></div>
+
+	<div class="brand-news-industry-trends">
+		<a name="industrytrends">
+		<div class="brand-news-hd">
+			<ul>
+				<li class="brand-news-hd-name">行业动态</li>
+				<li class="brand-news-hd-none">
+				</li>
+			</ul>
+		</div>
+		</a>
+		<div class="brand-news-main">
+			<ul class="brand-news-it-list">
+				<li ng-repeat="inner in innerdetail">
+					<div class="brand-news-it-item">
+						<div class="brand-news-it-item-left fl">
+							<img class="brand-news-it-item-left-img" ng-src="{{inner.picture}}@165h_260w.jpg">
+						</div>
+						<div class="brand-news-it-item-right fr">
+							<div class="brand-news-it-hd">
+								<div class="brand-news-it-hd-title fl">
+									{{inner.title}}
+								</div>
+								<div class="brand-news-it-hd-date fr">
+									{{inner.addtime}}
+								</div>
+							</div>
+							<div class="clear"></div>
+							<div class="brand-news-it-detail">
+								{{inner.abstracts}}
+
+							</div>
+							<div class="brand-news-it-more">
+								<div class="brand-news-it-more-btn fr" ng-click="readInner(inner)">阅读全文</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</li>
+			</ul>
+			<div class="mall-more brand-news-more">
+				<span ng-if="more" ng-click="getList(size)" class="">查看更多&gt;&gt;</span>
+			</div>
+		</div>
+		
+
+	</div>	
+
+</div>
+
+<div class="clear"></div>
+<footer></footer>

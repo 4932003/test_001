@@ -1,0 +1,68 @@
+<div class="center-view user-center-bottom">
+	<div class="user-center-b-title">
+		<ul>
+			<li class="user-center-bt-item" ><span id="user-center-bt-1-hd" class="ucbi-active" onclick="changeTab('user-center-bt-',1,3,'ucbi-active')">猜你喜欢</span>&nbsp;|&nbsp;</li>
+			<li class="user-center-bt-item" ><span id="user-center-bt-2-hd" onclick="changeTab('user-center-bt-',2,3,'ucbi-active')">我的收藏</span>&nbsp;|&nbsp;</li>
+			<li class="user-center-bt-item" ><span id="user-center-bt-3-hd" onclick="changeTab('user-center-bt-',3,3,'ucbi-active')">我的足迹</span></li>
+		</ul>
+	</div>
+  <div class="clear"></div>
+  
+	
+  <div ng-controller="FootTrackCtrl as footTrackCtrl">
+    <guess-like></guess-like>
+  <div class="user-center-b-details" id="user-center-bt-2-detail"  style="display:none;">
+    <div class="user-center-b-left" ng-click="getFavoritesGoods2(-1)"></div>
+    <ul class="user-center-bd-list">
+      <li ng-repeat="fg in fgoods2">
+        <div class="main-hot-product-item main-ga-width product-hover">
+          <div>
+    		    <a href="#/product/detail/{{fg.gid}}/description">
+              <img class="main-hot-product-img" ng-src="{{fg.thumbpath1}}@160h_160w.jpg"/>
+    			  </a>
+          </div>
+          <div class="main-hot-product-desc main-ga-desc-width">
+			<a    title="{{fg.goodsName}}" href="#/product/detail/{{fg.gid}}/description">
+				<p class="main-hp-name fl text-omitted">{{fg.goodsName}}</p>
+			</a>
+            <p class="main-hp-scale fr">{{fg.specifications}}</p>
+            <div class="clear"></div>
+            <p class="main-hp-price fl" ng-show="fg.onSale == '0'">￥{{fg.price}}</p>
+            <p class="main-hp-price fl" ng-show="fg.onSale == '1'">￥{{fg.promotionPrice}}</p>
+            <p class="main-hp-old-price fr" ng-show="fg.onSale == '1'">原价{{fg.price}}</p> 
+          </div>
+        </div>                
+      </li>
+    </ul>
+
+    <div class="user-center-b-right" ng-click="getFavoritesGoods2(1)"></div>
+  </div>
+
+  <div class="user-center-b-details" id="user-center-bt-3-detail"  style="display:none;">
+    <div class="user-center-b-left" ng-click="getFootprintGoods2(-1)"></div>
+    <ul class="user-center-bd-list">
+      <li ng-repeat="pg in pgoods2.goodsList">
+        <div class="main-hot-product-item main-ga-width product-hover">
+          <div>
+    		    <a href="#/product/detail/{{pg.gid}}/description">
+              <img class="main-hot-product-img" ng-src="{{pg.thumbpath1}}@160h_160w.jpg"/>
+    			  </a>
+          </div>
+          <div class="main-hot-product-desc main-ga-desc-width">
+			<a    title="{{pg.goodsName}}" href="#/product/detail/{{pg.gid}}/description"> 
+				<p class="main-hp-name fl text-omitted">{{pg.goodsName}}</p>
+			</a>
+            <p class="main-hp-scale fr">{{pg.specifications}}</p>
+            <div class="clear"></div>
+            <p class="main-hp-price fl" ng-show="pg.onSale == '0'">￥{{pg.price}}</p>
+            <p class="main-hp-price fl" ng-show="pg.onSale == '1'">￥{{pg.promotionPrice}}</p>
+            <p class="main-hp-old-price fr" ng-show="pg.onSale == '1'">原价{{pg.price}}</p>
+          </div>
+        </div>                
+      </li>
+    </ul>
+
+    <div class="user-center-b-right" ng-click="getFootprintGoods2(1)"></div>
+  </div>
+  </div>
+</div>

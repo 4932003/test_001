@@ -1,0 +1,137 @@
+<header-top></header-top>
+<div class="clear"></div>
+<header-search></header-search>
+<div class="clear"></div>
+<header-nav></header-nav>
+<div class="clear"></div>
+
+<div class="center-view" ng-controller="RefundRequestController">
+	<div class="refund-main">
+		<div class="refund-title">退货/退款(需要退货)</div>
+		<div class="refund-content">
+			<div class="refund-steps">
+				<ul class="refund-goods-steps-list">
+					<li class="step-first">
+						<div class="step-done">
+							<div class="step-no"></div>
+							<div class="step-name">买家申请退货</div>
+						</div>
+					</li>
+					<li>
+						<div>
+							<div class="step-no"></div>
+							<div class="step-name">商家处理退货申请</div>
+					    </div>
+					</li>
+					<li>
+						<div>
+							<div class="step-no"></div>
+							<div class="step-name">买家退货给商家</div>
+					    </div>
+					</li>
+					<li class="step-last">
+						<div>
+							<div class="step-no"></div>
+							<div class="step-name">商家确认收货，退款成功</div>
+						</div>	
+					</li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+			<div class="refund-product-info">
+				<div class="refund-product-info-hd">
+					<div class="refund-product-info-txt fl">退款/退货商品</div>
+					<div class="refund-product-info-no fl">订单号：<span>{{goods.orderno}}</span></div>
+					<div class="fl">下单时间：{{goods.addtime | date:'yyyy-MM-dd HH:mm:ss'}}</div>
+					<div class="refund-product-info-seller fr">商家：{{goods.mname}}</div>
+				</div>
+				<div class="clear"></div>
+				<refund-goods></refund-goods>
+			</div>
+			<div class="clear"></div>
+			<div class="refund-action-info">
+				<div class="refund-action-hd">
+					我要退货
+				</div>
+				<div class="refund-action-detail">
+					<ul class="refund-goods-apply-list">
+						<li>
+							<div class="refund-goods-apply-item-txt fl">
+								<span class="required-input">*</span>
+								退款原因：
+							</div>
+							<div class="refund-goods-apply-item-value fl">
+								<select class="refund-reason" ng-options="r.v for r in reasons" ng-model="selectedReason">
+								</select>
+							</div>
+							<div class="clear"></div>
+						</li>
+						<li>
+							<div class="refund-goods-apply-item-txt fl">
+								<span class="required-input">*</span>
+								退款金额：
+							</div>
+							<div class="refund-goods-apply-item-value fl">
+								<input type="text" ng-model="refundVo.money" class="re-value">
+							</div>
+							<div class="refund-goods-apply-item-value fl">
+								元（最多{{goods.payout}}元）			
+							</div>
+							<div class="clear"></div>
+						</li>
+						<li class="refund-goods-reason">
+							<div class="refund-goods-apply-item-txt fl">
+								退款说明：
+							</div>
+							<div class="refund-goods-apply-item-value fl">
+								<textarea class="ex" cols="40" rows="5" ng-model="refundVo.description"></textarea>
+								<p class="">
+									最多输入200字
+								</p>			
+							</div>
+							<div class="clear"></div>
+						</li>
+						<li class="refund-goods-imgs">
+							<div class="refund-goods-apply-item-txt fl">
+								上传凭证：
+							</div>
+							<div class="refund-goods-apply-item-value fl">
+								<div class="refund-goods-img-upload">
+									<input type="file" ng-disabled="refundVo.certificates.length == 3" accept="image/*" onchange="angular.element(this).scope().fileNameChanged(this)">选择凭证图片
+								</div>
+								<p class="refund-goods-note">
+									每张图片大小不超过5M,最多3张，支持GIF、JPG、PNG、BMP格式
+								</p>
+								<div class="uploaded-images">
+									<img ng-src="{{img}}@110h_110w.jpg" ng-click="removeImg('{{img}}')" ng-repeat="img in refundVo.certificates">
+								</div>
+							</div>
+							<div class="clear"></div>
+						</li>
+						<li>
+							<div class="refund-apply-btn fl" ng-click="submit(true)">
+								提交退货申请
+							</div>
+							<div class="refund-apply-btn fl">
+								<a href="#/user/center/orders">取消并返回</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+
+		</div>
+
+	</div>
+	<login-dialog></login-dialog>
+	<illegal-request-dialog messagehd="{{messagehd}}" ></illegal-request-dialog>
+</div>
+			
+
+<div class="clear"></div>
+<my-refund-confirm-dialog></my-refund-confirm-dialog>
+
+
+<div class="clear"></div>
+<footer></footer>

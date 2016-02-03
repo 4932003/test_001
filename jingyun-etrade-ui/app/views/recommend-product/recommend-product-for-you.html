@@ -1,0 +1,29 @@
+<div ng-controller='Track404Ctrl as trackCtrl404'>
+	<div class="page-not-found-recommend-hd">为您推荐的商品</div>
+	<div class="center-view">
+		<div class="page-not-found-recommend-main">
+		  <ul class="page-not-found-recommend-list">
+		    <li ng-repeat="rg in recommendGoodslist">
+				<div class="page-not-found-recommend-item">
+					<a href="#/product/detail/{{rg.gid}}/description">
+					<div>
+						<img class="main-hot-product-img" ng-src="{{rg.thumbpath1}}"/>
+					</div>
+					</a>
+					<div class="main-hot-product-desc">
+						<a    title="{{rg.goodsName}}" href="#/product/detail/{{rg.gid}}/description"> 
+							<p class="main-hp-name text-omitted fl">{{rg.goodsName}}</p>
+						</a>
+						<p class="main-hp-scale fr">{{rg.specifications}}</p>
+						<div class="clear"></div>
+						<p class="main-hp-price fl" ng-show="rg.onSale == '1'">￥{{rg.promotionPrice}}</p>
+						<p class="main-hp-old-price fr" ng-show="rg.onSale == '1'">原价￥{{rg.price}}</p>
+						<p class="main-hp-price fl" ng-show="rg.onSale == '0'">￥{{rg.price}}</p>
+					</div>
+				</div>
+				<div class="clear"></div>
+		    </li>
+		  </ul>
+		</div>
+	</div>
+</div>

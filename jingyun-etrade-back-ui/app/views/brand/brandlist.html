@@ -1,0 +1,47 @@
+<div class="merchant-list" ng-controller="BrandController as brandCtl">
+	<div class="ml-top-title">品牌管理&gt品牌维护</div>
+	<div class="ml-mid-detail">
+		<ul class="ml">
+			<li class="ml-detail">
+				<p>所属商家</p>
+			</li>
+			<li class="ml-detail">
+			<select  ng-model="mid" ng-options="m.mid as m.merchantName for m in merchantlist"></select>
+			</li>
+		</ul>
+		
+		<div class="clear h10"></div>
+	
+		<div class="ml-ser" ng-click="serch()">查询</div>
+	</div>
+	<div class="ml-content">
+		<div class="ml-hd">
+			<div class="mlh-mid">
+				<ul class="mlhm">
+					<li class="mlh-m mlh-m2">商家名称</li>
+					<li class="mlh-m mlh-m2">品牌名称</li>
+					<li class="mlh-m">品牌描述</li>
+					<li class="mlh-m">操作</li>
+				</ul>
+			</div>
+		</div>
+		<div class="ml-bd">
+			<div class="mlb-mid">
+				<div  ng-repeat="brand in brandlist" class = "mlb-line">
+					<ul class="mlbm" style="text-align: center;">
+						<li class="mlb-m mlb-m2">{{brand.mid}}</li>
+						<li class="mlb-m mlb-m2">{{brand.name}}</li>
+						<li class="mlb-m">{{brand.desc}}</li>
+						<li class="mlb-m">
+							<a href="#" class="aa" ui-sref="station-goods.brand-edit({bid:'{{brand.id}}'})"
+							 >编辑</a>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="#" class="aa"  ng-click="del(brand.id)">删除</a>
+						</li>
+					</ul>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,40 @@
+<div class="return-record" ng-controller="RefundListController">
+	<div class="user-center-mr-hd my-collection-main-hd">
+		<div class="user-center-mr-title-icon fl"></div>
+		<div class="user-center-mr-title fl">
+			<p>退货/退款记录</p>
+		</div>
+	</div>
+	<div class="rr-bd">
+		<div class="rr-box1 rr-box" ng-repeat="refund in refunds">
+			<div class="rr-box-top">
+				<p>退货编号：{{refund.refundno}}</p>
+				<p>订单编号：{{refund.orderno}}</p>
+				<p>提交时间：{{refund.addtime | date: 'yyyy-MM-dd HH:mm:ss'}}</p>
+			</div>
+			<div class="rr-box-bottom">
+				<div class="rr-b1-info1">
+					<div class="rr-b1-goods1 rr-b1-goods">
+					<a href="#/product/detail/{{goods.gid}}/description">
+						<img ng-src="{{refund.gpath}}@90h_90w.jpg" alt="" class="rr-g">
+					</a>
+					</div>
+				</div>
+				<div class="rr-b1-info2">
+					<p>交易金额：￥{{refund.money}}</p>
+				</div>
+				<div class="rr-b1-info3">
+					<p>{{refund.statusName}}</p>
+				</div>
+				<div class="rr-b1-info4">
+					<a href="#/refund/detail?rid={{refund.id}}&ogid={{refund.ogid}}">查看详情</a>
+				</div>
+			</div>
+		</div>
+		<div class="clear h10"></div>
+	</div>
+</div>
+
+<div class="clear"></div>
+<div ui-view=""></div>
+

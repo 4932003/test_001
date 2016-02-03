@@ -1,0 +1,58 @@
+<div class="merchant-list" ng-controller="AddetailListController as addetailListController">
+	<div class="ml-top-title">推广管理&gt广告维护</div>
+	<div class="ml-mid-detail">
+		<ul class="ml">
+			<li class="ml-detail">
+				<p>广告模块：</p>
+				<select   class="ml-t" 
+							ng-model="adModuleId" 
+							ng-options="m.id as m.name for m in admodulelist"
+							name="adModuleId">
+							</select>
+			</li>
+			<li class="ml-detail">
+				<p>广告名称：</p>
+				<input type="text" class="ml-t" ng-model="name"></li>
+		</ul>
+		<div class="clear h10"></div>
+		<div class="ml-ser" ng-click="serch()">查询</div>
+	</div>
+	<div class="ml-content">
+		<div class="ml-hd">
+			<div class="mlh-mid">
+				<ul class="mlhm">
+					<li class="mlh-m">广告模块</li>
+					<li class="mlh-m">广告名称</li>
+					<li class="mlh-m">图片地址</li>
+					<li class="mlh-m">链接地址</li>
+					<li class="mlh-m">排序</li>
+					<li class="mlh-m">属性1</li>
+					<li class="mlh-m">属性2</li>
+					<!-- <li class="mlh-m">属性3</li> -->
+					<li class="mlh-m">操作</li>
+				</ul>
+			</div>
+		</div>
+		<div class="ml-bd">
+			<div class="mlb-mid">
+				<div ng-repeat="obj in addetaillist" class = "mlb-line">
+					<ul class="mlbm">
+						<li class="mlb-m">{{obj.adModuleName}}</li>
+						<li class="mlb-m">{{obj.name}}</li>
+						<li class="mlb-m">{{obj.imgpath}}</li>
+						<li class="mlb-m">{{obj.linkpath}}</li>
+						<li class="mlb-m">{{obj.sortNum}}</li>
+						<li class="mlb-m">{{obj.attr1}}</li>
+						<li class="mlb-m">{{obj.attr2}}</li>
+						<!-- <li class="mlb-m">{{obj.attr3}}</li> -->
+						<li class="mlb-m">
+							<a href="#" class="aa" ui-sref="station-goods.addetail-edit({id:'{{obj.id}}'})">编辑</a>&nbsp;&nbsp;&nbsp;
+							<a href="#" class="aa" ng-click="removeAddetail(obj.id);">删除</a>
+						</li>
+					</ul>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,113 @@
+
+<find-pw-header></find-pw-header>
+<div class="clear h105"></div>
+
+<div class="register center-view" ng-controller="RegisterController as registerctrl">
+		<div class="register-content">
+			
+			<div class="rc-bd">
+				<div class="bd-left">
+					<ng-form name=someForm>
+					<div class="user-name">
+						<p>用户名</p>
+						<input class="name" id="super" ng-class="{'my-class':someForm.usernames.$error.pattern}" type="text" name="usernames" ng-blur="checkUsername(user)" placeholder="请输入用户名" ng-model="user.username" pattern="^([a-zA-Z]+[a-zA-Z0-9]{3,19})$" required>
+						<span class="errorss" ng-show="someForm.usernames.$error.pattern">请输入4-20位的字母数字(必须以字母开头)</span>
+						<p ng-show="someForm.usernames.$valid">用户名一旦确定，不可更改</p>
+					</div>
+					<div class="codeemail" ng-if="emailcodes">
+						<div class="email">
+							<p>邮&nbsp&nbsp箱</p>
+							<input  class="em"  id="super" ng-class="{'my-class':someForm.emails.$error.pattern}"  style="   color: #BEBEBE;" type="text" name="emails" pattern="^[\w-_]+@([\w]+\.)+[\w]+$" placeholder="请输入邮箱" ng-model="user.email" required>
+							
+							<p class="emailss" ng-show="someForm.emails.$error.pattern">请输入正确的邮箱地址！</p>
+							<p ng-show="someForm.emails.$valid">邮箱输入正确</p>
+							
+						</div>
+						<div>
+						<div class="check-code">
+							<p>校验码</p>
+							<input  class="check-code" type="text" placeholder="请输入校验码" name="code" ng-model="user.code" pattern="^\d{4}$" required>
+							<input type="button" class="check-button" value="{{sendEmailBtnValue}}" ng-click="emailcode(user)" ng-disabled="emailCountDown">
+							<p class="showhide">给您{{user.email}}的邮箱发送了验证码，请<a href="#" class="no1" ng-click="getLoginEmail(user)">登录邮箱</a>查看</p>
+						</div>
+						</div>
+					</div>
+				<div class="codeemail" ng-if="!emailcodes">
+					<div class="mobile">
+						<p>手机号</p>
+						<input  class="mo" type="text" ng-change="checkMobile(user,someForm.inputs.$valid)" id="super" ng-class="{'my-class':someForm.inputs.$error.pattern}" name="inputs" placeholder="请输入手机号" ng-model="user.mobile"  pattern="^((13)|(14)|(15)|(16)|(17)|(18))\d{9}$" required>
+						
+						<p class="mobiless" ng-show="someForm.inputs.$error.pattern">请输入正确的手机号</p>
+						<p class="mobiless" ng-show="someForm.inputs.$valid && existsPhone">手机号已存在</p>
+						<p ng-show="someForm.inputs.$valid && !loadingPhone &&  !existsPhone">手机输入正确</p>
+						
+					</div>
+					<div class="check-code">
+						<p>验证码</p>
+						<input type="text" class="check-code" placeholder="请输入图形验证码"  ng-model="user.captchaCode2" name='captchaCode' required checkcaptchacode >
+						<div class="num" style="background: url({{captcha}}) no-repeat;" ng-click="changeCaptcha()" ></div>
+						<p style="float: left;padding-left: 12px;" ng-hide="someForm.captchaCode.$valid">
+							看不清？
+							<a href class="set" ng-click="changeCaptcha()">换一张</a>
+						</p>
+						<p class="errorss" ng-show="someForm.captchaCode.$dirty &&  someForm.captchaCode.$error.captchaCode">验证码错误</p>
+						<p ng-show="someForm.captchaCode.$valid">验证码正确</p>
+					</div>
+					
+					<div class="check-code">
+						<p>校验码</p>
+						<input  class="check-code" type="text" ng-class="{'my-class':someForm.code1.$error.pattern}" pattern="^\d{4}$" id="super" placeholder="请输入校验码" name="code1" ng-model="user.code" required>
+						<input type="button" class="check-button"   value="{{sendSmsBtnValue}}" ng-click="mobilecode(user)" ng-disabled="existsPhone ||smsCountDown|| someForm.captchaCode.$error.required ||  someForm.captchaCode.$error.captchaCode">
+
+						<span class="codess1" ng-show="someForm.code1.$error.pattern">请输入验证码</span>
+						
+					</div>
+				</div>	
+					<div class="login-password">
+						<p>登录密码</p>
+						<input class="password" type="password" id="super" ng-class="{'my-class':someForm.pwd.$error.pattern}" name="pwd" placeholder="请输入密码" ng-model="user.password" pattern="^\w{8,20}$" required>
+						<p class="error" ng-show="someForm.pwd.$error.pattern">请输入8-20位的字母数字</p>
+						<p ng-show="someForm.pwd.$valid">密码输入正确</p>
+					</div>
+					<div class="confirm">
+						<p>确认密码</p>
+						<input class="confirm" ng-model="con" ng-keyup="checkPsw(user);" id="super" ng-class="{'my-class':(user.password!=con)}" type="password" placeholder="请再次输入密码">
+						<p class="yizhii">确认密码正确</p>
+						<p ng-show='user.password!=con'>两次密码必须一致</p>
+					</div>
+					<div class="agreement">
+						<input class="a-checkbox" type="checkbox" ng-model="agreent">
+						<p>我已阅读并同意<a target="_bank" href="#/helpcenter/bacOJGmXT2ufwKb52dSMJQ/yI5mMczYSa2AlXNrmHlYrQ" class="no1">&lt;&lt;中华阿胶网注册协议&gt;&gt;</a></p>
+					</div>
+					<div class="clear"></div>
+					<div class="sign-up">
+						<input class="sign" type="button"  ng-disabled="(existsPhone) || someForm.$invalid||(user.password!=con)" value="立即注册" ng-click="register(user)">
+					</div>
+				</ng-form>
+				<illegal-request-dialog messagehd="{{messagehd}}"></illegal-request-dialog>
+				</div>
+
+				<div class="bd-right">
+					<div class="bd-top cur">
+						<p  ng-click="changeRighttop(user)">手机注册</p>
+						<div class="triangle"></div>
+					</div>
+					<div class="bd-bottom">
+						<p ng-click="changeRightbottom(user)">邮箱注册</p>
+						<div class="triangle"></div>
+					</div>
+				</div>
+			</div>
+			<div class="rc-hd">
+				<div class="personal">
+					<p>个人用户</p>
+				</div>
+				<div class="company" ng-click="companyRegist()">
+					<p>企业入驻</p>
+				</div>
+			</div>
+		</div>
+		<illegal-request-dialog messagehd="{{messagehd}}"></illegal-request-dialog>
+	</div>
+<div class="clear h75"></div>
+<find-pw-footer></find-pw-footer>

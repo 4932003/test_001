@@ -1,0 +1,71 @@
+<div class="merchant-list" ng-controller="CashcounponController" style="width: 1200px;">
+	<div class="ml-top-title">购物金管理</div>
+	<div class="ml-mid-detail">
+		<ul class="ml">
+			
+			卡号:<input ng-model="cash.cardNum" type="text">
+			面额: <select ng-model="cash.value" >
+					<option value='1000' >1000</option>
+					<option value='500' >500</option>
+					<option value='200' >200</option>
+				  </select>
+			是否锁定:<select ng-model="cash.locked" >
+						<option value='true' >是</option>
+						<option value='false' >否</option>
+					  </select>
+			
+		</ul>
+		
+		<div class="clear h10"></div>
+	
+		<div class="ml-ser" style='float: left;'ng-click="reSearch()">查询</div>
+		<div class="ml-ser" style='float: left;' ng-click="unlock()">解锁</div>
+		<div class="clear"></div>
+	</div>
+	<div class="ml-content" style="width: 1200px;">
+		<div class="ml-hd">
+			<div class="mlh-mid">
+				<ul class="mlhm">
+					<li class="mlh-m ">
+						<input type="checkbox" ng-click='chkAll(chkall)' ng-model="chkall">
+						<span>全选</span>
+					</li>
+					
+					<li class="mlh-m mlh-m2">卡号</li>
+					<li class="mlh-m mlh-m2">面额</li>
+					<li class="mlh-m mlh-m2" >生成时间</li>
+					<li class="mlh-m">使用门槛</li>
+					<li class="mlh-m">是否使用</li>
+					<li class="mlh-m">使用时间</li>
+					<li class="mlh-m">是否删除</li>
+					<li class="mlh-m">是否锁定</li>
+					<li class="mlh-m">备注</li>
+					
+				</ul>
+			</div>
+		</div>
+		<div class="ml-bd">
+			<div class="mlb-mid">
+				<div  ng-repeat="counpon in counpons" class = "mlb-line">
+					<ul class="mlbm" style="text-align: center;">
+						<li class="mlb-m">
+							<input type="checkbox" ng-change="selectItem(counpon)" ng-model="counpon.selected" value="{{counpon.id}}" ng-true-value="true" ng-false-value="false">
+						</li>
+						<li class="mlb-m mlb-m2">{{counpon.cardNum}}</li>
+						<li class="mlb-m mlb-m2">{{counpon.value | currency:'￥'}}</li>
+						<li class="mlb-m mlb-m2" >{{counpon.addtime | date:'yyyy-MM-dd'}}</li>
+						<li class="mlb-m">{{counpon.threshhold | currency:'￥'}}</li>
+						<li class="mlb-m " >{{counpon.used  | booleanFilter}}</li>
+						<li class="mlb-m">{{counpon.usedtime | date:'yyyy-MM-dd'}}</li>
+						<li class="mlb-m">{{counpon.del | booleanFilter}}</li>
+						<li class="mlb-m">{{counpon.locked | booleanFilter}}</li>
+						<li class="mlb-m">{{counpon.remark}}</li>
+						
+					</ul>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+		<div class="ml-bd">数量 {{counpons.length}}/{{amount}}<span ng-click="list()" ng-if="more">展示更多</span> </div>
+	</div>
+</div>

@@ -1,0 +1,68 @@
+@import "common";
+
+body{
+	font-family: "Microsoft Yahei","hiragino sans gb","STHeiti","WenQuanYi Zen Hei",arial;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.align-left{
+	text-align: left;
+}
+.align-right{
+	text-align: right;
+}
+.align-center{
+	text-align: center;
+}
+.clr, .clear{
+	clear:both;
+	display: block;
+	font-size: 0;
+	height: 0;
+	line-height: 0;
+	overflow: hidden;
+}
+ul{
+	list-style: none;
+}
+ul > li{
+	float:left;
+}
+
+a:visited,a:link{
+	text-decoration: none;
+	outline:none;
+}
+
+input,button{
+	outline:none;
+}
+
+input[type="checkbox"],input[type="checkbox"]:focus,input[type="radio"],input[type="radio"]:focus{
+	outline:none;
+}
+
+.center-view{
+	width:@center-view-width;
+	margin:0 auto;
+}
+
+*{
+	margin:0;
+	padding:0;
+}
+
+*{
+	color:@txt-color;
+}
+
+.text-omitted{
+	white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+
+}
+
+

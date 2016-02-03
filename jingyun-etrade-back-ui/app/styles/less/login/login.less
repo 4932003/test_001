@@ -1,0 +1,251 @@
+@import "../common";
+
+.login-inner{
+	width: 400px;
+	margin: 0 auto;
+}
+.h117{
+	height: 117px !important;
+}
+.h142{
+	height: 142px !important;
+}
+.center-view .login-logo{
+	width: 400px;
+	height: 63px;
+	padding-left:94px;
+	padding-right: 88px;
+	margin-top:83px;
+	margin-bottom: 85px;
+}
+.center-view .hd{
+	height:37px;
+	border-bottom: 1px solid #bebebe;
+	margin-bottom: 48px;
+}
+.center-view .hd .account-login{
+	float: left;
+	width: 200px;
+	height: 38px;
+	padding-left:52px;
+	padding-right:29px;
+	position: relative;
+	cursor: pointer;
+}
+.center-view .hd .account-login p{
+	text-align: center;
+	font-size:@t3-size; 
+	color:#666565;
+}
+.center-view .hd .account-login.on p{
+	color:#FB4041;
+}
+.center-view .hd .account-login .bottom{
+	position: absolute;
+	top:36px;
+	left:54px;
+	width:119px;  
+	height: 3px;
+	background-color:#FE4240;
+	display: none;
+}
+.center-view .hd .account-login.on .bottom{
+	display: block;
+}
+.center-view .hd .sms-login{
+	float: left;
+	width: 200px;
+	height: 38px;
+	padding-left:57px;
+	padding-right:63px;
+	position: relative;
+	cursor: pointer;
+}
+.center-view .hd .sms-login p{
+	text-align: center;
+	font-size:@t3-size; 
+	color:#666565;
+}
+.center-view .hd .sms-login.on p{
+	color:#FB4041;
+}
+.center-view .hd .sms-login .bottom{
+	position: absolute;
+	top:36px;
+	left:38px;
+	width:119px;  
+	height: 3px;
+	background-color:#FE4240;
+	display: none;
+
+}
+.center-view .hd .sms-login.on .bottom{
+	display: block;
+}
+.center-view .hd .sms-login.on {
+	color:#FB4041;
+}
+.center-view .bd{
+	width: 400px;
+	height:374px;
+	margin-bottom:95px;
+}
+.center-view .bd .account{
+	display: none;
+}
+.center-view .bd .account.cur{
+	display: block;
+}
+ .account-user{
+	width: 650px;
+	height: 50px;
+	margin-bottom: 25px;
+}
+.account-user .icon1{
+	float: left;
+	width:50px;
+	height: 50px;
+	border: 1px solid #dcdcdc;
+	padding-top: 17px;
+	padding-left: 15px;
+}
+.account-user .icon1 .pic1{
+	width:18px;
+	height:19px;
+	background: url(../images/icons.png) no-repeat -2px -248px; 
+}
+.account-user input.account-user{
+	float: left;
+	width: 350px;
+	height: 50px;
+	border: 1px solid #dcdcdc;
+	border-left: none;
+	padding-left: 15px;
+	font-size: @t3-size;
+	line-height:30px;
+	color:#BEBEBE;
+} 
+.account-password{
+	width: 650px;
+	height: 50px;
+	margin-bottom:10px;
+}
+.account-password .icon2{
+	float: left;
+	width:50px;
+	height: 50px;
+	border: 1px solid #dcdcdc;
+	padding-top: 15px;
+	padding-left: 18px;
+}
+.account-password .icon2 .pic2{
+	width:14px;
+	height:19px;
+	background: url(../images/icons.png) no-repeat -35px -248px; 
+}
+.account-password input.account-password{
+	float: left;
+	width: 350px;
+	height: 50px;
+	border: 1px solid #dcdcdc;
+	border-left: none;
+	padding-left: 15px;
+	font-size: @t3-size;
+	line-height:30px;
+	color:#BEBEBE;
+	position: relative;
+} 
+.account-password input.account-password::after{
+	content:"";
+	position: absolute;
+	top:18px;
+	right:11px; 
+	width: 33px;
+	height: 19px;
+	background: url(../images/icons.png) no-repeat -57px -248px; 
+}
+.center-view .bd .select-item{
+	height:15px; 
+	margin-bottom: 32px;
+}
+.center-view .bd .select-item input.select-checkbox{
+	float: left;
+	width:15px;
+	height:15px;
+	margin:0;
+	cursor: pointer;
+}
+.center-view .bd .select-item input.select-checkbox.cur{
+	background-color:#FB413F;
+}
+.center-view .bd .select-item p{
+	font-size:@t4-size ;
+	line-height: 15px;
+	color:#656464; 
+}
+.center-view .bd .select-item p.remember{
+	float: left;
+	margin-left:7px;
+	margin-right:279px;		
+}
+.center-view .bd  p a.login-a:link,a.login-a:visited{
+	text-decoration: none;
+	color:#656464;  
+}
+.center-view .bd .sms{
+	display: none;
+}
+.center-view .bd .sms.cur{
+	display: block;
+}
+.center-view .bd input.login-btn{
+	width: 400px;
+	height: 50px;
+	background-color:#FE4240;
+	font-size: @t3-size;
+	color:@white-color; 
+	line-height: 50px;
+	text-align: center;
+	border: none;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+.ft{
+	height:100px;
+	background-color:@title-color; 
+}
+.ft{
+	height: 100px;
+	padding-top: 46px; 
+}
+.ft p{
+	float: left;
+	font-size: @t4-size;
+	height: 12px;
+	line-height: 12px;
+	color:#999; 
+	margin-right: 12px;
+}
+.ft p:nth-child(3){
+	width: 85px;
+	height: 12px;
+	text-align: center;
+	border-left: 1px solid #999; 
+}
+.ft p:nth-child(4){
+	width: 85px;
+	height: 12px;
+	text-align: center;
+	border-left: 1px solid #999;
+}
+.ft p a.no4:link,a.no4:visited{
+	text-decoration: none;
+	color:#999;  
+}
+
+.bd .worn_info{
+	float: left;
+    line-height: 50px;
+    margin-left: 10px;
+    color: #FD4040;
+}

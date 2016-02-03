@@ -1,0 +1,124 @@
+<div class="setting" ng-controller="SafetySettingController">
+	<input type='hidden' ng-model='email' />
+	<input type='hidden' ng-model='mobile' />
+			<div class="setting-hd">
+				<div class="user-center-mr-hd">
+					<div class="user-center-mr-title-icon fl"></div>
+					<div class="user-center-mr-title fl">
+						<p>安全设置</p>
+					</div>
+				</div>
+				<div class="clear"></div>
+				
+				<div class="level">
+					<p>
+						账户安全等级：
+						<span>{{levelName}}</span>
+					</p>
+					<div class="progress myaccount-progress fl">
+						<progress-bar level="level"></progress-bar>
+					</div>
+					<p>建议您启动全部安全设置，以保障账户及资金的安全。</p>
+				</div>
+			</div>
+			<div class="setting-bd">
+				<!-- 通过手机号修改登录密码-->
+				<div class="log-password box lp1" ng-if="mobile">
+					<div class="p1">登录密码</div>
+					<div class="p2">建议定期更换密码，且数字、字母、符号至少包含两种的，长度为8-20个字符的密码。</div>
+					<div class="modify">
+						<input type="button" class="modify" value="修改" ui-sref="user-center.modify-mobile-login-password"></div>
+				</div>
+				<!-- 通过邮箱修改登录密码-->
+				<div class="log-password box lp1" ng-if="!mobile">
+					<div class="p1">登录密码</div>
+					<div class="p2">建议定期更换密码，且数字、字母、符号至少包含两种的，长度为8-20个字符的密码。</div>
+					<div class="modify">
+						<input type="button" class="modify" value="修改" ui-sref="user-center.modify-email-login-password"></div>
+				</div>
+				<div class="verify-mailbox box vm1" ng-if="!email">
+					<div class="p1">验证邮箱</div>
+					<div class="p2">进行邮箱验证后 ,可用于快速找回账号密码和进行敏感操作的身份验证，以及订阅更优惠商品的促销邮件。</div>
+					<div class="modify">
+						<input type="button" class="modify cur" value="立即验证" ui-sref="user-center.verify-email"></div>
+				</div>
+				<div class="verify-mailbox box vm2" ng-if="email">
+					<div class="p1">修改邮箱</div>
+					<div class="p2">已验证邮箱：{{viewEmail}} </div>
+					<div class="modify">
+						<input type="button" class="modify" value="修改" ui-sref="user-center.modify-email"></div>
+				</div>
+				
+				<div class="mobile-verify box mv1" ng-if="!mobile">
+					<div class="p1">手机验证</div>
+					<div class="p2">进行手机验证后 ,可用于快速找回账号密码和进行敏感操作的身份验证，以及获取最新的订单</div>
+					<div class="modify">
+						<input type="button" class="modify cur" value="立即验证" ui-sref="user-center.verify-mobile"></div>
+				</div>
+				<div class="mobile-verify box mv2" ng-if="mobile">
+					<div class="p1">修改手机</div>
+					<div class="p2">已验证手机：{{viewMobile}} </div>
+					<div class="modify">
+						<input type="button" class="modify" value="修改" ui-sref="user-center.modify-mobile"></div>
+				</div>
+				<!-- 手机设置支付密码-->
+				<div class="payment-password box pp1" ng-if="!tradepwd && mobile">
+					<div class="p1">支付密码</div>
+					<div class="p2">
+						用于本平台交易账户的支付和提现，可设置为包含字母加数字或符号、长度为8-20个字符的密码，若忘记已有支付密码，点此
+
+						<a href="" class="set" ui-sref="user-center.modify-mobile-pay-password">找回</a>
+
+					</div>
+					<div class="modify">
+						<input type="button" class="modify cur" value="立即设置" ui-sref="user-center.set-mobile-pay-password"></div>
+				</div>
+				<!-- 手机修改支付密码-->
+				<div class="payment-password box pp2" ng-if="tradepwd && mobile">
+					<div class="p1">支付密码</div>
+					<div class="p2">
+						用于本平台交易账户的支付和提现，可设置为包含字母加数字或符号、长度为8-20个字符的密码，若忘记已有支付密码，点此
+						<a href="" class="set" ui-sref="user-center.modify-mobile-pay-password">找回</a>
+					</div>
+					<div class="modify">
+						<input type="button" class="modify" value="修改" ui-sref="user-center.modify-mobile-pay-password"></div>
+				</div>
+				<!-- 邮箱设置支付密码-->
+				<div class="payment-password box pp1" ng-if="!tradepwd && !mobile">
+					<div class="p1">支付密码</div>
+					<div class="p2">
+						用于本平台交易账户的支付和提现，可设置为包含字母加数字或符号、长度为8-20个字符的密码，若忘记已有支付密码，点此
+
+						<a href="" class="set" ui-sref="user-center.modify-email-pay-password">找回</a>
+
+					</div>
+					<div class="modify">
+						<input type="button" class="modify cur" value="立即设置" ui-sref="user-center.set-email-pay-password"></div>
+				</div>
+				<!-- 邮箱修改支付密码-->
+				<div class="payment-password box pp2" ng-if="tradepwd && !mobile">
+					<div class="p1">支付密码</div>
+					<div class="p2">
+						用于本平台交易账户的支付和提现，可设置为包含字母加数字或符号、长度为8-20个字符的密码，若忘记已有支付密码，点此
+						<a href="" class="set" ui-sref="user-center.modify-email-pay-password">找回</a>
+					</div>
+					<div class="modify">
+						<input type="button" class="modify" value="修改" ui-sref="user-center.modify-email-pay-password"></div>
+				</div>
+			</div>
+			<illegal-request-dialog messagehd="{{messagehd}}" ></illegal-request-dialog>
+		</div>
+
+	<div class="cl"></div>
+
+	<div class="tip-ft">
+		<div class="tip-left">
+			<h3>安全服务提示</h3>
+		</div>
+		<div class="tip-right">
+			<p>
+				1.确认您登录的是中华阿胶网<a href="http://www.zhonghuaejiao.com/#/" class="set">http://www.zhonghuaejiao.com</a>,注意防范进入钓鱼网站，不要轻信个中即时通讯工具发送的商品或支付链接，谨防网购诈骗。
+			</p>
+			<p>2.建议您安装杀毒软件，并定期更新操作系统等软件补丁，确保账户及交易安全。</p>
+		</div>
+	</div>

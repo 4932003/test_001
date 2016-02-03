@@ -1,0 +1,27 @@
+<div class="user-center-b-details" id="user-center-bt-1-detail">
+   <!--  <div class="user-center-b-left"></div> -->
+    <ul class="user-center-bd-list">
+      <li ng-repeat="rg in recommendlist">
+        <div class="main-hot-product-item main-ga-width product-hover">
+          <div>
+      		  <a href="#/product/detail/{{rg.gid}}/description">
+              <img class="main-hot-product-img" ng-src="{{rg.thumbpath1}}@160h_160w.jpg"/>
+      			</a>
+          </div>
+          <div class="main-hot-product-desc main-ga-desc-width">
+			<a    title="{{rg.goodsName}}" href="#/product/detail/{{rg.gid}}/description">
+                <p class="main-hp-name text-omitted fl">{{rg.goodsName}}</p>
+            </a>
+            <p class="main-hp-scale fr">{{rg.specifications}}</p>
+            <div class="clear"></div>
+            <p class="main-hp-price fl" ng-show="rg.onSale == '0'">￥{{rg.price}}</p>
+            <p class="main-hp-price fl" ng-show="rg.onSale == '1'">￥{{rg.promotionPrice}}</p>
+            <p class="main-hp-old-price fr" ng-show="rg.onSale == '1'">原价{{rg.price}}</p>
+          </div>
+          
+        </div>                
+      </li>
+    </ul>
+
+    <!-- <div class="user-center-b-right"></div> -->
+  </div>

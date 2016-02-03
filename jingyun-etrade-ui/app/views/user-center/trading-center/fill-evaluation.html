@@ -1,0 +1,180 @@
+<header-top></header-top>
+<div class="clear"></div>
+<header-search></header-search>
+<div class="clear"></div>
+<header-nav></header-nav>
+<div class="clear"></div>
+
+<div class="center-view">
+	<div class="fill-evaluation" ng-controller="MyAddCommentController" >
+		<div class="fe-title">填写评价</div>
+		<div class="fe-info1">
+			<div class="fe-img fl">
+				<a href="#/product/detail/{{goods.gid}}/description">
+					<img src="{{goods.imgpath}}" alt="" class="fe">
+				</a>
+			</div>
+			<div class="fe-text1 fl">
+			<a href="#/product/detail/{{goods.gid}}/description" title="{{goods.gname}}">
+				<p class="gi-p text-omitted">{{goods.gname}}</p>
+			</a>
+			</div>
+			<div class="fe-text2 fl">
+				<p>购买时间:{{goods.addtime}}</p>
+			</div>
+			<div class="fe-text3 fl">
+				<p>月成交量:2015件</p>
+				<p>（累计评价{{goodgrade.personCount}}）</p>
+			</div>
+			<!-- <div class="gi-comment">
+				<p>立即评价</p>
+			</div> -->
+		</div>
+		<input type="hidden" ng-model="goods.gid">
+		<div class="fe-cumulative">
+			<div class="fe-cumulative-hd">
+				<p>累计评价（{{goodgrade.personCount}}）</p>
+			</div>
+			<div class="fe-cumulative-bd">
+				<div class="fec-left fl">
+					<p>与描述相符</p> <strong class="spe">{{goodgrade.zongjibie}}</strong>
+					<p>
+						<span class="fec-left-star" id="star1"></span>
+						<span class="fec-left-star" id="star2"></span>
+						<span class="fec-left-star" id="star3"></span>
+						<span class="fec-left-star" id="star4"></span> 
+						<span class="fec-left-star" id="star5"></span>
+					</p>
+				</div>
+				<div class="fec-right fl">
+					<div class="fec-top">
+						<p>非常不满意</p>
+						<p>不满意</p>
+						<p>一般</p>
+						<p>满意</p>
+						<p>非常满意</p>
+					</div>
+					<div class="fec-mid">
+						<div class="progress fill-evaluation-progress fl">
+							<progress-bar level="goodgrade.allLevel"></progress-bar>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="fec-bottom">
+						<p>共有{{goodgrade.personCount}}位客户参与评分</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="fe-mid-text">
+			<p>其他买家，需要您的建议哦！</p>
+			<p>认真写评价最多可获中华阿胶成长值20点！</p>
+		</div>
+		<div class="fe-content">
+			<div class="fe-content-hd">
+				<div class="fe-description">
+					<div class="rating-star">
+						<span class="s-name fl">描述相符：</span>
+						<ul class="star-ul fl">
+							<a class="one-star" title="2分不满"   ng-click='setGrade(2)'  href="#">0</a>
+							<a class="two-star" title="4分不满"   ng-click='setGrade(4)'  href="#">1</a>
+							<a class="three-star" title="6分一般" ng-click='setGrade(6)' href="#">2</a>
+							<a class="four-star" title="8分满意"  ng-click='setGrade(8)'   href="#">3</a>
+							<a class="five-star" title="10分惊喜" ng-click='setGrade(10)'  href="#">4</a>
+							
+						</ul>
+						<input type="hidden" ng-model="comments.commentGrade">
+						<span class="s-result fl" style="color: rgb(51, 51, 51);">请打分</span>
+					</div>
+				</div>
+				<div class="fe-seller-service">
+					<div class="rating-star">
+						<span class="s-name fl">卖家服务：</span>
+						<ul class="star-ul fl">
+							<a class="one-star" title="2分不满"  ng-click='setService(2)'  href="#">0</a>
+							<a class="two-star" title="4分不满"  ng-click='setService(4)'    href="#">1</a>
+							<a class="three-star" title="6分一般" ng-click='setService(6)' href="#">2</a>
+							<a class="four-star" title="8分满意"  ng-click='setService(8)'  href="#">3</a>
+							<a class="five-star" title="10分惊喜" ng-click='setService(10)'  href="#">4</a>
+							
+						</ul>
+						<input type="hidden" ng-model="comments.serviceGrade">
+						<span class="s-result fl" style="color: rgb(51, 51, 51);">请打分</span>
+					</div>
+				</div>
+				<div class="fe-logistics-service">
+					<div class="rating-star">
+						<span class="s-name fl">物流服务：</span>
+						<ul class="star-ul fl">
+							<a class="one-star" title="2分不满"   ng-click="setLogistics(2)" href="#">0</a>
+							<a class="two-star" title="4分不满"   ng-click="setLogistics(4)"   href="#">1</a>
+							<a class="three-star" title="6分一般" ng-click="setLogistics(6)" href="#">2</a>
+							<a class="four-star" title="8分满意"  ng-click="setLogistics(8)"  href="#">3</a>
+							<a class="five-star" title="10分惊喜" ng-click="setLogistics(10)"  href="#">4</a>
+							
+						</ul>
+						<input type="hidden" ng-model=" comments.logisticsGrade">
+						<span class="s-result fl" style="color: rgb(51, 51, 51);">请打分</span>
+					</div>
+				</div>
+			</div>
+			<div class="fe-content-bd">
+				<div class="fe-comment-goods">
+					<div class="fecg-left">
+						<p>评价商品</p>
+					</div>
+					<div class="fecg-right">
+						<textarea cols="30" rows="10" class="fecg-right" ng-model="comments.goodsComment"></textarea>
+					</div>
+				</div>
+				<div class="fe-service-comment">
+					<div class="fesc-left">
+						<p>服务评价</p>
+					</div>
+					<div class="fesc-right">
+						<textarea cols="30" rows="10" class="fesc-right" ng-model="comments.goodsService"></textarea>
+
+					</div>					
+						
+				</div>
+
+					
+					<input type="hidden" ng-model="comments.oid">
+
+				<div class="fe-sun-picture">
+					<div class="fesp-left">
+						<p>晒图片</p>
+					</div>
+					<div class="fesp-right">
+						<div class="fesp-add">
+							<div class="fesp-add1" onClick="$('#file1').trigger('click')">
+								<div class="fesp-add1-icon"></div>
+							</div>
+							<form id='fileinfo1'>
+								<input style='display:none' type='file' value='图片上传' id='file1' name='file' ng-model='uploadBtn' onChange="$('#submitFile1').trigger('click');" />
+
+								<input id='submitFile1' type='hidden' ng-click='uploadFile()'>
+							</form>
+							<div class="fesp-add2" ng-repeat="imgPath in comments.picture">
+								<img class="add-pic"  ng-src='{{imgPath}}@55h_55w.jpg'/>
+								<div class="add2-po"></div>
+								<div class="add2-po2" ng-click="deleteImg('{{imgPath}}')"></div>
+							</div>
+							<illegal-request-dialog messagehd="{{messagehd}}"></illegal-request-dialog>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="fe-bottom">
+	<div class="feb-comment" id="targets">
+		<p ng-click="savecomment(comments)">立即评价</p>
+	</div>
+	</div>
+	</div>
+</div>
+
+
+<div class="clear"></div>
+<success-dialog message="恭喜您评价成功！"></success-dialog>
+<footer></footer>

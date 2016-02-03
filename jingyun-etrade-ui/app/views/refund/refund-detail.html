@@ -1,0 +1,150 @@
+<header-top></header-top>
+<div class="clear"></div>
+<header-search></header-search>
+<div class="clear"></div>
+<header-nav></header-nav>
+<div class="clear"></div>
+
+<div class="center-view" ng-controller="RefundDetailController">
+	<div class="apply-refund-goods">
+		<div class="cor-top-title">申请退款的宝贝</div>
+		<div class="cor-content">
+			<div class="cor-box1">
+				<div class="cor-box1-top">
+					<p>退款编号：{{refund.refundno}}</p>
+					<p>当前状态：<span class="red">{{refund.statusName}}</span></p>
+				</div>
+				<div class="cor-box1-bottom">
+					<p>亲爱的客户，我们正在为您处理，请耐心等待。</p>
+				</div>
+			</div>
+			<div class="refund-product-info">
+				<div class="refund-product-info-hd">
+					<div class="refund-product-info-txt fl">退款/退货商品</div>
+					<div class="refund-product-info-no fl">订单号：<span>{{goods.orderno}}</span></div>
+					<div class="fl">成交时间：{{goods.addtime | date: 'yyyy-MM-dd HH:mm:ss'}}</div>
+					<div class="refund-product-info-seller fr">商家：{{goods.mname}}</div>
+				</div>
+				<div class="clear"></div>
+				<refund-goods></refund-goods>
+			</div>
+			<div class="cor-box3">
+				<div class="cor-box3-detail">
+					<table class="cor-b3-detail">
+						<thead class="cor-b3-detail">
+							<th class="cor-b3-detail th-1">处理时间</th>
+							<th class="cor-b3-detail th-2">处理信息</th>
+							<th class="cor-b3-detail th-3">操作人</th>
+						</thead>
+						<tbody class="cor-b3-detail">
+							<tr class="cor-b3-detail" ng-repeat="trace in traces">
+								<td class="cor-b3-detail">{{trace.addtime| date:'yyyy-MM-dd HH:mm:ss'}}</td>
+								<td class="cor-b3-detail">{{trace.note}}</td>
+								<td class="cor-b3-detail">{{trace.operator}}</td>
+							</tr> 
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="cor-box4">
+				<div class="cor-apply-detail">申请单详细信息</div>
+				<div class="cor-apply-bd">
+					<ul class="cor">
+						<li class="cor-apply">
+							<div class="cor-apply-left"><p>申请退款时间：</p></div>
+							<div class="cor-apply-right"><p>{{refund.addtime| date:'yyyy-MM-dd HH:mm:ss'}}</p></div>
+							
+							
+						</li>
+						<li class="cor-apply">
+							<div class="cor-apply-left"><p>退款状态：</p></div>
+							<div class="cor-apply-right">
+								<p>
+									<span class="red">{{refund.statusName}}</span>
+								</p> 
+							</div>
+						</li>
+						<li class="cor-apply">
+							<div class="cor-apply-left"><p>货物状态：</p></div>
+							<div class="cor-apply-right">
+								<p>{{logistic.rid?'买家已退货':'买家未退货'}}</p>
+							</div>
+							
+						</li>
+						<li class="cor-apply">
+							<div class="cor-apply-left"><p>退还给买家的金额： </p></div>
+							<div class="cor-apply-right">
+								<p>
+									<span class="red">{{refund.money}}</span>元
+								</p> 
+							</div>
+							
+						</li>
+						<!-- <li class="cor-apply">
+							<div class="cor-apply-left"><p>支付给商家的金额： </p></div>
+							<div class="cor-apply-right">
+								<p>
+									<span class="red">0.00</span>元
+								</p> 
+							</div>
+							
+						</li> -->
+						<li class="cor-apply">
+							<div class="cor-apply-left"><p>退款原因：</p></div>
+							<div class="cor-apply-right"><p>{{refund.reason}}</p></div>
+						</li>
+						<li class="cor-apply">
+							<div class="cor-apply-left"><p>凭证图片：</p></div>
+							<div class="cor-apply-right">
+								<div class="cor-a-pic">
+									<div class="cor-a-box" ng-repeat="cert in certificates">
+										<img ng-src="{{cert}}@60h_60w.jpg" alt="" class="cor-pic" ng-click="selectCert(cert)">
+									</div>							
+								</div>
+							</div>
+							
+						</li>
+						<li class="cor-apply">
+							<img class="big-thumb-img" ng-show="certSelected()" ng-src="{{selectedCert}}@300h_300w.jpg" ng-click="removeCert()">
+						</li>
+						<li class="cor-apply">
+							<div class="cor-apply-left"><p>退款说明：</p></div>
+							<div class="cor-apply-right">
+								<p>{{refund.description}}</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="cor-box5">
+				<div class="cor-apply-detail">申请单详细信息</div>
+				<div class="cor-apply-bd">
+					<ul class="cor">
+						<li class="cor-apply">
+							<div class="cor-apply-left"><p>退货时间：</p></div>
+							<div class="cor-apply-right">
+								<p>{{logistic.addtime | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+							</div>
+						</li>
+						<li class="cor-apply">
+							<div class="cor-apply-left"><p>物流公司：</p></div>
+							<div class="cor-apply-right">
+								<p>{{logistic.expressName}}</p>
+							</div>
+						</li>
+						<li class="cor-apply">
+							<div class="cor-apply-left"><p>发货单号：</p></div>
+							<div class="cor-apply-right">
+								<p>{{logistic.expressno}}</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<login-dialog></login-dialog>
+</div>
+
+<div class="clear"></div>
+<footer></footer>

@@ -1,0 +1,42 @@
+<div class="merchant-list" ng-controller="AdmoduleListController as admoduleListController">
+	<div class="ml-top-title">推广管理&gt推广模块维护</div>
+	<div class="ml-mid-detail">
+		<ul class="ml">
+			<li class="ml-detail">
+				<p>模块名称：</p>
+				<input type="text" class="ml-t" ng-model="name"></li>
+		</ul>
+		<div class="clear h10"></div>
+		<div class="ml-ser" ng-click="serch()">查询</div>
+	</div>
+	<div class="ml-content">
+		<div class="ml-hd">
+			<div class="mlh-mid">
+				<ul class="mlhm">
+					<li class="mlh-m">模块编码</li>
+					<li class="mlh-m mlh-m2">模块名称</li>
+					<li class="mlh-m">图片路径</li>
+					<li class="mlh-m">描述</li>
+				</ul>
+			</div>
+		</div>
+		<div class="ml-bd">
+			<div class="mlb-mid">
+				<div ng-repeat="obj in admodulelist" class = "mlb-line">
+					<ul class="mlbm">
+						<li class="mlb-m">{{obj.code}}</li>
+						<li class="mlb-m mlb-m2">{{obj.name}}</li>
+						<li class="mlb-m">{{obj.imgpath}}</li>
+						<li class="mlb-m">{{obj.description}}</li>
+						<li class="mlb-m">
+							<a href="#" class="aa" ui-sref="station-goods.admodule-edit({id:'{{obj.id}}'})">编辑</a>
+							&nbsp;&nbsp;&nbsp;
+							<a href="#" class="aa" ng-click="removeAdmodule(obj.id);">删除</a>
+						</li>
+					</ul>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,42 @@
+<div class="my-coupon" ng-controller='MyCouponController'>
+	<div class="user-center-mr-hd my-collection-main-hd">
+		<div class="user-center-mr-title-icon fl"></div>
+		<div class="user-center-mr-title fl">
+			<p>我的优惠券</p>
+		</div>
+	</div>
+	<div class="coupon-bd">
+		<div class="voucher-box coupon-box">
+			<p>抵用券</p>
+			<p>
+				目前可用抵用券
+				<a class="bl">{{discountCouponAmount}}</a>
+				张
+			</p>
+			<p  ui-sref="user-center.my-voucher.voucher-not-use">
+				<a href="#" class="red" >查看</a>
+			</p>
+			<input type="button" class="recharge-voucher" value="抵用券充值" ng-click='goRechargeVoucher()' >
+			<p>
+				<a href="#/helpcenter/V8-7kU7iSDOUSLr118wGiA/zE8FInvWRDuFVEGXchUS2w" target="_blank" class="voucher-intro">抵用券使用说明</a>
+			</p>
+		</div>
+		<div class="shopping-gold-box coupon-box">
+			<p>购物金</p>
+			<p>
+				目前可用购物金
+				<a class="bl">{{cashCouponAmount}}</a>
+				张
+			</p>
+			<p  ui-sref="user-center.my-shopping-gold.gold-not-use">
+				<a href="#" class="red">查看</a>
+			</p>
+			<input type="button" class="recharge-shopping-gold" value="购物金充值" ng-click='goRechargeShoppingGold()' >
+			<p>
+				<a href="#/helpcenter/V8-7kU7iSDOUSLr118wGiA/zE8FInvWRDuFVEGXchUS2w" target="_blank" class="shopping-gold-intro">购物金使用说明</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+<div class="clear"></div>

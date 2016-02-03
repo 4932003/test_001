@@ -1,0 +1,95 @@
+
+	<form name='myForm' ng-controller="MyReceiveAddressController">
+		<div class="receive-address">
+			<div class="my-address">
+				<div class="user-center-mr-hd">
+					<div class="user-center-mr-title-icon fl"></div>
+					<div class="user-center-mr-title fl">
+						<p>我的收货地址</p>
+					</div>
+					<div class="add-receive-address fr">
+						<p class="red" ng-click='clearAddress()' >添加新地址</p>
+					</div>
+				</div>
+				<div class="clear"></div>
+
+				<div class="address-hd">
+					<div class="addressee">收件人</div>
+					<div class="address">地址</div>
+					<div class="phone">电话/手机</div>
+					<div class="operation">操作</div>
+				</div>
+				<div class="address-bd">
+					<div class="address-box1 address-box " ng-class="{'cur': (address.id == item.id)}" ng-repeat="item in list">
+						<div class="addresee1">
+							{{item.receiver}}
+							<span ng-if="item.defaulted">(默认收货)</span>
+						</div>
+						<dic class="address1 text-omitted">{{item.address}}</dic>
+						<div class="phone1">{{item.mobile}}</div>
+						<div class="operation1">
+							<span class="modify" ng-click="getSingle(item, list)">修改&nbsp|</span>
+							<span class="delete" ng-click="remove('{{item.id}}')">&nbsp删除</span>
+						</div>
+					</div>
+					<li ng-if="more" ng-click="getList(size)">
+						查看更多
+					</li>
+					
+				</div>
+			</div>
+			<div class="modify-address">
+
+				<div class="modify-address-title">
+					<p class='title' ng-if="address.id">修改地址 </p> 
+					<p class='title' ng-if="!address.id">添加地址 </p>
+					<p class='set_default' ng-if="!(address.defaulted=='true' || address.defaulted==true)" ng-click="setDefault()">设为默认</p>
+					<p class='set_default' ng-if="address.defaulted=='true' || address.defaulted==true" ng-click="cancelDefault()">取消默认</p>
+
+				</div>
+				<input type='hidden' ng-model='address.id' value='' />
+				<input type='hidden' ng-model='address.defaulted'  />
+					<div class="modify-le">
+						<div class="modify-addresee">
+					<p>收件人:</p>
+					<input type="text" class="addresee" ng-model='address.receiver' name='receiver' ng-change='checkAddress()' required >
+					<p class='worn' ng-show='doCheck &&  myForm.receiver.$error.required'>请输入收件人</p>
+				</div>
+				<div class="area">
+					<p>地区:</p>
+					<select  ng-class="{'Firefox':Firefox,'notFirefox':!Firefox}" name='country' ng-model='address.country' ng-options="item.countryID as item.countryName  for item in countries"  ng-change='getProvince(address.country);checkAddress()' required></select>
+					<select ng-class="{'Firefox':Firefox,'notFirefox':!Firefox}" name='province' ng-model='address.province' ng-options="item.provinceID as item.provinceName  for item in provinces" ng-change='getCity(address.province);checkAddress()' required></select>
+					<select ng-class="{'Firefox':Firefox,'notFirefox':!Firefox}" class='city' name='city' ng-model='address.city' ng-options="item.cityID as item.cityName  for item in cities" ng-change='checkAddress()'  required></select>
+
+					<p class='worn' ng-show='doCheck && myForm.country.$error.required'>请选择国家</p>
+					<p class='worn' ng-show='doCheck && myForm.country.$valid &&myForm.province.$error.required'>请选择省份</p>
+					<p class='worn' ng-show='doCheck && myForm.province.$valid &&myForm.city.$error.required'>请选择城市</p>
+				</div>
+				<div class="detail-address">
+					<p>详细地址:</p>
+					<input type="text" class="detail-address" ng-model='address.address' name='address' ng-change='checkAddress()' required >
+					<p class='worn' ng-show=' doCheck && myForm.address.$error.required'>请输入详细地址</p>
+				</div>
+				<div class="postcode">
+					<p>邮政编码:</p>
+					<input type="text" name="zipcode" class="postcode"  ng-model='address.zipcode' ng-change='checkAddress()' required pattern="[0-9]{6}">
+					<p class='worn' ng-show='doCheck && myForm.zipcode.$error.required'>请输入邮政编码</p>
+					<p class='worn' ng-show='doCheck && myForm.zipcode.$dirty && myForm.zipcode.$error.pattern'>邮政编码格式错误</p>
+
+				</div>
+				<div class="mobile-address">
+					<p>手机:</p>
+					<input type="text" class="mobile-add"  ng-model='address.mobile' name='mobile' ng-change='checkAddress()' pattern="^((13)|(14)|(15)|(16)|(17)|(18))\d{9}$" required  >
+					<p class='worn' ng-show='doCheck && myForm.mobile.$error.required'>请输入收件人手机号</p>
+					<p class='worn' ng-show='doCheck && myForm.mobile.$dirty && myForm.mobile.$error.pattern'>手机号格式错误</p>
+				</div>
+				<div class="fixed-phone">
+					<p>固定电话:</p>
+					<input type="text" class="fixed-phone" ng-model='address.telephone' name='telephone'  ng-change='checkAddress()'>
+				</div>
+				<input type="button" class="commit-address" value="提交" ng-click='submit(address, myForm.$valid)' >
+					</div>
+				</div>
+		</div>
+		<illegal-request-dialog messagehd="{{messagehd}}" ></illegal-request-dialog>
+	</form>

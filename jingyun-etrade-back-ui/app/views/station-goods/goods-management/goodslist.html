@@ -1,0 +1,134 @@
+<div class="goods-list" ng-controller="GoodsEditController as goodsCtl">
+	<div class="gl-top-title">商品管理&gt商品维护</div>
+	<div class="gl-mid-detail">
+		<ul class="gl">
+			<li class="gl-detail">
+				<p>宝贝名称：</p>
+				<input type="text" class="gl-t" ng-model="name">
+			</li>
+			<li class="gl-detail">
+				<p>商家：</p>
+					<select class="release-commodity-select-length" required
+							ng-model="mid" 
+							ng-options="m.mid as m.merchantName for m in merchantalllist"
+							ng-change="getbrandbymid(mid)"
+							name="mer">
+							</select>
+			</li>
+			<li class="gl-detail">
+				<p>品牌：</p>
+				<select class="release-commodity-select-length" required
+							ng-model="bid" 
+							ng-options="b.bid as b.brandName for b in brandlistbymid"
+							name="brand">
+							</select>
+			</li>
+			<li class="gl-detail">
+				<p>上架状态：</p>
+				<select class="gl-ss" ng-model="state">
+					<option class="gl-o" value="0">未上架</option>
+					<option class="gl-o" value="1">已上架</option>
+				</select>
+			</li> 
+				<li class="gl-detail">
+					<div  class="but" ng-click="serch()"   >查询</div>
+			</li> 
+		</ul>
+		<div class="clear h10"></div>
+	
+	</div>
+	<div class="gl-content" >
+<!-- 	<div class="gl-hd">
+	<div class="glh-mid">
+		<ul class="glhm">
+			<li class="glh-m">商品名称</li>
+			<li class="glh-m glh-m2">商家</li>
+			<li class="glh-m">品牌</li>
+			<li class="glh-m">商品编码</li>
+			<li class="glh-m">库存</li>
+			<li class="glh-m">原价（元）</li>
+			<li class="glh-m">促销价</li>
+
+			<li class="glh-m">操作</li>
+		</ul>
+	</div>
+</div> -->
+	
+<!-- <div class="gl-bd">
+<div class="glb-mid">
+	<div ng-repeat="goods in goodslist" class = "glb-line">
+		<ul class="glbm">
+			<li class="glb-m along">
+			<a ui-sref="station-goods.update-goods({gid:'{{goods.gid}}'})">
+			{{goods.goodsName}}
+			</a>
+			</li>
+			<li class="glb-m along">{{goods.merchantName}}</li> 
+			<li class="glb-m along">{{goods.brandName}}</li>
+			<li class="glb-m along">{{goods.goodsCode}}</li>
+			<li class="glb-m " id="{{goods.gid}}" >{{goods.count}}</li>
+			<li class="glb-m ">{{goods.price}}</li>
+			<li class="glb-m ">{{goods.promotionPrice}}</li>
+			<li class="glb-m ">
+				<a href="#" class="aa" ui-sref="station-goods.update-goods({gid:'{{goods.gid}}'})">编辑</a>
+
+				<a href="#" class="aa" ng-click="up('{{goods.gid}}')" ng-show="{{goods.state == 0}}">上架</a>
+				<a href="#" class="aa" ng-click="down('{{goods.gid}}')" ng-show="{{goods.state == 1}}">下架</a>
+
+				<a  class="aa" ng-click="changeCount('{{goods.gid}}',{{goods.count}})" id="_{{goods.gid}}">改库存</a>
+			</li>
+		</ul>
+		<div class="clear"></div>
+
+	</div>
+</div>
+</div>  -->
+总数量 : {{total}}
+<table border="1" width="100%" class="table1" >
+	<tr style="height: 40px; ">
+		<th style="width: 110px;" class="center">商品名称</th>
+		<th style="width: 130px;" class="center">商家名称</th>
+		<th style="width: 100px;" class="center">品牌名称</th>
+		<th style="width: 100px;"  class="center">编码</th>
+		<th style="width: 60px;"  class="center">库存</th>
+		<th style="width: 60px;"  class="center">原价</th>
+		<th style="width: 60px;" class="center">促销价</th>
+		<th style="width: 60px;" class="center">是否促销</th>
+		<th style="width: 120px;" class="center">操作</th>
+	</tr>
+</table>
+	<div class="goodsdiv">
+	<table  width="100%" border="1"  >
+		<tr  ng-repeat="goods in goodslist">
+			<th class="width1 cleanTH">
+			<a href="http://www.zhonghuaejiao.com/#/product/detail/{{goods.gid}}/description" target="brank">
+			<!-- <a ui-sref="station-goods.update-goods({gid:'{{goods.gid}}'})">	 -->
+			{{goods.goodsName}}
+			</a>
+			</th>
+
+			<th class="width1 cleanTH">{{goods.merchantName}}</th>
+			<th class="width1 cleanTH">{{goods.brandName}}</th>
+			<th class="width2 cleanTH">{{goods.goodsCode}}</th>
+			<th class="width3 cleanTH" id="{{goods.gid}}">{{goods.count}}</th>
+			<th class="width3 cleanTH">{{goods.price}}</th>
+			<th class="width3 cleanTH">{{goods.promotionPrice}}</th>
+			<th class="width3 cleanTH">{{goods.onSale==1?'是':'否'}}</th>
+			<th class="width1 cleanTH">
+				<a href="#" class="aa" ui-sref="station-goods.update-goods({gid:'{{goods.gid}}'})">编辑</a>
+
+				<a href="#" class="aa" ng-click="up('{{goods.gid}}')" ng-show="{{goods.state == 0}}">上架</a>
+				<a href="#" class="aa" ng-click="down('{{goods.gid}}')" ng-show="{{goods.state == 1}}">下架</a>
+
+				<a  class="aa" ng-click="changeCount('{{goods.gid}}',{{goods.count}})" id="_{{goods.gid}}">改库存</a>
+
+			</th>
+		</tr>
+	</table>
+
+	</div>
+
+</div> 
+
+
+</div>

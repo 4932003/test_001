@@ -1,0 +1,173 @@
+<div class="merchant-list" ng-controller="OrderDetailController">
+	<div class="ml-top-title">订单详情</div>
+	<div class="sg-content">
+		<div class="center-view-1">
+			<!--<div class="order-detail-common">当前页面：首页&gt;我的账户&gt;我的订单&gt;订单详情</div>-->
+			<div class="order-detail-main">
+				<div class="order-detail-common">
+					<div class="user-center-mr-title-icon fl"></div>
+					<div class="user-center-mr-title fl">
+						<p>订单信息</p>
+					</div>
+				</div>
+				<div class="order-detail-sum order-detail-common">
+					<p class="order-detail-no fl">订单编号：{{order.orderno}}</p>
+					<p class="order-detail-state fl">状态：<span>{{order.statusName}}</span></p>
+					<p class="order-detail-seller fr">买家：{{order.uname}}</p>
+				</div>
+				<div class="clear"></div>
+				<div class="order-detail-logistics-info">
+					<div class="order-detail-li-hd order-detail-common">
+						<div class="order-detail-li-hd-txt fl">物流跟踪</div>
+						<div class="fl">物流：<span class="order-detail-li-type">{{logistic?logistic.expressName:'未发货'}}</span></div>
+						<div class="order-detail-li-no fl">运单号：{{logistic?logistic.expressno:'未发货'}}</div>
+					</div>
+					<div class="clear"></div>
+					<!-- <div>
+						<table class="order-detail-logistics-info-tb">
+							<tr >
+								<th class="order-detail-li-trade-date-h">处理时间</th>
+								<th class="order-detail-li-trade-info-h">处理信息</th>
+								<th class="order-detail-li-trade-person-h">操作人</th>
+							</tr>
+							<tr >
+								<td class="order-detail-li-trade-date">2015-11-03 23：33：50</td>
+								<td class="order-detail-li-trade-info">您提交了订单，请等待系统确认</td>
+								<td class="order-detail-li-trade-person">客户</td>
+							</tr>
+							<tr>
+								<td class="order-detail-li-trade-date">2015-11-03 23：33：50</td>
+								<td class="order-detail-li-trade-info">打包成功</td>
+								<td class="order-detail-li-trade-person">打包员</td>
+							</tr>
+							<tr>
+								<td class="order-detail-li-trade-date">2015-11-03 23：33：50</td>
+								<td class="order-detail-li-trade-info">您的订单在【苏州外单分拣中心】发货完成，准备送往【济南分拨中心】</td>
+								<td class="order-detail-li-trade-person">打包员</td>
+							</tr>
+						</table>
+					</div> -->
+				</div>
+				<div class="order-detail-receiver-info">
+					<div class="order-detail-li-hd order-detail-common">
+						<div class="order-detail-li-hd-txt fl">收货人信息</div>
+					</div>
+					<div class="clear"></div>
+					<div>
+						<table class="order-detail-info-tb">
+							<tr>
+								<td class="order-detail-info-txt">姓名</td>
+								<td class="order-detail-info-value">{{order.receiver}}</td>
+							</tr>
+							<tr>
+								<td class="order-detail-info-txt">电话</td>
+								<td class="order-detail-info-value">{{order.mobile}}</td>
+							</tr>
+							<tr>
+								<td class="order-detail-info-txt">地址</td>
+								<td class="order-detail-info-value">{{order.address}}</td>
+							</tr>
+							<tr>
+								<td class="order-detail-info-txt">邮编</td>
+								<td class="order-detail-info-value">{{order.zipcode}}</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+				<div class="order-detail-payment-info">
+					<div class="order-detail-li-hd order-detail-common">
+						<div class="order-detail-li-hd-txt fl">支付方式及配送方式</div>
+					</div>
+					<div class="clear"></div>
+					<div>
+						<table class="order-detail-info-tb">
+							<tr>
+								<td class="order-detail-info-txt">支付方式</td>
+								<td class="order-detail-info-value">{{order.paytypeName}}</td>
+							</tr>
+							<tr>
+								<td class="order-detail-info-txt">卖家留言</td>
+								<td class="order-detail-info-value">{{order.note}}</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+				<div class="order-detail-invoice-info">
+					<div class="order-detail-li-hd order-detail-common">
+						<div class="order-detail-li-hd-txt fl">发票信息</div>
+					</div>
+					<div class="clear"></div>
+					<div>
+						<table class="order-detail-info-tb">
+							<tr>
+								<td class="order-detail-info-txt">发票类型</td>
+								<td class="order-detail-info-value">{{order.invoiceType}}</td>
+							</tr>
+							<tr>
+								<td class="order-detail-info-txt">发票抬头</td>
+								<td class="order-detail-info-value">{{order.invoiceTitle}}</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+				<div class="order-detail-info">
+					<div class="order-detail-info-hd order-detail-common">
+						<div class="order-detail-info-hd-no fl">订单号：{{order.orderno}}</div>
+						<div class="order-detail-info-hd-date fl">下单时间：{{order.addtime|date:'yyyy-MM-dd HH:mm:ss'}}</div>
+					</div>
+					<div class="clear"></div>
+					<div>
+						<table class="order-detail-info-table">
+							<thead>
+								<tr>
+									<th class="order-detail-info-product-hd">商品</th>
+									<th class="order-detail-info-price-hd">单价（元）</th>
+									<th class="order-detail-info-amount-hd">数量</th>
+									<th class="order-detail-info-discount-hd">优惠(元)</th>
+									<th class="order-detail-info-state-hd">状态</th>
+									<th class="order-detail-info-freight-hd">运费（元）</th>
+								</tr>
+							</thead>
+							<tbody >
+								<tr>
+									<td colspan="3" >
+										<table class="order-detail-info-products">
+											<tbody>
+												<tr ng-repeat="goods in order.goods">
+													<td class="order-detail-info-product">
+														<a href="http://www.zhonghuaejiao.com/#/product/detail/{{goods.gid}}/description"><img class="order-detail-info-product-img" ng-src="{{goods.imgpath}}@60h_60w.jpg"></a>
+													</td>
+													<td class="order-detail-info-price">￥{{goods.pprice?goods.pprice:goods.price}}</td>
+													<td class="order-detail-info-amount">{{goods.count}}</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+									<td class="order-detail-info-discount" >{{order.price-order.payout | number:2}}</td>
+									<td class="order-detail-info-state" >{{order.statusName}}</td>
+									<td class="order-detail-info-freight">{{order.postage}}</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td class="order-detail-info-pay-price" colspan="6">
+										<div ng-hide="ifNew(order)">实付款：<span>￥{{order.payout}}</span></div>
+										<div class="od-si-btn" ng-show="ifNew(order)">
+											<div class="od-sib-submit fr">
+												<a href="#/order/success/{{order.id}}">去支付</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

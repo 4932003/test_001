@@ -1,0 +1,50 @@
+<header-top></header-top>
+<div class="clear"></div>
+<header-search></header-search>
+<div class="clear"></div>
+<header-nav></header-nav>
+<div class="clear"></div>
+
+<div class="center-view" ng-controller="RefundProgressController">
+	<div class="refund-main">
+		<div class="refund-title">退货/退款({{refund.returnGoods?'需要退货':'不需退货'}})</div>
+		<div class="refund-content">
+			<!--steps-->
+			<refund-step ng-show="!refund.returnGoods"></refund-step>
+			<return-step ng-show="refund.returnGoods"></return-step>
+
+			<div class="clear"></div>
+			<div class="refund-product-info">
+				<div class="refund-product-info-hd">
+					<div class="refund-product-info-txt fl">退款/退货商品</div>
+					<div class="refund-product-info-no fl">订单号：<span>{{goods.orderno}}</span></div>
+					<div class="fl">下单时间：{{goods.addtime | date: 'yyyy-MM-dd HH:mm:ss'}}</div>
+					<div class="refund-product-info-seller fr">商家：{{goods.mname}}</div>
+				</div>
+				<div class="clear"></div>
+				<refund-goods></refund-goods>
+			</div>
+			<div class="clear"></div>
+			
+			<refund-request-success-action ng-show="stepRefundRequestSuccess(refund)"></refund-request-success-action>
+			<return-request-success-action ng-show="stepReturnRequestSuccess(refund)"></return-request-success-action>
+			<return-logistic-action ng-show="stepReturnAccepted(refund)"></return-logistic-action>
+			<return-logistic-success-action ng-show="stepLogisticSubmit(refund)"></return-logistic-success-action>
+			<refund-denied-action ng-show="stepRefundDenied(refund)"></refund-denied-action>
+			<refund-done ng-show="refundDone(refund)"></refund-done>
+			<div class="clear"></div>
+			<edit-logistics-info-dialog></edit-logistics-info-dialog>
+
+		</div>
+
+	</div>
+	<illegal-request-dialog messagehd="{{messagehd}}" ></illegal-request-dialog>
+	<login-dialog></login-dialog>
+	<confirm-dialog confirm-function='cancelRefund()' message='您确定要取消该商品的退款申请吗？'></confirm-dialog>
+</div>
+
+<div class="clear"></div>
+<rgsh-voucher-requirement-dialog></rgsh-voucher-requirement-dialog>
+
+<div class="clear"></div>
+<footer></footer>

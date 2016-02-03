@@ -1,0 +1,69 @@
+<div class="my-collection-shop-main">
+	<div class="my-collection-shop-item" ng-repeat="fm in fmerchantall">
+		<div class="my-collection-shop-left fl" >
+			<p ><img class="my-collection-shop-img" ng-src="{{fm.merchantVO.imgPath}}@85h_85w.jpg" ng-click="toMerchantPage('{{fm.merchantVO.id}}')"></p>
+			<p class="my-collection-shop-name">{{fm.merchantVO.name}}</p>
+			<p class="my-collection-shop-tel">电话：{{fm.merchantVO.tel}}</p>
+			<!-- 
+<p class="my-collection-shop-remarks">
+				<img src="">
+				<span contenteditable="true">添加备注</span>
+			</p>
+		-->
+			
+		</div>
+
+		<div class="my-collection-shop-right fr">
+			<div class="mcsr-top">
+				<!-- <ul>
+					<li class="mcsr-type-item mcsr-type-item-selected">本周上新&nbsp;5</li>
+					<li class="mcsr-type-item">优惠&nbsp;0</li>
+					<li class="mcsr-type-item">热销&nbsp;15</li>
+				</ul> -->
+				<div class="mscr-top-right fr">
+					<!-- <img class="mscr-sort"></img> -->
+					<div class="mscr-more fr" ng-click="toMerchantPage('{{fm.merchantVO.id}}')">查看更多&gt;</div>
+					<div class="mscr-delete garbage-can-icon fr" ng-click="removeFavMerchant(fm.id)"></div>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="mscr-bottom">
+				<ul>
+					<li class="mscr-product-item" ng-repeat="fg in fm.goodsList">
+						<div class="mscr-product">
+						    <a href="#/product/detail/{{fg.gid}}/description">
+							<img class="mscr-product-img" ng-src="{{fg.thumbpath1}}@105h_125w.jpg"></img>
+							<p class="mscr-product-name text-omitted" title="{{fg.goodsName}}">{{fg.goodsName}}</p>
+							</a>
+							<p class="mscr-product-desc text-omitted">{{fg.desc}}</p>
+							<p class="mscr-product-price" ng-show="fg.onSale == '0'">￥{{fg.price}}</p>
+							<p class="mscr-product-price" ng-show="fg.onSale == '1'">￥{{fg.promotionPrice}}</p>
+						</div>
+					</li>
+					<!-- 
+<li class="mscr-product-item">
+						<div class="mscr-product">
+							<img class="mscr-product-img" src="../images/product-detail/jtsp1.png"></img>
+							<p class="mscr-product-name text-omitted">桃花姬&nbsp;东阿阿胶</p>
+							<p class="mscr-product-desc text-omitted">糕即食固元膏特产...</p>
+							<p class="mscr-product-price">￥129.00</p>
+						</div>
+					</li>
+					<li class="mscr-product-item">
+						<div class="mscr-product">
+							<img class="mscr-product-img" src="../images/product-detail/jtsp1.png"></img>
+							<p class="mscr-product-name text-omitted">桃花姬&nbsp;东阿阿胶</p>
+							<p class="mscr-product-desc text-omitted">糕即食固元膏特产...</p>
+							<p class="mscr-product-price">￥129.00</p>
+						</div>
+					</li>
+				-->
+				</ul>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="ptr-get-more" ng-click='getmorefmerchantall()' align="center" ng-show="showmore2">
+		查看更多&gt;&gt;
+	</div>
+</div>

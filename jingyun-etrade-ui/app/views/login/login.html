@@ -1,0 +1,76 @@
+<div class="login center-view" ng-controller="LoginController as lgctrl">	
+	
+		<div class=" login-inner">
+			<div class="login-logo">
+				<a href="#/">
+					<div class="logo-short-icon"></div>
+				</a>
+			</div>
+			<div class="login-hd">
+				<div class="account-login on">
+					<p>账号登录</p>
+					<div class="bottom"></div>
+				</div>		
+				<div class="sms-login " ng-click="smsLogin()">
+					<p>短信登录</p>
+					<div class="bottom"></div>
+				</div>		
+			</div>
+			
+			<div class="login-bd">
+				<form ng-submit="login(user, false)" name='myForm'>
+					<div class="account tab-bd cur">
+						<div class="account-user">
+							<div class="icon1">
+								<div class="pic1"></div>
+							</div>
+							<input ng-model="user.key" name='userLoginKey' class="account-user" type="text"  placeholder="用户名/邮箱/手机号" required>
+						</div>
+
+						<div class="account-password">
+							<div class="icon2">
+								<div class="pic2"></div>
+							</div>
+							<input ng-model="user.password" name='userLoginPsw' class="account-password" type="password"  placeholder="请输入密码" required>
+						</div>
+						<div class="select-item">
+							<input class="select-checkbox cur" type="checkbox" class="checkbox" name="remember">
+							<p class="remember">记住我</p>
+							<p class="forget"><a class="login-a" href="#" ui-sref="mobilebox-password">忘记密码</a></p>
+						</div>
+					</div>
+					<div class="sms tab-bd">
+						<div class="sms-user">
+							<div class="icon3">
+								<div class="pic3"></div>
+							</div>
+							<input class="sms-user" type="text" placeholder="请输入手机号">
+						</div>
+						<div class="sms-checkcode">
+							<input type="text" class="sms-code" placeholder="请输入短信验证码">
+							<input class="get-code" type="button" value="获取短信验证码">
+						</div>
+					</div>
+
+					<input type="submit" class="login-btn" value="登录" ng-disabled="myForm.userLoginKey.$error.required || myForm.userLoginPsw.$error.required">
+				</form>
+				<p class="register-p"><a class="login-a" ui-sref="register">立即注册</a></p>
+				<div class="third-login">
+					<div class="left">
+						<div class="string1"></div>
+					</div>
+					<div class="mid">第三方合作登录</div>
+					<div class="right">
+						<div class="string2"></div>
+					</div>
+				</div>
+				<div class="other">
+					<div class="blog" ng-click="smsLogin()"></div>
+					<div class="QQ" ng-click="smsLogin()"></div>
+				</div>
+			</div>
+		</div>
+		<illegal-request-dialog messagehd="{{messagehd}}"></illegal-request-dialog>
+	</div>
+	<div class="clear h25"></div>
+	<find-pw-footer></find-pw-footer>

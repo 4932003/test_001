@@ -1,0 +1,63 @@
+@import "../common";
+
+.help-center-left-main{
+	height: 40px;
+    line-height: 40px;
+    background-color: @base-color;
+    color: @white-color;
+    font-size:@t3-size;
+    padding-left: 30px;
+}
+
+.help-center-left-main > div{
+    margin-top: 10px;
+    margin-right: 2px;
+}
+
+.help-center-left-nav > ul{
+	border:1px solid @gray-border;
+	border-top:none;
+	overflow:hidden;
+}
+
+.help-center-first-menu,.help-center-second-menu-box ul >li{
+	height: 40px;
+    line-height: 40px;
+    width: 180px;
+    cursor: pointer;
+}
+
+.help-center-first-menu > div{
+    margin-top: 12px;
+    margin-right: 18px;
+}
+
+.help-center-second-menu-box ul >li{
+    text-align: center;
+}
+
+.help-center-second-menu-box ul >li >a{
+    color:@txt-color;
+}
+
+.help-center-first-menu{
+	border-top: 1px solid @gray-border;
+     padding-left:30px;
+     font-weight: bold;
+}
+
+.help-center-first-menu:first-child{
+    border-top:none;
+}
+
+.help-center-second-menu-box{
+    display:none;
+}
+
+.help-center-second-menu-box .on{
+    display:block;
+}
+
+.help-center-left-nav ul > li.active{
+    color:@base-color;
+}

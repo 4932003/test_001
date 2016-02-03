@@ -1,0 +1,61 @@
+<div class="center-view" ng-controller="PasswordController">
+<ng-form  name='saveForm'>
+
+	<div class="commodity-main">
+		<div class="commodity-main-hd">
+			修改密码
+		</div>
+		<div class="commodity-base-info">
+			<div class="release-commodity-hd">
+				基本信息
+			</div>
+			<div class="release-commodity-info">
+				<ul class="release-commodity-info-list">
+					
+					<li>
+						<div class="release-commodity-info-label fl">原密码：</div>
+						<div class="release-commodity-info-txt fl">
+							<input type='password' class="release-commodity-input-length release-commodity-postage fl" placeholder='请输入原密码'   ng-model="oldPwd" name="oldPwd" required>
+						</div>
+						<p ng-show="saveForm.oldPwd.$error.required" style="color: red" >&nbsp;&nbsp;&nbsp;*必填</p>
+							
+					</li>
+					<div class="clear"></div>
+					<li>
+						<div class="release-commodity-info-label fl">新密码：</div>
+						<div class="release-commodity-info-txt fl">
+							<input type='password' class="release-commodity-input-length release-commodity-postage fl" placeholder='请输入新密码'   ng-model="newPwd" name="newPwd" pattern="^\w{8,20}$" required>
+						</div>
+						<p ng-show="saveForm.newPwd.$error.required" style="color: red;float: left;" >&nbsp;&nbsp;&nbsp;*必填</p>
+						<p ng-show="saveForm.newPwd.$dirty && saveForm.newPwd.$error.pattern" style="color: red;float: left;">&nbsp;&nbsp;请输入8-20位的密码</p>
+							
+					</li>
+					<div class="clear"></div>
+					<li>
+						<div class="release-commodity-info-label fl">重复新密码：</div>
+						<div class="release-commodity-info-txt fl">
+							<input type='password' class="release-commodity-input-length release-commodity-postage fl" placeholder='请再输入一次新密码'   ng-model="newPwdRepeat" name="newPwdRepeat" required>
+						</div>
+						<p ng-show="saveForm.newPwdRepeat.$error.required" style="color: red;float: left;" >&nbsp;&nbsp;&nbsp;*必填</p>
+						<p ng-show="saveForm.newPwd.$dirty && saveForm.newPwdRepeat.$dirty  && (newPwd!=newPwdRepeat)" style="color: red;float: left;" >&nbsp;&nbsp;&nbsp;两次密码输入不一致</p>
+							
+					</li>
+					<div class="clear"></div>
+					
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="release-commodity-footer" >
+		<!--  -->
+			<button class="release-commodity-btn"  ng-click="submit()"
+			ng-disabled="saveForm.$invalid || (newPwd!=newPwdRepeat)">
+				修改
+			</button>
+		</div>
+	</div>
+
+</ng-form>
+</div>
+

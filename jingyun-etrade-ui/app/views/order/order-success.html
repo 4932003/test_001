@@ -1,0 +1,88 @@
+<header-top></header-top>
+<div class="clear"></div>
+<div class="logo-sec center-view">
+	<div class="logo-icon top-logo fl" ui-sref="index"></div>
+	<div class="order-d-step fr">
+		<ul class="step-d-step-list">
+			<li class="step-first">
+				<div class="step-done">
+					<div class="step-no"></div>
+					<div class="step-name">我的购物车</div>
+				</div>
+			</li>
+			<li>
+				<div class="step-done">
+					<div class="step-no"></div>
+					<div class="step-name">确认订单信息</div>
+			    </div>
+			</li>
+			<li class="step-last">
+				<div class="step-done">
+					<div class="step-no"></div>
+					<div class="step-name">提交订单</div>
+				</div>	
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class="clear"></div>
+<div class="center-view" ng-controller="PayController">
+	<div class="order-success1">
+		<div class="order-success1-hd">
+			<div class="tbox1">
+				<p>订单提交成功，请您立即付款,我们将为您闪电送达！</p>
+				<p>
+					请您在
+					<span class="red">24小时</span>
+					内付款，逾期订单将被取消！
+				</p>
+			</div>
+			<div class="bbox2" ui-view></div>
+		</div>
+		<div class="order-success1-bd">
+			<div class="order-success1-bd-top">
+				<!-- <div class="osbt1">
+					<input type="radio" class="osbt1" checked="checked" name="bank">
+					<p>使用</p>
+					<div class="bank-logo1 bank-logo" class="{{type"></div>
+				</div> -->
+				<div class="clear"></div>
+				<paybank type="type" bankcode="bankcode" bankname="bankname"></paybank>
+			</div>
+			<div class="order-success1-bd-bottom">
+				<p>
+					支付金额：
+					<span class="red">{{paymoney|number:2}}</span>
+					元
+				</p>
+				<!-- <div class="osb1">
+					<p>你在安全的环境中，请放心使用！</p>
+				</div>
+				<div class="osb2">
+					<p>请输入支付密码</p>
+				</div>
+				<div class="osb3">
+					<input type="password" class="osb3-i" ng-model="tradepwd">
+					<p class="os-f">忘记密码</p>
+				</div> -->
+				<input type="button" class="payment" ng-click="pay()" value="立即支付">
+				<div class="note">
+					<p>
+						<span class="notes">注意事项：</span>
+					</p>
+					<p>订单提交成功仅表明中华阿胶网收到您的订单，只有你的订单通过审核后，才代表订单正式生效;</p>
+					<p>选择货到付款的客户，请您务必认真检查所有货物，如有不符，您可以拒收;</p>
+					<p>选择其他方式的客户，请您认真检查外包装。如有明显损坏迹象，您可以拒收该货品，并及时通知我们。</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<payform></payform>
+	<illegal-request-dialog messagehd="{{messagehd}}" ></illegal-request-dialog>
+</div>
+<div class="clear"></div>
+<order-success-dialog></order-success-dialog>
+
+<div class="clear"></div>
+<footer></footer>

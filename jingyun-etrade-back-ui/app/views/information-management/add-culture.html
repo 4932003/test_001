@@ -1,0 +1,56 @@
+<div class="info-view" ng-controller="SchoolSiteController">
+	<div class="sg-top-title">资讯管理&gt添加阿胶文化</div>
+	<ng-form name='myForm'>
+	<div class="info-div">&nbsp;&nbsp;SID：<!-- <input type="text" class="info" /> -->
+		<select class="info-option" name='names' ng-model="infoschool.sid" ng-options="m.id as m.name for m in cultureSite">
+		</select>
+
+
+	</div>
+	<div class="info-div">标题：
+		<input type="text" name="code" class="info" ng-model="infoschool.title"/>
+		<span ng-hide="myForm.code.$dirty" style="color:red;margin-left:10px;">标题必填</span>
+	</div>
+	<div class="info-div">简介：
+		<input type="text" class="info" name="leibie" ng-maxlength='50' ng-model="infoschool.name"/>
+		<span style="color:red" ng-show="myForm.leibie.$invalid">请输入不超过50个字的简介</span>
+	</div>
+	<div class="info-div">
+		摘要:<textarea cols="50" rows="5" name="zhai" ng-model="infoschool.abstracts" ng-maxlength='200'></textarea>
+		<span style="color:red" ng-show="myForm.zhai.$invalid">请输入小于200字的摘要!<span>
+	</div>
+	<div class="info-div">
+		处方:<textarea cols="50" rows="3" name="recipe" ng-model="infoschool.recipe" ng-maxlength='100'></textarea>
+		<span ng-show="myForm.recipe.$invalid" style="color:red">请输入小于100字的处方</span>
+	</div>
+	<div class="info-div">
+		主治:<textarea cols="50" rows="3" name="function" ng-maxlength='100' ng-model="infoschool.function"></textarea>
+		<span ng-show="myForm.function.$invalid" style="color:red">请输入小于100字的主治功能</span>
+	</div>
+	<!-- <div class="info-div">时间：<input type="text" class="info" ng-model="infoschool.addtime"/></div>-->
+	<div class="info-div"> 
+	<!-- ueditor begin-->
+	 	<script type="text/plain" id="editor" ></script>
+	 	<ueditor  ng-model="content"></ueditor>
+		<textarea ng-model="content" style="display: none;"/>
+	<!-- ueditor end -->
+	</div>
+	<input type="hidden" id="texts">
+	<div class="info-div" class="info" >
+		<div style="float:left;margin-top:18px;"><input type="text" onClick="$('#file').trigger('click')"  value="上传图片" style="cursor:pointer;width:90px"/></div>
+		
+		<form id='fileinfo'>
+			<input style='display:none' type='file' value='头像上传' id='file' name='file' ng-model='uploadBtn' onChange="$('#submitFile').trigger('click');" />
+
+			<input id='submitFile' type='hidden' ng-click='uploadFile()'></form>
+			<input type='hidden' ng-model='infoschool.picture'/>
+			<div class="frames">
+				<img  ng-src='{{infoschool.picture}}' style="width:500px;height:300px;" ng-if="infoschool.picture" />
+			</div>
+	</div>
+	<div class="savebtn">
+		<!-- <input class="btn" type="button" value="保存" ng-click="saveuserinfo(userinfo)"> -->
+		<div class="gl-ser1" style="width: 150px;height: 30px;background-color: #FF9934;color: #fff;line-height: 30px;text-align: center;cursor: pointer;border-radius: 4px;margin-left: -300px; margin-top: 400px;" ng-click="saveuserinfo(infoschool)">保存</div>
+	</div>
+ </ng-form>
+</div>

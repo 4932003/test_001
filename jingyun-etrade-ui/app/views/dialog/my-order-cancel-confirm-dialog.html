@@ -1,0 +1,31 @@
+<div style="display: none;" class="modal in" id="my-order-cancel-confirm-dialog" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+  <div class="modal-dialog my-order-cancel-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        	<span aria-hidden="true">×</span>
+        </button>
+        <div class="modal-title" id="my-order-cancel-confirm-title">提示</div>
+      </div>
+      <div class="modal-body">
+        <div class="moccd-main">
+          <div class="moccd-txt">
+            确定要取消订单吗？
+          </div>
+          <div class="moccd-reason">
+            <p class="moccd-reason-txt fl">
+              取消原因：
+            </p>
+            <select class="moccd-reason-select fr" ng-model="cancelreason" ng-options="vo.v for vo in cancelreasons">
+            </select>
+          </div>
+          <div class="clear"></div>
+          <div class="moccd-btns">
+            <div class="moccd-btn moccd-confirm-btn fl" data-target="#my-order-cancel-success-dialog" data-toggle="modal" ng-click="confirmCancelOrder()">确定</div>
+            <div data-dismiss="modal" class="moccd-btn moccd-cancel-btn fr">取消</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

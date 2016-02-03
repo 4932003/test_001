@@ -1,0 +1,123 @@
+<div class="user-info " ng-controller="UserinfoController">
+		<div class="user-center-mr-hd">
+		    <div class="user-center-mr-title-icon fl"></div>
+			<div class="user-center-mr-title fl">
+				<p>个人资料</p>
+			</div>
+			<div class="as-desc fr">
+				<p>完善个人信息，可获得<span class="as-desc-red">50</span>积分！积分可以抵现啦，赶快行动吧</p>
+			</div>
+		</div>
+		<div class="user-info-detail">
+			<p>基本信息</p>
+			<div class="user-info-detail-left">
+				<ul class="user-info-list">
+					<li>
+						<div class="user-info-txt fl">
+							用户名：
+						</div>
+						<div class="user-info-value fl">
+							<input type="text" value="{{user.username}}" />
+						</div>
+						<div class="clear"></div>
+					</li>
+					<li>
+						<div class="user-info-txt fl">
+							性别：
+						</div>
+						<div class="user-info-value fl">
+							<input type="radio" ng-model="userinfo.gender" id='M' value="1"/>
+							<label for="M">男</label>
+							<input type="radio" ng-model="userinfo.gender" id='W' value="0"/> 
+							<label for="W">女</label>
+						</div>
+						<div class="clear"></div>
+					</li>
+					<li>
+						<div class="user-info-txt fl">
+							生日：
+						</div>
+						<div class="user-info-value fl">
+							<select class="user-info-d-date" ng-model="year" id="year" ng-change="febday()"></select>年
+							<select class="user-info-d-date" ng-model="month" id="month" ng-change="febday()"></select>月
+							<select class="user-info-d-date" ng-model="day" id="day"></select>日
+							<input type="hidden" ng-model="userinfo.birthday" name="birthday">
+						</div>
+						<div class="clear"></div>
+					</li>
+					<li>
+						<div class="user-info-txt fl">
+							婚否：
+						</div>
+						<div class="user-info-value fl">
+							<input type="radio"  id='Y' ng-model="userinfo.marriage" value="1"/>
+							<label for="Y">是</label>
+							<input type="radio"  id='N' ng-model="userinfo.marriage" value="0"/>
+							<label for="N">否</label>
+						</div>
+						<div class="clear"></div>
+					</li>
+					<li>
+						<div class="user-info-txt fl">
+							国家：
+						</div>
+						<div class="user-info-value fl">
+							<select class="user-info-d-area" name='country' ng-model='userinfo.country' ng-options="item.countryID as item.countryName  for item in countries"  ng-change='getProvince(userinfo.country)'></select>
+							省份：
+							<select class="user-info-d-area" name='province' ng-model='userinfo.province' ng-options="item.provinceID as item.provinceName  for item in provinces" ng-change='getCity(userinfo.province)'></select>
+							城市：
+							<select class="user-info-d-area" name='city' ng-model='userinfo.city' ng-options="item.cityID as item.cityName  for item in cities"></select>
+						</div>
+						<div class="clear"></div>
+					</li>
+					<li>
+						<div class="user-info-txt fl">
+							街道：
+						</div>
+						<div class="user-info-value fl">
+							<input class="street" type="text" value="{{userinfo.address}}" ng-model='userinfo.address'/>
+						</div>
+						<div class="clear"></div>
+					</li>
+					<li>
+						<div class="user-info-txt fl">
+							学历：
+						</div>
+						<div class="user-info-value fl">
+							<select class="user-info-d-area" name="education" ng-model="userinfo.education" ng-options="m.value as m.education for m in educations">
+								<option value="">请选择</option>
+							</select>
+
+							职业：
+							<select class="user-info-d-area" name="job" ng-model="userinfo.job" ng-options="m.value as m.job for m in jobs">
+								<option value="">请选择</option>
+							</select>
+
+							收入：
+							<select class="user-info-d-area" name="income" ng-model="userinfo.income" ng-options='m.value as m.income for m in incomes'>
+								<option value="">请选择</option>
+							</select>
+
+						</div>
+						<div class="clear"></div>
+					</li>
+					<li>
+						<div class="user-info-btn" ng-click="saveuserinfo(userinfo)">保存</div>
+					</li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+			<success-dialog message="{{sucMessage}}"></success-dialog>
+			<div class="right-box">
+				<div class="set-head">
+					<div class="avatar-setting-v-img">
+						<img  ng-src='{{userinfo.picture}}@85h_85w.jpg' ng-if="userinfo.picture" />
+					    <div class='default-pic'  ng-if="(userinfo.picture=='' || userinfo.picture==null)">
+					    </div>	
+					</div>
+					<p class="set" ui-sref="user-center.avatar-setting">设置头像</p>
+				</div>
+			</div>
+		</div>
+		<illegal-request-dialog messagehd="{{messagehd}}" ></illegal-request-dialog>		
+</div>

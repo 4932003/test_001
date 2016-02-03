@@ -1,0 +1,24 @@
+<div style="display: none;" class="modal in" id="recharge-voucher-dialog" tabindex="-1" role="dialog" ng-controller='ActiveCouponController' data-keyboard="false" data-backdrop="static">
+  <div class="modal-dialog recharge-voucher-dialog" role="document">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        	<span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title" id="recharge-voucher-id-title">添加抵用券</h4>
+      </div>
+      <div class="modal-body">
+      	<div class="rvd-id-box1">
+         <p>输入充值码</p> 
+        </div>
+        <div class="rvd-id-box2">
+         <input type="text" class="rvd" ng-model='code' required>
+        </div>
+        <div class="rvd-id-box3">
+        	<div class="rvd-confirm" ng-click="activeDiscountCoupon(code)">确定</div>
+        	<div class="rvd-not-use" data-dismiss="modal">暂不使用</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

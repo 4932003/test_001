@@ -1,0 +1,666 @@
+﻿@import "../common";
+
+.h105{
+	height:105px;
+}
+.h75{
+	height:75px !important;
+}
+.register{
+	width:@center-view-width;
+	height: 600px;
+}
+.register .title{
+	height:15px;
+	padding-left: 44px; 
+	margin-bottom: 11px;
+}
+.register .title p{
+	height: 15px;
+	line-height: 15px;
+	font-size:@t3-size; 
+	color:#656565; 
+}
+.register .register-content{
+	width: @center-view-width;
+	height: 574px;
+}
+.register .register-content .rc-hd{
+	float: left;
+	width: 41px;
+	height:574px;
+	padding-top: 27px; 
+}
+.register .register-content .rc-hd .personal{
+	width:41px;
+	height: 134px;
+	border: 1px solid @gray-border;
+	border-right:none;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	padding:20px 0 0 17px; 
+	margin-bottom: 20px;
+	cursor: pointer;
+	margin-left: 1px;
+    background-color: @white-color;
+} 
+.register .register-content .rc-hd .personal p{
+	width:16px; 
+	color: #FD5454;
+	line-height:24px;
+	font-size: @t3-size;
+	margin:0;
+}
+.register .register-content .rc-hd .company{
+	width:41px;
+	height: 134px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	background-color:#FD4040;
+	padding: 18px 13px 16px 15px;
+	cursor: pointer;
+} 
+.register .register-content .rc-hd .company p{
+	width:16px; 
+	height: 100px;
+	color:@white-color;
+	line-height:24px;
+	font-size: @t3-size;
+	margin:0;
+}
+.register .register-content .rc-bd{
+	float: right;
+	width:1059px;
+	height:574px;
+	border: 1px solid @gray-border;
+}
+.register .register-content .rc-bd .bd-left{
+	float: left;
+	width:911px;
+	height: 574px;
+	padding-top: 74px;
+	padding-left: 110px;
+}
+.register .register-content .rc-bd .bd-left .user-name{
+	height: 41px;
+	padding-left: 16px;
+	margin-bottom: 20px;
+}
+.register .register-content .rc-bd .bd-left .user-name p{
+	height:41px;
+	line-height:41px; 
+}
+.register .register-content .rc-bd .bd-left .user-name p:first-child{
+	float: left;
+	font-size: @t3-size;
+	color:#666; 
+	margin-right: 20px;
+}
+.register .register-content .rc-bd .bd-left .user-name input.name{
+	position: relative;
+	float: left;
+	width:324px;
+	height:41px;
+	padding-left:15px;
+	padding-right: 13px;
+	border: 1px solid #DCDCDC;
+	font-size: @t4-size;
+	color:#BEBEBE; 
+}
+.register .register-content .rc-bd .bd-left .user-name input.name::after{
+	content:"";
+	position: absolute;
+	top:13px;
+	right:13px;
+	width:16px;
+	height:18px;
+	background: url(../images/icons.png) no-repeat -131px -162px; 
+}
+.register .register-content .rc-bd .bd-left .user-name p:last-child{
+	float: left;
+	font-size: @t5-size;
+	color:#BEBEBE; 
+	margin-left:9px;
+}
+.register .register-content .rc-bd .bd-left .user-name span.errorss{
+	float: left;
+	font-size: @t5-size;
+	color: #FD4040;
+	margin-left:28px;
+	height:41px;
+	line-height:41px;
+	border-color:red;
+	position: relative;
+}
+.register .register-content .rc-bd .bd-left .user-name span.errorss::before{
+	content: "";
+    position: absolute;
+    top: 12px;
+    left: -19px;
+    width: 16px;
+    height: 16px;
+    background: url(../images/icons.png) no-repeat -112px -165px;
+}
+.register .register-content .rc-bd .bd-left .email{
+	height: 41px;
+	padding-left: 16px;
+	margin-bottom: 20px;
+}
+.register .register-content .rc-bd .bd-left .email.on{
+	height: 41px;
+	padding-left: 16px;
+	margin-bottom: 30px;
+	display: block;
+}
+.register .register-content .rc-bd .bd-left .email p{
+	height:41px;
+	line-height: 41px; 
+}
+.register .register-content .rc-bd .bd-left .email p:first-child{
+	float: left;
+	font-size: @t3-size;
+	color:#666; 
+	margin-right: 20px;
+}
+.register .register-content .rc-bd .bd-left .email input.em{
+	float: left;
+	height:41px;
+	padding-left:15px;
+	border: 1px solid #DCDCDC;;
+	font-size:@t4-size ;
+	color:#FD4040; 
+	width:325px;
+	margin-left:5px; 
+}
+.register .register-content .rc-bd .bd-left .email p.emailss{
+	position: relative;
+	float: left;
+	font-size:@t5-size;
+	color:#FD4040; 
+	margin-left:27px;
+}
+.register .register-content .rc-bd .bd-left .email p.emailss::before{
+	content:"";
+	position: absolute;
+	top:13px;
+	left:-17px;
+	width:15px;
+	height:15px;
+	background: url(../images/icons.png) no-repeat -112px -165px; 
+	}
+.register .register-content .rc-bd .bd-left .email p:last-child{
+	position: relative;
+	float: left;
+	font-size: @t5-size;
+	color:#BEBEBE; 
+	margin-left:30px;
+}
+.register .register-content .rc-bd .bd-left .email p:last-child::before{
+	content:"";
+	position: absolute;
+	top:12px;
+	left:-19px;
+	width:16px;
+	height:16px;
+	background: url(../images/icons.png) no-repeat -93px -165px; 
+	}
+.register .register-content .rc-bd .bd-left .mobile{
+	height: 41px;
+	padding-left: 16px;
+	margin-bottom: 20px;
+	
+}
+.register .register-content .rc-bd .bd-left .mobile.on{
+	height: 41px;
+	padding-left: 16px;
+	margin-bottom: 30px;
+	
+}
+.register .register-content .rc-bd .bd-left .mobile p{
+	height:41px;
+	line-height: 41px; 
+}
+.register .register-content .rc-bd .bd-left .mobile p:first-child{
+	float: left;
+	font-size: @t3-size;
+	color:#666; 
+	margin-right: 20px;
+}
+.register .register-content .rc-bd .bd-left .mobile input.mo{
+	float: left;
+	width:324px;
+	height:41px;
+	padding-left:15px;
+	border: 1px solid #DCDCDC;
+	font-size: @t4-size;
+	color: #BEBEBE;
+}
+.register .register-content .rc-bd .bd-left .mobile p.mobiless{
+	position: relative;
+	float: left;
+	font-size: @t5-size;
+	color:#FD4040; 
+	margin-left:29px;
+}
+.register .register-content .rc-bd .bd-left .mobile p.mobiless::before{
+	content: "";
+    position: absolute;
+    top: 12px;
+    left: -19px;
+    width: 16px;
+    height: 16px;
+    background: url(../images/icons.png) no-repeat -112px -165px;
+}
+.register .register-content .rc-bd .bd-left .mobile p:last-child{
+	position: relative;
+	float: left;
+	font-size:@t5-size;
+	color:#BEBEBE; 
+	margin-left:30px;
+}
+.register .register-content .rc-bd .bd-left .mobile p:last-child::before{
+	content:"";
+	position: absolute;
+	top:12px;
+	left:-19px;
+	width:16px;
+	height:16px;
+	background: url(../images/icons.png) no-repeat -93px -165px; 
+}
+.register .register-content .rc-bd .bd-left .check-code{
+	height: 41px;
+	padding-left: 16px;
+	margin-bottom: 20px;
+}
+.register .register-content .rc-bd .bd-left .check-code p{
+	height:41px;
+	line-height: 41px; 
+}
+.register .register-content .rc-bd .bd-left .check-code p:first-child{
+	float: left;
+	font-size: @t3-size;
+	color:#666; 
+	margin-right: 20px;
+}
+.register .register-content .rc-bd .bd-left .check-code input.check-code{
+	float: left;
+	width:157px;
+	height:41px;
+	padding-left:15px;
+	border: 1px solid #DCDCDC;
+	font-size: @t4-size;
+	color:#BEBEBE; 
+	margin-right: 11px;
+}
+.register .register-content .rc-bd .bd-left .check-code input.check-button{
+	float: left;
+	width:156px;
+	height:41px;
+	border: 1px solid #DCDCDC;
+	font-size: @t4-size;
+	color:#666; 
+	background-color: #e9e9e9;
+}
+.register .register-content .rc-bd .bd-left .check-code p:last-child{
+	float: left;
+	font-size: @t5-size;
+	color:#BEBEBE; 
+	margin-left: 11px;
+}
+.register .register-content .rc-bd .bd-left .check-code p:last-child a.no1:link,a.no1:visited{
+text-decoration: none;
+color:@aid-blue;
+}
+
+.register .register-content .rc-bd .bd-left .check-code p.errorss{
+	float: left;
+	font-size: @t5-size;
+	color: #FD4040;
+	margin-left:28px;
+	height:41px;
+	line-height:41px;
+	border-color:red;
+	position: relative;
+}
+.register .register-content .rc-bd .bd-left .check-code p.errorss::before{
+	content: "";
+    position: absolute;
+    top: 12px;
+    left: -19px;
+    width: 16px;
+    height: 16px;
+    background: url(../images/icons.png) no-repeat -112px -165px;
+}
+
+.register .register-content .rc-bd .bd-left .check-code p:last-child{
+	position: relative;
+	float: left;
+	font-size:@t5-size;
+	color:#BEBEBE; 
+	margin-left:30px;
+}
+.register .register-content .rc-bd .bd-left .check-code p:last-child::before{
+	content:"";
+	position: absolute;
+	top:12px;
+	left:-19px;
+	width:16px;
+	height:16px;
+	background: url(../images/icons.png) no-repeat -93px -165px; 
+}
+
+
+.register .register-content .rc-bd .bd-left .login-password{
+	height: 41px;
+	margin-bottom: 20px;
+}
+.register .register-content .rc-bd .bd-left .login-password p{
+height:41px;
+line-height: 41px; 
+}
+.register .register-content .rc-bd .bd-left .login-password p:first-child{
+float: left;
+font-size: @t3-size;
+color:#666; 
+margin-right: 20px;
+}
+.register .register-content .rc-bd .bd-left .login-password input.password{
+	position: relative;
+	float: left;
+	width:324px;
+	height:41px;
+	padding-left:15px;
+	padding-right: 14px;
+	border: 1px solid #DCDCDC;
+	font-size: @t4-size;
+	color:#BEBEBE; 
+}
+.register .register-content .rc-bd .bd-left .login-password input.password::after{
+	content:"";
+	position: absolute;
+	top:10px;
+	right:14px;
+	width:14px;
+	height:19px;
+	background: url(../images/icons.png) no-repeat -143px -192px; 
+}
+.register .register-content .rc-bd .bd-left .login-password p:last-child{
+	position: relative;
+	float: left;
+	font-size: @t5-size;
+	color:#BEBEBE; 
+	margin-left:30px;
+}
+.register .register-content .rc-bd .bd-left .login-password p:last-child::before{
+	content:"";
+	position: absolute;
+	top:12px;
+	left:-19px;
+	width:16px;
+	height:16px;
+	background: url(../images/icons.png) no-repeat -93px -165px; 
+}
+.register .register-content .rc-bd .bd-left .login-password p.error{
+	position: relative;
+	float: left;
+	font-size: @t5-size;
+	 color: #FD4040;
+	margin-left:30px;
+}
+.register .register-content .rc-bd .bd-left .login-password p.error::before{
+	content: "";
+    position: absolute;
+    top: 12px;
+    left: -19px;
+    width: 16px;
+    height: 16px;
+    background: url(../images/icons.png) no-repeat -112px -165px;
+}
+.codes{
+	font-size: @t5-size;
+	 color: #FD4040;
+	margin-left:30px;
+	height:40px;
+	line-height:40px;
+}
+.codes::before{
+	content: "";
+    position: absolute;
+    top: 12px;
+    left: -19px;
+    width: 16px;
+    height: 16px;
+    background: url(../images/icons.png) no-repeat -112px -165px;
+}
+.codess1{
+	font-size: @t5-size;
+	 color: #FD4040;
+	margin-left:30px;
+	height:40px;
+	line-height:40px;
+	position: relative;
+}
+.codess1::before{
+	content: "";
+    position: absolute;
+    top: 0;
+    left: -19px;
+    width: 16px;
+    height: 16px;
+    background: url(../images/icons.png) no-repeat -112px -165px;
+}
+
+.register .register-content .rc-bd .bd-left .confirm{
+	height: 41px;
+	margin-bottom: 20px;
+}
+.register .register-content .rc-bd .bd-left .confirm p{
+height:41px;
+line-height: 41px; 
+}
+.register .register-content .rc-bd .bd-left .confirm p:first-child{
+float: left;
+font-size: @t3-size;
+color:#666; 
+margin-right: 20px;
+}
+.register .register-content .rc-bd .bd-left .confirm input.confirm{
+	position: relative;
+	float: left;
+	width:324px;
+	height:41px;
+	padding-left:15px;
+	padding-right: 14px;
+	border: 1px solid #DCDCDC;
+	font-size: @t4-size;
+	color:#BEBEBE; 
+}
+.register .register-content .rc-bd .bd-left .confirm input.confirm::after{
+	content:"";
+	position: absolute;
+	top:9px;
+	right:14px;
+	width:14px;
+	height:19px;
+	background: url(../images/icons.png) no-repeat -143px -192px;  
+}
+.register .register-content .rc-bd .bd-left .confirm p.yizhii{
+	position: relative;
+	float: left;
+	font-size: @t5-size;
+	color:#BEBEBE; 
+	margin-left:30px;
+}
+.register .register-content .rc-bd .bd-left .confirm p.yizhii::before{
+	content:"";
+	position: absolute;
+	top:12px;
+	left:-19px;
+	width:16px;
+	height:16px;
+	background: url(../images/icons.png) no-repeat -93px -165px; 
+}
+.register .register-content .rc-bd .bd-left .confirm p:last-child{
+	float: left;
+	font-size: @t5-size;
+	color: #FD4040;
+	margin-left:30px;
+	position: relative;
+}
+.register .register-content .rc-bd .bd-left .confirm p:last-child::before{
+	content:"";
+	position: absolute;
+	top:12px;
+	left:-19px;
+	width:16px;
+	height:16px;
+	background: url(../images/icons.png) no-repeat -112px -165px; 
+}
+.register .register-content .rc-bd .bd-left .agreement{
+height: 17px;
+padding-left: 83px;
+margin-bottom: 25px;
+}
+.register .register-content .rc-bd .bd-left .agreement .a-checkbox{	
+float: left;
+width: 17px;
+height: 17px;
+margin-right:7px;
+border: 1px solid #383838;
+margin-top:0;
+margin-bottom:0;
+cursor: pointer;
+}
+.register .register-content .rc-bd .bd-left .agreement p{
+float: left;
+height: 17px;
+font-size:@t5-size; 
+color:#BEBEBE;
+margin-right:5px;
+}
+.register .register-content .rc-bd .bd-left .agreement p a.no1:link,a.no1:visited{
+text-decoration: none;
+color:@aid-blue;
+}
+.register .register-content .rc-bd .bd-left .sign-up{
+height:50px;
+padding-left: 83px;
+}
+.register .register-content .rc-bd .bd-left .sign-up input.sign{
+width: 324px;
+height: 50px;
+background-color:#FD4040;
+color:@white-color;	
+font-size: @t3-size;
+border-color: #FD4040;
+border: none;
+}
+.register .register-content .rc-bd .bd-right{
+height: 572px;
+float: left;
+width:146px;
+background-color: #F3F3F3;
+}
+.register .register-content .rc-bd .bd-right .bd-top{
+height: 284px;
+padding-top:166px;
+text-align: center;
+position: relative;
+cursor: pointer;
+}
+.register .register-content .rc-bd .bd-right .bd-top p{
+color: #BEBEBE;
+font-size: @t4-size;
+}
+.register .register-content .rc-bd .bd-right .bd-top p::before{
+content:"";
+position: absolute;
+top:94px;
+left: 44px;
+width:59px;
+height:59px;
+background: url(../images/icons.png) no-repeat -229px -3px; 
+}
+.register .register-content .rc-bd .bd-right .bd-top .triangle{
+position: absolute;
+top:123px;
+left: 0;
+width: 14px;
+height: 25px;
+background: url(../images/icons.png) no-repeat -177px -216px; 
+}
+
+.register .register-content .rc-bd .bd-right .bd-bottom{
+height: 288px;
+padding-top:166px;
+text-align: center;
+position: relative;
+cursor: pointer;
+}
+.register .register-content .rc-bd .bd-right .bd-bottom p{
+color: #BEBEBE;
+font-size: @t4-size;
+}
+.register .register-content .rc-bd .bd-right .bd-bottom p::before{
+content:"";
+position: absolute;
+top:94px;
+left:44px;
+width:59px;
+height:59px;
+background: url(../images/icons.png) no-repeat -295px -3px; 
+}
+.register .register-content .rc-bd .bd-right .bd-bottom .triangle{
+position: absolute;
+top:129px;
+left: 0;
+width: 14px;
+height: 25px;
+background: url(../images/icons.png) no-repeat -177px -216px; 
+}
+.register .register-content .rc-bd .bd-right .bd-top.cur{
+background-color: #E9E9E9;
+}
+.register .register-content .rc-bd .bd-right .bd-top.cur p{
+color: #FD4040;
+}
+.register .register-content .rc-bd .bd-right .bd-top.cur p::before{
+content:"";
+position: absolute;
+top:94px;
+left: 44px;
+width:59px;
+height:59px;
+background: url(../images/icons.png) no-repeat -227px -66px; 
+}
+.register .register-content .rc-bd .bd-right .bd-bottom.cur{
+background-color: #E9E9E9;
+}
+.register .register-content .rc-bd .bd-right .bd-bottom.cur p{
+color: #FD4040;
+}
+.register .register-content .rc-bd .bd-right .bd-bottom.cur p::before{
+content:"";
+position: absolute;
+top:94px;
+left: 44px;
+width:59px;
+height:59px;
+background: url(../images/icons.png) no-repeat -296px -66px; 
+}
+
+.register .check-code .num{
+	float: left;
+    width: 156px;
+    height: 40px;
+	background: url(../images/safety-setting/num1.png) no-repeat;
+}
+.showhide{
+	display:none;
+}
+.showhide.on{
+	display:block;
+}
+#super.my-class{
+	border-color:#FD4040;
+}

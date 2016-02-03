@@ -1,0 +1,19 @@
+
+<div class="bbox2-top">
+	<div class="bbox2-top-left">
+		<p>{{payments[0].mname}}</p>
+	</div>
+	<div class="bbox2-top-right">
+		<p><span class="red">{{paymoney|number:2}}</span>元</p>
+	</div>
+</div>
+<div class="bbox2-mid" ng-repeat="payment in payments" ng-show="displayOrderDetailFlag">
+	<p class="detail">订单详情</p>
+	<p class="goods-name">商品名称：{{payment.mname}}</p>
+	<p class="trading-amount">交易金额：{{payment.money}}元</p>
+	<p class="time-buying">购买时间：{{payment.addtime|date:'yyyy-MM-dd HH:mm:ss'}}</p>
+	<p class="trading-number">交易号：{{payment.transno}}</p>
+</div>
+<div class="bbox2-bottom">
+	<input type="button" ng-click="displayOrderDetail()" class="bbox2-bottom-detail" value="订单详情">
+</div>

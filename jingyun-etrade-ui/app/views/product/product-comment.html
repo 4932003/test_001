@@ -1,0 +1,95 @@
+<div class="p-comment" ng-controller="GoodsCommentController">
+	<div class="pc-summary">
+		<div class="pc-summary-left fl">
+			<p class="pc-sl-score"><span class="pc-sl-score-txt">{{levels}}</span>分</p>
+			<p>评价累计</p>
+		</div>
+
+		<div class="pc-summary-right fl">
+			<div class="pc-desc">
+				<ul>
+					<li class="pc-desc-item">非常不满意</li>
+					<li class="pc-desc-item">不满意</li>
+					<li class="pc-desc-item">一般</li>
+					<li class="pc-desc-item">满意</li>
+					<li class="pc-desc-item">非常满意</li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+			<div class="pc-progress-info">
+				<div class="progress pc-progress fl">
+				    <progress-bar level="levelGrades"></progress-bar>
+				</div>
+				
+			</div>
+			<div class="pc-pb-count fl">共有{{grade.personCount}}位客户参与评分</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="pc-filter">
+		<ul>
+			<li class="pc-filter-item">
+				<input checked="checked" name="pc-filter-type" class="pc-filters" ng-click="getComment(0)" value="" type="radio">&nbsp;&nbsp;全部</input>
+			</li>
+			<li class="pc-filter-item">
+				<input name="pc-filter-type" class="pc-filters" value="" ng-click="getpicture()" type="radio">&nbsp;&nbsp;图片</input>
+			</li>
+			<li class="pc-filter-item">
+				<input name="pc-filter-type" class="pc-filters" value="" ng-click="goodCommnet(9)" type="radio">&nbsp;&nbsp;好评</input>
+			</li>
+			<li class="pc-filter-item">
+				<input name="pc-filter-type" class="pc-filters" value="" ng-click="middleCommnet(7)" type="radio">&nbsp;&nbsp;中评</input>
+			</li>
+			<li class="pc-filter-item">
+				<input name="pc-filter-type" class="pc-filters" value="" ng-click="dadCommnet(4)" type="radio">&nbsp;&nbsp;差评</input>
+			</li>
+		</ul>
+	</div>
+	<div class="clear"></div>
+	<div class="pc-list">
+		<table>
+			<tbody>
+				
+				<tr ng-repeat="comment in list">
+					<td class="pc-master">
+						<div class="pc-tm-rate-content">
+							<div class="pc-tm-rate-fulltxt">{{comment.goodsComment}}
+							</div>
+						</div>
+						<div class="pc-tm-m-photos">
+							<ul class="pc-tm-m-photos-thumb">
+								<li ng-repeat="imgs in comment.imgs">        
+									<img class="pc-tmpt-img" ng-click="getBigPicture(imgs)" ng-src="{{imgs.picture}}@50h_50w.jpg">
+								</li>
+								
+							</ul>
+							<div class="clear"></div>
+							
+							<div ng-show="comment.id ==img_id">   
+							 <img style="height:240px;" ng-src="{{pictures}}@240h.jpg">
+							</div>
+						</div>
+						<div class="clear"></div>
+						<div class="pc-tm-rate-date">{{comment.addtime}}</div>
+						<!-- <div class="pc-tm-rate-answer">
+							商家回复：亲，针对您的问题我们会计及时反馈相关部门进行处理，提升服务质量。给您带来不便，敬请谅解。感谢您对中华阿胶的支持，祝您生活愉快，谢谢！
+						</div> -->
+					</td>
+					<td class="pc-author" valign="top">
+						
+						<div class="pc-author-img" ng-show="{{comment.userInfoVO.picture.length >0 ?true :false }}">
+							<img class="pc-ca-img" ng-src="{{comment.userInfoVO.picture}}@60h_60w.jpg"/>
+						</div>
+						<div class="pc-author-name">
+						
+						{{comment.userVO.username}}
+
+						</div>
+					</td>
+				</tr>
+				
+			</tbody>
+		</table>
+		<div class="ptr-get-more" ng-if="more" ng-click="getList(size,commentGrade,picture)">查看更多&gt;&gt;</div>
+	</div>
+</div>

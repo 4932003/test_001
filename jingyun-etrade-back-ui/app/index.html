@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="jingyunetradebackApp">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div data-loading style="width:100%;height:100%;position:fixed;z-index:30000;">
+        <div class="spinner">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+        </div>
+    </div>
+
+    
+
+   <!--  <div class="container"> -->
+    <div ui-view=""></div>
+ <!--    </div> -->
+
+    <div class="clear"></div>
+    
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-ueditor/dist/angular-ueditor.min.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="bower_components/angular-ui-date/src/date.js"></script>
+    <script src="bower_components/js-md5/build/md5.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/api.js"></script>
+        <script src="scripts/directive/loading.js"></script>
+        <script src="scripts/directive/header.js"></script>
+        <script src="scripts/directive/footer.js"></script>
+        <script src="scripts/directive/dialog.js"></script>
+        <script src="scripts/constants.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/goods/goodsOperation.js"></script> 
+        <script src="scripts/services/goods/goodsOperationService.js"></script>
+        <script src="scripts/controllers/order/order.js"></script> 
+        <script src="scripts/controllers/order/orderdetail.js"></script>
+        <script src="scripts/controllers/order/orderlist.js"></script>  
+        <script src="scripts/services/order/order.js"></script>
+        <script src="scripts/services/order/orderstatus.js"></script>
+        <script src="scripts/router/refund/refund.js"></script>
+        <script src="scripts/controllers/refund/refunding.js"></script>
+        <script src="scripts/controllers/refund/refunding_receiver.js"></script>
+        <script src="scripts/controllers/refund/refunding_deny.js"></script>
+        <script src="scripts/controllers/refund/returning.js"></script>
+        <script src="scripts/controllers/refund/refunded.js"></script>
+        <script src="scripts/services/refund/refund.js"></script>
+
+         <!-- help center start -->
+      <script src="scripts/router/help-center/help-center.js"></script>
+      <script src="scripts/controllers/help-center/category.js"></script>
+      <script src="scripts/services/help-center/category.js"></script>
+
+      <script src="scripts/controllers/help-center/detail.js"></script>
+      <script src="scripts/services/help-center/detail.js"></script>
+
+        <!-- help center end -->
+      <script src="scripts/filter/myfilter.js"></script>
+      <script src="scripts/controllers/header/header.js"></script>
+      <script src="scripts/controllers/header/header-top.js"></script>
+      <script src="scripts/services/header/header-top.js"></script>
+      <script src="scripts/services/user/UserService.js"></script>
+      <script src="scripts/services/user/ManagerService.js"></script>
+      <script src="scripts/services/user/SellerService.js"></script>
+         <!-- counpon start -->
+      <!--ue-->
+      <script src="scripts/directive/ueditor.js"></script>
+      <!-- ue end-->
+
+      <script src="scripts/router/vip/counpon.js"></script>
+      <script src="scripts/controllers/vip/counpon/cashcounpon.js"></script>
+      <script src="scripts/controllers/vip/counpon/cashcounponAdd.js"></script>
+      <script src="scripts/controllers/vip/counpon/discountcounpon.js"></script>
+      <script src="scripts/controllers/vip/counpon/discountcounponAdd.js"></script>
+      
+      <script src="scripts/services/vip/counpon/cashcounpon.js"></script>
+      <script src="scripts/services/vip/counpon/discountcounpon.js"></script>
+
+        <!-- counpon end -->
+      <script src="scripts/controllers/login/login.js"></script>
+
+      
+       <script src="scripts/controllers/information/add-information.js"></script> 
+       <script src="scripts/services/information/add-information.js"></script>
+
+      <script src="scripts/controllers/information/information.js"></script> 
+       <script src="scripts/services/information/information.js"></script>
+     
+
+      <!-- help center end -->   
+
+      <script src="scripts/controllers/password/password.js"></script> 
+      <script src="scripts/services/password/password.js"></script>  
+  
+     <!--brand begin-->
+      <script src="scripts/router/brand/brand.js"></script>
+      <script src="scripts/controllers/brand/brand.js"></script> 
+      <script src="scripts/services/brand/brandService.js"></script>
+      <!--brand end-->
+
+       <!--   liug  edit   start    -->
+        <script src="scripts/controllers/goods/goodsEdit.js"></script> 
+        <script src="scripts/services/goods/goodsEdit.js"></script>
+
+        <script src="scripts/router/merchant/merchant.js"></script>
+        <script src="scripts/controllers/merchant/merchantList.js"></script> 
+        <script src="scripts/services/merchant/merchantList.js"></script>
+        <script src="scripts/controllers/merchant/merchantEdit.js"></script> 
+        <script src="scripts/services/merchant/merchantEdit.js"></script>
+        <script src="scripts/router/track/track.js"></script>
+        <script src="scripts/controllers/track/admoduleList.js"></script> 
+        <script src="scripts/services/track/admoduleList.js"></script>
+        <script src="scripts/controllers/track/admoduleEdit.js"></script> 
+        <script src="scripts/services/track/admoduleEdit.js"></script>
+        <script src="scripts/controllers/track/addetailList.js"></script> 
+        <script src="scripts/services/track/addetailList.js"></script>
+        <script src="scripts/controllers/track/addetailEdit.js"></script> 
+        <script src="scripts/services/track/addetailEdit.js"></script>
+         <script src="scripts/router/goodstype/goodstype.js"></script>
+        <script src="scripts/controllers/goodstype/goodstype.js"></script> 
+        <script src="scripts/services/goodstype/goodstype.js"></script>
+       <!--   liug  edit   end    -->
+        <!-- endbuild -->
+
+
+        <!--ue and timepiug-in -->
+      <script src="plug-in/ueditor/ueditor.config.js"></script>
+      <script src="plug-in/ueditor/ueditor.all.js"></script>
+      <script src="plug-in/My97DatePicker/WdatePicker.js"></script>
+</body>
+</html>

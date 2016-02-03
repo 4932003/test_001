@@ -1,0 +1,77 @@
+
+<form  ng-controller="MyMessageController">
+	<div class="my-message-main">
+		<div class="user-center-mr-hd my-collection-main-hd">
+			<div class="user-center-mr-title-icon fl"></div>
+			<div class="user-center-mr-title fl">
+				<p>站内消息</p>
+			</div>
+		</div>
+		<div class="my-collection-type">
+			<ul class="my-collection-type-list">
+				<li class="my-collection-type-item my-collection-type-item-selected">
+					系统消息
+				</li>
+				<li class="my-collection-type-none mm-type-none"></li>
+			</ul>
+		</div>
+
+		<div class="clear"></div>
+
+		<div class="my-message-list">
+			<div class="my-message-list-sum">
+				<div class="my-message-list-sum-left fl">
+					<div class="my-message-select-all fl">
+						<input type="checkbox" ng-click='chkAll(chkall)' ng-model="chkall">
+						<span>全选</span>
+					</div>
+					<div class="my-message-btn my-message-remark-to-read-btn fl" ng-click="readMesages()">
+						标记所选为已读
+					</div>
+					<input type='button' value='删除所选' class="my-message-btn my-message-delect-select fl" data-target="#confirm-dialog" data-toggle="modal" ng-disabled="{{list.length==0}}">
+						
+					</input>
+				</div>
+				<div class="my-message-list-sum-right fr">
+					未读{{unreadAmount}}/已读{{readAmount}}
+				</div>
+			</div>
+			<div class="clear"></div>
+
+			<div>
+				<ul>
+					<li class="my-message-item" ng-repeat="item in list">
+						<div class="my-message-title">
+							<div class="my-message-select fl">
+								<input type="checkbox" ng-change="selectMessage(item)" ng-model="item.selected" value="{{item.id}}" ng-true-value="true" ng-false-value="false">
+							</div>
+							<div class="my-message-icon red-mail-icon fl" ng-if="!item.hasRead" ng-click="getDetail(item)"></div>
+							<div class="my-message-icon gray-mail-icon fl" ng-if="item.hasRead" ng-click="getDetail(item)"></div>
+							<div class="fl" ng-click="getDetail(item)">
+								{{item.title}}&gt;
+								<span class="my-message-detail-btn">点此查看！</span>
+							</div>
+							<div class="fr">
+								{{item.addtime}}
+							</div>
+						</div>
+						<div class="clear"></div>
+						<div class="my-message-detail" ng-if="item.showContent">
+							{{item.content}}
+						</div>
+					</li>
+
+					<li ng-if="more" style='width: 100%;'>
+
+						<div class="mall-more"><span ng-click="getList(size)" class="">查看更多&gt;&gt;</span><div>
+					</li>
+					
+				</ul>
+			</div>
+
+		</div>
+	</div>
+
+	<confirm-dialog confirm-function='delMsg()' message='确定删除？'></confirm-dialog>
+
+</form>

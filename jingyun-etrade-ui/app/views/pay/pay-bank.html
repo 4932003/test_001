@@ -1,0 +1,75 @@
+<div class="osbt2">
+	<div class="osbt2-hd">
+		<ul class="osbt2">
+			<li class="osbt2" ng-click="showTab('thirdparty')" ng-class="{'cur': type=='thirdparty'}">支付平台</li>
+			<li class="osbt2">快捷支付</li>
+			<li class="osbt2" ng-click="showTab('debit')" ng-class="{'cur': type=='debit'}">储蓄卡</li>
+			<li class="osbt2" ng-click="showTab('credit')" ng-class="{'cur': type=='credit'}">信用卡</li>
+		</ul>
+	</div>
+	<div class="osbt2-bd">
+		<!--支付平台-->
+		<div class="osbt2-b1 osbt2-box" ng-class="{'cur': type=='thirdparty'}">
+			<ul class="osbt2-1">
+				<li class="osbt2-1" ng-click="selectBank('ALIPAY', '支付宝')" ng-class="{'currentbank': bankcode=='ALIPAY'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('LLPAY', '连连支付')" ng-class="{'currentbank': bankcode=='LLPAY'}"></li>
+				<!-- <li class="osbt2-1" ng-click="selectBank('WXPAY', '微信支付')" ng-class="{'currentbank': bankcode=='WXPAY'}"></li> -->
+			</ul>
+		</div>
+
+		<!--快捷支付-->
+		<div class="osbt2-b2 osbt2-box">
+			<ul class="osbt2-1">
+				<li class="osbt2-1"></li>
+				<li class="osbt2-1"></li>
+			</ul>
+		</div>
+
+		<!--储蓄卡-->
+		<div class="osbt2-b3 osbt2-box" ng-class="{'cur': type=='debit'}">
+			<ul class="osbt2-1">
+				<li class="osbt2-1" ng-click="selectBank('01030000', '农业银行')" ng-class="{'currentbank': bankcode=='01030000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('01050000', '建设银行')" ng-class="{'currentbank': bankcode=='01050000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('01040000', '中国银行')" ng-class="{'currentbank': bankcode=='01040000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('01020000', '工商银行')" ng-class="{'currentbank': bankcode=='01020000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('03080000', '招商银行')" ng-class="{'currentbank': bankcode=='03080000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('03010000', '交通银行')" ng-class="{'currentbank': bankcode=='03010000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('03030000', '光大银行')" ng-class="{'currentbank': bankcode=='03030000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('03020000', '中信银行')" ng-class="{'currentbank': bankcode=='03020000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('03060000', '广发银行')" ng-class="{'currentbank': bankcode=='03060000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('03100000', '浦发银行')" ng-class="{'currentbank': bankcode=='03100000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('03070000', '平安银行')" ng-class="{'currentbank': bankcode=='03070000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('03040000', '华夏银行')" ng-class="{'currentbank': bankcode=='03040000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('04083320', '宁波银行')" ng-class="{'currentbank': bankcode=='04083320'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('03200000', '东亚银行')" ng-class="{'currentbank': bankcode=='03200000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('04012900', '上海银行')" ng-class="{'currentbank': bankcode=='04012900'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('01000000', '中国邮政银行')" ng-class="{'currentbank': bankcode=='01000000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('04243010', '南京银行')" ng-class="{'currentbank': bankcode=='04243010'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('03170000', '渤海银行')" ng-class="{'currentbank': bankcode=='03170000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('64296510', '成都银行')" ng-class="{'currentbank': bankcode=='64296510'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('04031000', '北京银行')" ng-class="{'currentbank': bankcode=='04031000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('03050000', '民生银行')" ng-class="{'currentbank': bankcode=='03050000'}"></li>
+			</ul>
+		</div>
+
+		<!--信用卡-->
+		<div class="osbt2-b4 osbt2-box" ng-class="{'cur': type=='credit'}">
+			<ul class="osbt2-1">
+				<li class="osbt2-1" ng-click="selectBank('65012900', '上海农商行')" ng-class="{'currentbank': bankcode=='65012900'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('01050000', '建设银行')" ng-class="{'currentbank': bankcode=='01050000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('01040000', '中国银行')" ng-class="{'currentbank': bankcode=='01040000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('01020000', '工商银行')" ng-class="{'currentbank': bankcode=='01020000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('03080000', '招商银行')" ng-class="{'currentbank': bankcode=='03080000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('03010000', '交通银行')" ng-class="{'currentbank': bankcode=='03010000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('03030000', '光大银行')" ng-class="{'currentbank': bankcode=='03030000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('03090000', '兴业银行')" ng-class="{'currentbank': bankcode=='03090000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('03060000', '广发银行')" ng-class="{'currentbank': bankcode=='03060000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('03100000', '浦发银行')" ng-class="{'currentbank': bankcode=='03100000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('03070000', '平安银行')" ng-class="{'currentbank': bankcode=='03070000'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('04012900', '上海银行')" ng-class="{'currentbank': bankcode=='04012900'}"></li>
+				<li class="osbt2-1" ng-click="selectBank('03050000', '民生银行')" ng-class="{'currentbank': bankcode=='03050000'}"></li>
+				
+			</ul>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,215 @@
+@import "../../common";
+
+.confirm-receipt{
+	width: 1100px;
+	margin-bottom: 207px;  
+	margin-top:62px ;       
+}
+.confirm-receipt .confirm-top-title{
+	height: 44px;
+	border-bottom: 1px solid #BEBEBE;     
+	line-height: 44px;  
+	font-size:@t2-size;
+	color: #FE4040; 
+	font-weight: bold; 
+	margin-bottom: 33px;  
+}
+.confirm-receipt .confirm-info{
+	overflow: hidden;
+} 
+.confirm-receipt .confirm-info .confirm-mid-title{
+	height: 12px;
+	padding-left: 27px;
+	font-size:@t4-size;
+	color: #5C5C5C; 
+	margin-bottom: 13px;
+}
+table.confirm-info-hd{
+	width: 1100px;
+	height:40px;
+	border: 1px solid #E9E9E9;
+	background-color:#F5F5F5; 
+}
+table.confirm-info-hd .confirm-info-goods{
+	width: 320px;
+	padding-left: 120px;
+}
+table.confirm-info-hd .confirm-info-state{
+	width: 104px;
+	padding-left: 32px;
+}
+table.confirm-info-hd .confirm-info-price{
+	padding-left: 38px;
+	width: 153px;
+}
+table.confirm-info-hd .confirm-info-number{
+	width: 91px;
+	padding-left: 27px;
+}
+table.confirm-info-hd .confirm-info-discount{
+	width: 79px;
+	padding-left: 18px;
+}
+table.confirm-info-hd .confirm-info-total{
+	width: 146px;
+	padding-left: 24px;
+}
+table.confirm-info-hd .confirm-info-freight{
+	width: 207px;
+	padding-left: 66px;
+}
+table.confirm-info-bd{
+	width: 1100px;
+}
+table.confirm-info-bd  tbody.confirm-info-box tr.confirm-info-item{
+	width: 1100px;
+	overflow: hidden;
+	border-top: none;
+	border: 1px solid #E9E9E9;
+	border-top: none;
+}
+td.confirm-info-product{
+	width:321px;
+	height: 93px;
+	padding-left: 24px;
+}
+.confirm-info-fl{
+	float: left;
+	width: 70px;
+	height: 70px;
+	border: 1px solid #E9E9E9;
+	line-height: 70px;
+	text-align: center;
+	margin-right: 26px;
+}
+.confirm-info-fl .confirm-info-p-img{
+	width:70px;
+	height: 70px;  
+}
+.confirm-info-p-name{
+	padding-top: 28px;
+}
+td.confirm-info-sta{
+	width: 103px;
+	text-align: center;
+}
+td.confirm-info-pri{
+	width: 153px;
+	border-right:1px solid #E9E9E9;
+	border-left:1px solid #E9E9E9;
+	text-align: center;
+}
+td.confirm-info-num{
+	width: 91px;
+	text-align: center;
+}
+td.confirm-info-dis{
+	width: 79px;
+	text-align: center;
+	border-right:1px solid #E9E9E9;
+	border-left:1px solid #E9E9E9;
+}
+td.confirm-info-tot{
+	width: 146px;
+	text-align: center;
+}
+td.confirm-info-frei{
+	width:207px;
+	text-align: center;
+	border-left:1px solid #E9E9E9;
+}
+.confirm-pay-mon{
+	float: right;
+	height: 50px;
+	line-height: 50px;
+	font-size:@t4-size ;
+	color:#5D5D5D; 
+}
+.confirm-pay-mon span.ts{
+	color: #FD403E;
+	font-size: 22px; 
+	font-weight: bold;
+}
+.confirm-rinfo{
+	height: 246px;
+	border: 1px solid #E9E9E9;
+	background-color:#F3F3F3;
+	padding-top: 40px;
+	padding-left: 50px; 
+	margin-bottom: 36px;
+}
+.confirm-rinfo>ul.cr>li.crl{
+	height: 12px;
+	margin-bottom: 24px;
+	font-size:@t4-size ;
+	color:#5D5D5D;
+	 float:none;
+}
+.confirm-pay-box{ 
+	height: 320px;
+	border: 1px solid #FE9900;
+	padding-top: 47px;
+	padding-left: 52px;
+	margin-bottom: 20px;
+}
+.confirm-pay-box .cp-b1{
+	margin-bottom: 14px;
+	position: relative;
+}
+.confirm-pay-box .cp-b1>p{
+	font-size:@t4-size ;
+	height: 18px;
+	line-height: 18px;
+	margin-bottom:18px;
+	color: #5D5D5D;
+}
+.confirm-pay-box .cp-b1>p:last-child{
+	margin-bottom: none;
+}
+.confirm-pay-box .cp-b1>p:first-child{
+	padding-left: 20px;
+}
+.confirm-pay-box .cp-b1>p:first-child::before{
+	content: "";
+	position: absolute;
+	top:3px;
+	left: 0;
+	width: 15px;
+	height: 15px;
+	background: url(../images/icons.png) no-repeat -93px -165px;
+}
+.confirm-pay-box .cp-b2{
+	height: 40px;
+	margin-bottom: 43px;
+}
+.confirm-pay-box .cp-b2 input.cp{
+	width: 240px;
+	height: 40px;
+	margin-right: 9px;
+	border: 1px solid #C9D3CB;
+	padding-left: 5px;
+	outline: none;
+}
+.confirm-pay-box .cp-b2 a.cpa:link,a.cpa:visited{
+	text-decoration: none;
+	color: #0359A2;
+	font-size:@t4-size;
+	cursor: pointer;
+}
+.confirm-pay-box .cp-b3{
+	width: 300px;
+	height: 50px;
+	background-color:#FF3334;
+	color: @white-color;
+	line-height: 50px;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 4px;
+}
+.confirm-p{
+	width:158px;
+}
+
+.confirm-pay-box .error-txt{
+	color: #fd4040;
+}

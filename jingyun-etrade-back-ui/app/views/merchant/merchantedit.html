@@ -1,0 +1,190 @@
+<div class="center-view" ng-controller="MerchantEditController as mEditController">
+<ng-form  name='saveForm'>
+
+	<div class="commodity-main">
+		<div class="commodity-main-hd">
+			商家管理&gt;商家维护
+		</div>
+		<div class="commodity-base-info">
+			<div class="release-commodity-hd">
+				1、商家基本信息
+			</div>
+			<div class="release-commodity-info">
+				<ul class="release-commodity-info-list">
+					<li>
+						<div class="release-commodity-info-label fl">商家名称：</div>
+						<div class="release-commodity-info-txt fl">
+							<input class="release-commodity-code"  type="text" ng-model="m.name" name="name" required>
+						</div>
+						<p ng-show="saveForm.name.$error.required" style="color: red" >&nbsp;&nbsp;&nbsp;*必填</p>
+					</li>
+					<div class="clear"></div>
+					<li>
+						<div class="release-commodity-info-label fl">商家英文名称：</div>
+						<div class="release-commodity-info-txt fl">
+							<input class="release-commodity-code"  type="text" ng-model="m.ename" name="ename">
+						</div>
+						<!--
+						<p ng-show="saveForm.merchantEname.$error.required" style="color: red" >&nbsp;&nbsp;&nbsp;*必填</p>
+					-->
+					</li>
+					<div class="clear"></div>
+					<li>
+						<div class="release-commodity-info-label fl">商家编码：</div>
+						<div class="release-commodity-info-txt fl">
+							<input class="release-commodity-code"  type="text" ng-model="m.code" name="code">
+						</div>
+						<!-- <p ng-show="saveForm.merchantCode.$error.required" style="color: red" >&nbsp;&nbsp;&nbsp;*必填</p> -->
+					</li>
+					<div class="clear"></div>
+					<li>
+						<div class="release-commodity-info-label fl">商家地址：</div>
+						<div class="release-commodity-info-txt fl">
+							<input class="release-commodity-code"  type="text" ng-model="m.address" name="address" required>
+						</div>
+						<p ng-show="saveForm.address.$error.required" style="color: red" >&nbsp;&nbsp;&nbsp;*必填</p>
+					</li>
+					<div class="clear"></div>
+					<li>
+						<div class="release-commodity-info-label fl">商家规模：</div>
+						<div class="release-commodity-info-txt fl">
+							<input class="release-commodity-code"  type="text" ng-model="m.scale" name="scale" required>
+						</div>
+						<p ng-show="saveForm.scale.$error.required" style="color: red" >&nbsp;&nbsp;&nbsp;*必填</p>
+					</li>
+					<div class="clear"></div>
+					<li>
+						<div class="release-commodity-info-label fl">员工人数：</div>
+						<div class="release-commodity-info-txt fl">
+							<input class="release-commodity-input-length"  type="text" ng-model="m.employeeNum" pattern="^[+-]?\d+(\.\d+)?$" name="employeeNum">
+						</div>
+						<p ng-show="saveForm.employeeNum.$dirty && saveForm.employeeNum.$error.pattern" style="color: red" >&nbsp;员工人数只能输入数字</p>
+					</li>
+					<div class="clear"></div>
+					<li>
+						<div class="release-commodity-info-label fl">联系电话：</div>
+						<div class="release-commodity-info-txt fl">
+							<input class="release-commodity-code"  type="text" ng-model="m.tel" name="tel" required>
+						</div>
+						<p ng-show="saveForm.tel.$error.required" style="color: red" >&nbsp;&nbsp;&nbsp;*必填</p>
+					</li>
+					<div class="clear"></div>
+					<li>
+						<div class="release-commodity-info-label fl">邮编：</div>
+						<div class="release-commodity-info-txt fl">
+							<input class="release-commodity-code"  type="text" ng-model="m.zipcode" name="zipcode" required>
+						</div>
+						<p ng-show="saveForm.zipcode.$error.required" style="color: red" >&nbsp;&nbsp;&nbsp;*必填</p>
+					</li>
+					<div class="clear"></div>
+					<li>
+						<div class="release-commodity-info-label fl">QQ：</div>
+						<div class="release-commodity-info-txt fl">
+							<input class="release-commodity-code"  type="text" ng-model="m.qq" name="qq">
+						</div>
+					</li>
+					<div class="clear"></div>
+					<li>
+						<div class="release-commodity-info-label fl">管理员排序：</div>
+						<div class="release-commodity-info-txt fl">
+							<input class="release-commodity-code"  type="text" ng-model="m.adminSortNum" name="adminSortNum" required>
+						</div>
+						<p ng-show="saveForm.adminSortNum.$error.required" style="color: red" >&nbsp;&nbsp;&nbsp;*必填</p>
+					</li>
+					<div class="clear"></div>
+					<li>
+						<div class="release-commodity-info-label fl">是否开具发票：</div>
+						<div class="release-commodity-info-txt fl">
+							<select class="release-commodity-select-length" ng-model="m.invoiceFlag" 
+							name="invoiceFlag" required>
+								<option value="0">否</option>
+								<option value="1">是</option>
+							</select>
+						</div>
+						<p ng-show="saveForm.invoiceFlag.$error.required" style="color: red" >&nbsp;&nbsp;&nbsp;*必填</p>
+
+					</li>
+					<div class="clear"></div>     
+					 <li>
+						<div class="release-commodity-info-label fl">商家等级：</div>
+						<div class="release-commodity-info-txt fl">
+							<input class="release-commodity-input-length"  type="text" ng-model="m.level" pattern="^[+-]?\d+(\.\d+)?$" name="level">
+						</div>
+						<p ng-show="saveForm.level.$dirty && saveForm.level.$error.pattern" style="color: red" >&nbsp;商家等级只能输入数字</p>
+					</li>
+					<div class="clear"></div>     
+					<li>
+						<div class="release-commodity-info-label fl">商家描述：</div>
+						<div class="release-commodity-info-txt fl">
+							<textarea class="release-commodity-desc" ng-model="m.merchantDesc"></textarea>
+						</div>
+					</li>
+					<div class="clear"></div>
+				</ul>
+			</div>
+		</div>
+
+		<div class="commodity-food-safety-info">
+			<div class="release-commodity-hd">
+				2、商家其他信息
+			</div>
+			<div class="release-commodity-info">
+				<ul class="release-commodity-info-list">
+					<li>
+						<div class="release-commodity-info-label fl">发票类型：</div>
+						<div class="release-commodity-info-txt fl" ng-repeat="io in invoicelist">
+							 <input type="checkbox" ng-change="selectInvoice(io)" ng-model="io.selected" value="{{io.code}}" ng-true-value="true" ng-false-value="false">
+							 {{io.name}} &nbsp;&nbsp;&nbsp;&nbsp;
+						</div> 
+					</li>
+					<div class="clear"></div>
+					<li>
+						<div class="release-commodity-info-label fl">邮递类型：</div>
+						<div class="release-commodity-info-txt fl" ng-repeat="do in deliverylist">
+							<input type="checkbox" ng-change="selectDelivery(do)" ng-model="do.selected" value="{{do.code}}" ng-true-value="true" ng-false-value="false">
+							{{do.name}} &nbsp;&nbsp;&nbsp;&nbsp;
+						</div> 
+					</li>
+					<div class="clear"></div>
+				</ul>
+			</div>
+		</div>
+
+		<div class="commodity-food-safety-info">
+			<div class="release-commodity-hd">
+				3、商家图片
+			</div>
+			<div class="release-commodity-info">
+				<ul class="release-commodity-info-list">
+					<li>
+					 <div class="release-commodity-info-label fl">商品图片：</div>
+						<div class="release-commodity-info-txt fl">
+							<form  id="fileinfo">
+							<input class="release-commodity-upload-img" type="file" id="file" name="file" onchange="$('#sub1').trigger('click')" />
+							<input id="sub1" type="hidden" ng-click="doUpload()"/>
+							</form>
+						</div>{{success}}
+						<br><br><br>
+						<div class="release-commodity-desc-img">
+							 <img src="{{m.imgPath}}">
+						</div>
+					</li>
+					<div class="clear"></div>
+				</ul>
+			</div>
+		</div>
+		<input type="hidden" ng-model="m.id"/>
+		<input type="hidden" ng-model="m.imgPath"/>
+		<input type="hidden" ng-model="m.invoiceCodes"/>
+		<input type="hidden" ng-model="m.deliveryCodes"/>
+		<div class="release-commodity-footer" >
+			<button class="release-commodity-btn" ng-click="saveorupdate(m)"
+			ng-disabled="saveForm.$invalid"
+			>修改
+			</button>
+		</div>
+	</div>
+
+</ng-form>
+</div>
+

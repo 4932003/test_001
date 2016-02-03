@@ -1,0 +1,57 @@
+<div style="display:none;" class="modal in" id="invoice-info-dialog" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+  <div class="modal-dialog invoice-i-dialog" role="document">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        	<span aria-hidden="true">×</span>
+        </button>
+        <div class="modal-title" id="invoice-id-title">发票信息</div>
+      </div>
+      <div class="modal-body">
+      	<!-- <div class="invoice-id-type">
+          普通发票 
+          <b></b>
+        </div> -->
+      	<div class="invoice-id-content">
+          <ul class="invoice-id-content-list">
+            <li>
+              <div class="invoice-input-label fl">发票类型：</div>
+              <div class="invoice-input-txt fl">
+                <ul>
+                  <li ng-repeat="it in invoiceTypes">
+                    <div ng-click="invoice.type = it" class="invoice-info" ng-class="{'invoice-info-selected': invoice.type == it }">{{it}}<b></b></div>
+                  </li>
+                  <span ng-show="invoiceTypeError">请选择发票类型</span>
+                </ul>
+              </div>
+            </li>
+            <div class="clear"></div>
+            <li>
+              <div class="invoice-input-label fl">发票抬头：</div>
+              <div class="invoice-input-txt fl">
+                <input class="invoice-hd" type="text" ng-model="invoice.title"><span ng-show="invoiceTitleError">请输入发票抬头</span>
+              </div>
+            </li>
+            <div class="clear"></div>
+            <li>
+              <div class="invoice-btns">
+                <ul>
+                  <li>
+                    <div class="invoice-btn invoice-save-btn" ng-click="saveInvoice()">保存发票信息</div>
+                  </li>
+                  <li>
+                    <div class="invoice-btn invoice-rest-btn" data-dismiss="modal" ng-click="cancelInvoice()">取消</div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="invoice-note">
+          <p>温馨提示：发票的开票金额不包括优惠券，积分卡支付部分</p>
+          <a href="#/helpcenter/knWclPhTSoyyjQ4MuhwL6w/o1ZBQLq4RM2dF1JPVYfQLQ" target="_blank"><p class="invoice-relative-info">发票信息相关内容&gt;&gt;</p></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

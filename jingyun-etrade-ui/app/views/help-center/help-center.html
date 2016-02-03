@@ -1,0 +1,37 @@
+<header-top></header-top>
+<div class="clear"></div>
+<header-search></header-search>
+<div class="clear"></div>
+<header-nav></header-nav>
+<div class="clear"></div>
+
+<div class="center-view">
+	<div class="help-center-main" ng-controller='HelpCenterController'>
+		<div class="user-center-main-left fl">
+			<div class="help-center-left-nav">
+				<div class="help-center-left-main" ><div class="white-help-icon fl"></div>客户服务中心</div>
+				<ul>
+					<li ng-repeat="category in categoryList">
+						<div class="help-center-first-menu" id='first-menu-{{$index}}' >
+							<div class="red-un-dd-icon fl" ></div>{{category.name}}
+						</div>
+						<div>
+						    <div class="help-center-second-menu-box"  >
+								<ul>
+									<li class="help-center-second-menu-item"  ng-repeat="detail in category.helpCenterDetailList" >
+										<a href="#/helpcenter/{{category.id}}/{{detail.id}}" >{{detail.name}}</a>
+									</li>
+								</ul>
+							</div>
+						</div>	
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div ui-view></div>
+	</div>	
+	<div class="clear"></div>
+</div>
+
+<div class="clear"></div>
+<footer></footer>

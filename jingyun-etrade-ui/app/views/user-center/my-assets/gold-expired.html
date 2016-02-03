@@ -1,0 +1,9 @@
+<div class="my-shopping-gold-detail-expired"  ng-controller='CashCouponExpiredController'>
+	<div class=" shopping-gold-detail" ng-repeat="item in coupons">
+		<div class="wdot"></div>
+		<p class="fifty">{{item.cashCoupon.value}}元<span class='tip'>({{item.cashCoupon.threshhold}}元起用)</span></p>
+		<p class="recharge-time">充值时间：{{item.addTime | date:'yyyy-MM-dd'}}</p>
+		<p class="valid-term">有效期：{{item.cashCoupon.end | date:'yyyy-MM-dd'}}前使用</p>
+	</div>
+	
+</div>

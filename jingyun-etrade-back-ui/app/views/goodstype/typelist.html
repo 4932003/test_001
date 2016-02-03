@@ -1,0 +1,45 @@
+<div class="merchant-list" ng-controller="GoodsTypeController as goodstypeController">
+	<div class="ml-top-title">类别管理&gt类别维护</div>
+	<div class="ml-mid-detail">
+		<ul class="ml">
+			<li class="ml-detail">
+				<p>类别名称</p>
+			</li>
+			<li class="ml-detail">
+			<input type="text" class="ml-t" ng-model="name">
+			</li>
+		</ul>
+		
+		<div class="clear h10"></div>
+	
+		<div class="ml-ser" ng-click="serch()">查询</div>
+	</div>
+	<div class="ml-content">
+		<div class="ml-hd">
+			<div class="mlh-mid">
+				<ul class="mlhm">
+					<li class="mlh-m mlh-m2">类别名称</li>
+					<li class="mlh-m">管理员排序</li>
+					<li class="mlh-m">操作</li>
+				</ul>
+			</div>
+		</div>
+		<div class="ml-bd">
+			<div class="mlb-mid">
+				<div  ng-repeat="type in typelist" class = "mlb-line">
+					<ul class="mlbm" style="text-align: center;">
+						<li class="mlb-m mlb-m2">{{type.name}}</li>
+						<li class="mlb-m">{{type.adminsort}}</li>
+						<li class="mlb-m">
+							<a href="#" class="aa" ui-sref="station-goods.type-edit({tid:'{{type.id}}'})"
+							 >编辑</a>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="#" class="aa"  ng-click="del(type.id)">删除</a>
+						</li>
+					</ul>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

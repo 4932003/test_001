@@ -1,0 +1,25 @@
+<div class="my-shopping-gold" ng-controller='MyVoucherController' >
+	<div class="user-center-mr-hd my-collection-main-hd">
+		<div class="user-center-mr-title-icon fl"></div>
+		<div class="user-center-mr-title fl">
+			<p>我的抵用券</p>
+		</div>
+	</div>
+	<div class="clear"></div> 
+	<div class="my-shopping-gold-mid">
+		<ul>
+			<li  class="shopping-gold-item"ui-sref-active="shopping-gold-item-selected" ui-sref="user-center.my-voucher.voucher-not-use">未使用（{{unUsedAmount}}）</li>
+			<li class="my-type-seperator">|</li>
+			<li  class="shopping-gold-item"ui-sref-active="shopping-gold-item-selected" ui-sref="user-center.my-voucher.voucher-used">已使用（{{usedAmount}}）</li>
+			<li class="my-type-seperator">|</li>
+			<li  class="shopping-gold-item"ui-sref-active="shopping-gold-item-selected" ui-sref="user-center.my-voucher.voucher-expired">已过期（{{overdueAmount}}）</li>
+			<li class="my-type-seperator">|</li>
+		</ul>
+	</div>
+	<div class="my-shopping-gold-bd">
+		<div class="get-shopping-gold">
+			<a href="#/helpcenter/V8-7kU7iSDOUSLr118wGiA/zE8FInvWRDuFVEGXchUS2w" target="_blank" class="get-shopping-golds">？如何获取抵用券</a>
+		</div>
+		<div ui-view=""></div>
+	</div>
+</div>

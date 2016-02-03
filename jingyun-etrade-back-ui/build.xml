@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="del">
+	
+	<target name="del">
+		<echo>del.........</echo>
+		<delete dir="bower_components"/>
+	</target>
+	
+</project>

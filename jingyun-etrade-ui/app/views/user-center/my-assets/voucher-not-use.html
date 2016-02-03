@@ -1,0 +1,16 @@
+<div class="my-voucher-detail" ng-controller='DiscountCouponUnusedController'>
+	<div class=" voucher-detail" ng-repeat="item in coupons">
+		<div class="wdot"></div>
+		<p class="fifty" ng-if='item.discountCoupon.value!=null && item.discountCoupon.value!=0'>{{item.discountCoupon.value}}元<span class='tip'>(抵扣{{item.discountCoupon.discount*100}}%)</span></p>
+		<p class="fifty discount" ng-if='item.discountCoupon.value==null || item.discountCoupon.value==0'>{{(1-item.discountCoupon.discount)*10}}折<span class='tip'>(上不封顶)</span></p>
+		<p class="valid-term">有效期限：{{item.discountCoupon.end | date:'yyyy-MM-dd'}}前使用</p>
+		<p class="recharge-time">充值时间：{{item.addTime | date:'yyyy-MM-dd'}}</p>
+	</div>
+	
+	<div class="add-voucher voucher-detail" data-target="#recharge-voucher-dialog" data-toggle="modal">
+		<p class="adds">抵用券充值</p>
+	</div>
+	<recharge-voucher-dialog id='recharge-voucher-dialog'></recharge-voucher-dialog>
+	<illegal-request-dialog messagehd="{{messagehd}}" ></illegal-request-dialog>
+</div>
+

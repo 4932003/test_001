@@ -1,0 +1,8 @@
+<div>
+<form action="{{payurl}}"  method="POST" name="PayForm" id="PayForm" target="_blank">
+
+<input type="hidden" name="{{key}}" value="{{value}}" ng-repeat="(key,value) in paymentinfos" ng-if="key != 'payurl'" on-finish-render="ngRepeatFinished">
+
+<input type="submit" id="PayFormSubmitBtn" style="display:none;">
+</form>
+</div>

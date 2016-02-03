@@ -1,0 +1,21 @@
+<div style="display: none;" class="modal in" id="confirm-dialog" tabindex="-1" role="dialog"  data-keyboard="false" data-backdrop="static">
+  <div class="modal-dialog confirm-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+        <div class="modal-title" id="confirm-dialog-title">提示</div>
+      </div>
+      <div class="modal-body">
+        <div class="confirm-dialog-main">
+          <p class="confirm-dialog-txt">{{message}}</p>
+          <div class="confirm-dialog-btns">
+            <div class="confirm-dialog-btn confirm-dialog-confirm-btn fl" data-dismiss="modal" aria-label="Close" ng-click='confirmFunction()'>确定</div>
+            <div class="confirm-dialog-btn confirm-dialog-cancel-btn fr" data-dismiss="modal" aria-label="Close">取消</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

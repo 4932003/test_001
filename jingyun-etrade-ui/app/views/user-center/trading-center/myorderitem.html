@@ -1,0 +1,127 @@
+<div class="my-order-item" ng-repeat="order in orders">
+	<table>
+		<tbody>
+			<tr class="my-order-info">
+				<td class="my-order-no">
+					<span >订单号：</span>
+					<span class="my-order-no-info">{{order.orderno}}</span>
+				</td>
+				<td class="my-order-date">
+					<span>
+						下单时间：{{order.addtime | date:'yyyy-MM-dd HH:mm:ss'}}
+					</span>
+				</td>
+				<td class="my-order-tel">
+					<!-- <span>联系客服：400-800-0815</span> -->
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table>
+		<tbody class="my-order-products">
+			<tr>
+				<td class="my-order-products-item">
+					<table>
+						<tbody>
+						<tr ng-repeat="goods in order.goods">
+							<td class="my-order-product">
+								<div class="fl">
+									<a href="#/product/detail/{{goods.gid}}/description"><img class="my-order-p-img" ng-src="{{goods.imgpath}}@90h_90w.jpg"></a>
+								</div>
+								<div class="my-order-p-name fl">
+									<a href="#/product/detail/{{goods.gid}}/description" title="{{goods.gname}}">
+										<p class="my-order-p text-omitted">{{goods.gname}}</p>
+									</a>
+								</div>
+							</td>
+							<td class="my-order-amount">{{goods.count}}</td>
+							<td class="my-order-product-action">
+								<p class="my-order-cancel" ng-show="canRefund(order, goods)">
+									<a href="#/refund/request?oid={{order.id}}&mid={{order.mid}}&ogid={{goods.id}}&rid=">退款</a><br><a href="#/return/request?oid={{order.id}}&mid={{order.mid}}&ogid={{goods.id}}&rid=">退货</a>
+								</p>
+								<p class="my-order-cancel" ng-show="refundDone(order, goods)">
+									<a href="#/refund/progress?oid={{order.id}}&mid={{order.mid}}&ogid={{goods.id}}">退款成功</a>
+								</p>
+								<p class="my-order-cancel" ng-show="refunding(goods)">
+									<a href="#/refund/progress?oid={{order.id}}&mid={{order.mid}}&ogid={{goods.id}}">退款中</a>
+								</p>
+							</td>
+						</tr>
+					</tbody>
+					</table>						
+				</td>
+								
+				
+				<td class="my-order-receiver" >{{order.receiver}}</td>
+				<td class="my-order-sum" >
+					<p class="my-order-sum-money">￥{{order.payout?order.payout:order.price}}</p>
+					<p class="my-order-pay-type">{{order.paytypeName}}</p>
+				</td>
+				<td class="my-order-state" >
+					<p class="my-order-state-txt my-order-wait-pay">{{order.statusName}}</p>
+					<!-- <div class="my-order-logistics-info">
+						<div class="my-order-logistics">
+							<div class="van-icon my-order-van-img fl"></div>
+							<span>跟踪</span>
+							<span class="my-order-l-icon">&gt;</span>
+						</div>
+						<div class="gray-white-full-arrow-icon my-order-arror-img"></div>
+						<div class="my-order-logistics-detail">
+							<div class="my-order-ld-hd">普通快递</div>
+							<div class="my-order-ld-txt">
+								<ul class="my-order-ld-list">
+									<li>
+										<div class="my-order-ld-item">
+											<div class="my-order-ld-round my-order-ldr-red fl"></div>
+											<div class="my-order-ld-item-txt fl">
+												您的商品正在配货，请内心等待
+											</div>
+											<div class="clear"></div>
+											<div class="my-order-ld-item-date">
+												2015-11-03 23：45：11
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="my-order-ld-item">
+											<div class="my-order-ld-round my-order-ldr-gray fl"></div>
+											<div class="my-order-ld-item-txt fl">
+												您的商品正在配货，请内心等待，您的商品正在配货，请内心等待，您的商品正在配货，请内心等待，您的商品正在配货，请内心等待
+											</div>
+											<div class="clear"></div>
+											<div class="my-order-ld-item-date">
+												2015-11-03 23：40：11
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div> -->					  
+					<p class="my-order-detail"><a href="#/order/detail/{{order.id}}">订单详情</a></p>
+				</td>
+				<td class="my-order-action">
+					 <!-- <div class="my-order-pay-deadline">
+						<div class="clock-icon my-order-clock-img fl"></div>
+						<span>剩余29分30秒</span>
+					</div> -->
+					<div class="my-order-action-btn my-order-pay-btn" ng-show="isnew(order)">
+						<a href="#/order/success/{{order.id}}">立即付款</a>
+					</div>
+					<div class="my-order-action-btn my-order-comment-btn" ng-show="issuccess(order)">
+						<a href="#/user/center/comment/evaluation">立即评价</a>
+					</div>
+					<div class="my-order-action-btn my-order-buy-again-btn" ng-show="canBuyAgain(order)" ng-click="buyAgain(order)">
+						立刻购买
+					</div>
+					<div class="my-order-action-btn my-order-buy-again-btn" ng-show="isDelivered(order)">
+						<a href="#/orders/receipt/{{order.id}}">确认收货</a>
+					</div>
+					<p class="my-order-cancel" data-target="#my-order-cancel-confirm-dialog" data-toggle="modal" ng-click="selectOrder2Cancel(order)" ng-show="canCancel(order)">
+						取消订单
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

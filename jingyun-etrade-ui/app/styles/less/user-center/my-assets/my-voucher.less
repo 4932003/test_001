@@ -1,0 +1,60 @@
+@import "../../common";
+
+.my-voucher{
+	width:900px;
+	height:436px;
+}
+.my-voucher .my-voucher-hd{
+	height: 40px;
+	background-color:#F8F8F8;
+	padding-left:20px;
+	margin-bottom:7px;
+}
+.my-voucher .my-voucher-hd h3.my-voucher{
+	line-height: 40px;
+	font-size: @t2-size;
+	color:#5d5d5d;
+}
+.my-voucher .my-voucher-mid{
+	height: 42px;
+	margin-bottom: 24px;
+	padding-top:14px;
+}
+.my-voucher .my-voucher-mid ul li.voucher-item{
+	float: left;
+	width:130px;
+	text-align: center;
+	border-bottom: 1px solid #f8f8f8;
+	padding-bottom: 15px;
+	cursor: pointer;	
+}
+.my-voucher .my-voucher-mid ul li.voucher-item-selected{
+	border-bottom: 1px solid @price-color;
+	color:@price-color; 
+}
+.my-voucher .my-voucher-bd{
+	height:419px;
+	border: 1px solid @gray-border;
+	padding-left: 18px;
+	padding-top: 60px;
+	position: relative;
+}
+.my-voucher .my-voucher-bd .get-voucher{
+	position: absolute;
+	top:19px;
+	right:25px; 
+	width: 133px;
+	height: 30px;
+	background-color:#F1F1F1;
+	border: 1px solid @gray-border;
+}
+.my-voucher .my-voucher-bd .get-voucher a.get-vouchers{
+	display: block;
+	width: 133px;
+	height: 30px;
+}
+.my-voucher .my-voucher-bd .get-voucher a.get-vouchers:link,a.get-vouchers:visited{
+	text-decoration: none;
+	color:#5d5d5d; 
+	line-height: 30px;
+}

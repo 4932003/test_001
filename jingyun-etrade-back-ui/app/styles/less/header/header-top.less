@@ -1,0 +1,41 @@
+@import "../common";
+
+div.top-bar{
+	height:30px;
+	line-height: 30px;
+	width:100%;
+	background-color:@light-gray-bg;
+	color:@txt-color;
+	min-width:@center-view-width;
+}
+
+.top-login > a{
+	color:@base-color;
+}
+
+.service-hotline{
+    padding-left:4px;	
+}
+
+li.top-shopping-cart::before{
+		content: "";
+		position: absolute;
+		top: 5px;
+		right: 75px;
+		width:20px;
+		height:20px;
+		background: url(../images/index/shopping-cart.png) no-repeat 0px 0px;
+}
+
+li.top-shopping-cart{
+	margin-left:64px;
+	position:relative;
+}
+
+li.top-shopping-cart > a{
+	margin-right:0px;
+}
+
+li.top-shopping-cart > span{
+    color:@base-color;
+}

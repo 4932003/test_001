@@ -1,0 +1,39 @@
+@import "../../common";
+
+.my-collection-main-hd{
+	background-color:@light-gray-bg;
+}
+
+ul.my-collection-type-list >li{
+	border-bottom: 1px solid @gray-border;
+}
+
+ul > li.my-collection-type-item,ul > li.my-collection-type-seperator,ul > li.my-collection-type-none{
+	width: 130px;
+	text-align: center;	
+	height: 40px;
+	line-height: 40px;
+}
+
+.mscr-delete{
+	margin-right: 8px;
+    margin-top: 2px;
+    cursor:pointer;
+}
+
+ul > li.my-collection-type-item{
+	cursor:pointer;
+}
+
+ul > li.my-collection-type-item-selected{
+	border-bottom: 1px solid @price-color;
+	color:@price-color;
+}
+
+ul > li.my-collection-type-seperator{
+	width:1px;
+}
+
+ul > li.my-collection-type-none{
+	width:640px;
+}

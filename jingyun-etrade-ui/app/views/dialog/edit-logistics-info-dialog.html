@@ -1,0 +1,60 @@
+<div style="display: none;" class="modal in" id="edit-logistics-info-dialog" tabindex="-1" role="dialog"  data-keyboard="false" data-backdrop="static">
+  <div class="modal-dialog edit-logistics-info-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+        <div class="modal-title" id="edit-logistics-info-dialog">请填写物流信息</div>
+      </div>
+      <div class="modal-body">
+        <div class="edit-logistics-info-main">
+          <ul class="edit-logistics-info-list">
+            <li>
+              <div class="edit-logistics-info-txt fl"><span class="required-input">*&nbsp;</span>物流公司：</div>
+              <div class="edit-logistics-info-value fl">
+                <input type="text" ng-model="logistic.expressName">
+              </div>
+              <div class="clear"></div>
+            </li>
+            <li>
+              <div class="edit-logistics-info-txt fl"><span class="required-input">*&nbsp;</span>物流单号：</div>
+              <div class="edit-logistics-info-value fl">
+                <input type="text" ng-model="logistic.expressno">
+              </div>
+              <div class="clear"></div>
+            </li>
+            <li>
+              <div class="edit-logistics-info-txt fl"><span class="required-input">*&nbsp;</span>所寄地址：</div>
+              <div class="edit-logistics-info-value fl">
+                <input type="text" ng-model="logistic.receiver">
+              </div>
+              <div class="clear"></div>
+            </li>
+            <!-- <li class="edit-logistics-info-desc">
+              <div class="edit-logistics-info-txt fl">发货说明：</div>
+              <div class="edit-logistics-info-value fl">
+                <textarea rows="4"></textarea>
+                还可输入200字
+              </div>
+              <div class="clear"></div>
+            </li>
+            <li>
+              <div class="edit-logistics-info-txt fl">上传凭证：</div>
+              <div class="edit-logistics-info-value fl">
+                <div class="refund-goods-img-upload fl">上传图片</div>
+                  &nbsp;每张图片大小不超过5M,最多3张，支持GIF、JPG、PNG、BMP格式
+              </div>
+              <div class="clear"></div>
+            </li> -->
+            <li class="edit-logistics-info-btns">
+              <div class="edit-logistics-info-btn edit-logistics-info-save-btn fl" ng-click="saveLogistic()">提交退货物流信息</div>
+              <div class="edit-logistics-info-btn edit-logistics-info-cancel-btn fl" data-dismiss="modal">取消</div>
+              <div class="clear"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div ng-controller="SchoolSiteController">
+	<div class="information" >
+		资讯管理&gt查询增加的资讯
+	</div>
+	<div class="content">
+		学堂：<select class="info-option" style="width:230px;" name='names' ng-model="infoschool.name" ng-options="m.name as m.name for m in SchoolSite"></select>
+		文化：<select class="info-option" style="width:230px;" name='names' ng-model="infoschool.name" ng-options="m.name as m.name for m in cultureSite"></select>
+		新闻：<select class="info-option" style="width:230px;" name='names' ng-model="infoschool.name" ng-options="m.name as m.name for m in newsSite">
+		</select>
+		<div style="width: 150px;height: 30px;background-color: #FF9934;color: #fff;line-height: 30px;text-align: center;cursor: pointer;border-radius: 4px;margin-top: 10px;margin-bottom:10px;margin-left:40px;" ng-click="checkInfo(infoschool)">查询</div>
+		</div>
+		<table class="all-info-tb">
+			<tr class="tr1">
+				<th style="width:120px;">类别</th>
+				<th class="title-hd" style="width:150px;">标题</th>			
+				<th class="date-hd" style="text-align:left;">时间</th>
+				<th class="summary-hd">摘要</th>
+				<th class="action-hd" style="width:130px;">操作</th>
+			</tr>
+			<tr ng-repeat="detail in alldetail">
+				<td><p style="width:120px;text-align:center;">{{detail.sitename}}</p></td>
+				<td><p class="title-p text-omitted" style="width:150px;">{{detail.title}}</td>
+				<td><p class="date-p text-omitted">{{detail.addtime}}</td>
+				<td><p class="summary-p text-omitted">{{detail.abstracts}}</td>
+				<td>
+					<input type="button" value="删除" ng-click="deletedetails(detail)" />
+					<input type="button" value="修改" ng-click="updatedetails(detail)">
+					<input type="button" ng-show="showhide" value="置顶" ng-click="topdetails(detail,infoschool)">
+				</td>
+			</tr>
+			<tr class="tr1">
+				<td style="border:none;"></td>
+				<td style="border:none;"></td>
+				<td rowspan="5" style="text-align:center;border:none;cursor:pointer" ng-if="more" ng-click="getList(size)">查看更多</td>
+				<td style="border:none;"></td>
+				<td style="border:none;"></td>
+			</tr>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,69 @@
+<div class="avatar-setting-main" ng-controller='AvatarSettingController' >
+	<div class="user-center-mr-hd">
+		    <div class="user-center-mr-title-icon fl"></div>
+			<div class="user-center-mr-title fl">
+				<p>个人资料</p>
+			</div>
+			<div class="as-desc fr">
+				<p>完善个人信息，可获得<span class="as-desc-red">50</span>积分！积分可以抵现啦，赶快行动吧</p>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div class="avatar-setting-detail">
+			<div class="avatar-setting-info fl">
+				<div class="avatar-setting-i-hd">
+					<p class="avatar-setting-i-title fl">头像设置</p>
+					<ul class="avatar-setting-i-type">
+						<!--
+						<li class="as-recommend" ng-hide="true">推荐头像</li>
+					-->
+						<li class="as-type-selected as-upload" onClick="$('#file').trigger('click')">
+							上传头像
+						</li>
+
+						<form id='fileinfo'>
+								<input style='display:none' type='file' value='头像上传' id='file' name='file' ng-model='uploadBtn' onChange="$('#submitFile').trigger('click');" />
+
+								<input id='submitFile' type='hidden' ng-click='uploadFile()'>
+							</form>
+
+					</ul>
+				</div>
+				<div class="clear"></div>
+
+				<div class="avatar-setting-i-main">
+					<img  ng-src='{{userinfo.picture}}' ng-if="userinfo.picture" />
+				</div>
+				<!--
+				<div class="avatar-setting-i-main" ng-hide="true">
+					<ul class="as-recommend-list">
+						<li class="as-recommend-item">
+							<img src="../images/avatar-setting/jttx1.png" alt="" class="as-recommend-img">
+						</li>
+					</ul>
+				</div>
+			-->
+				<div class="avatar-setting-im-desc">
+					请确保文件大小不超过200K，格式为jpg、png的图片
+				</div>
+			</div>
+			
+			<div class="avatar-setting-viewer fr">
+				<input type='hidden' ng-model='userinfo.uid' />
+				<input type='hidden' ng-model='userinfo.picture' />
+				<div class="avatar-setting-v-img">
+					<img  ng-src='{{userinfo.picture}}@85h_85w.jpg' ng-if="userinfo.picture" />
+					<div class='default-pic' ng-if="(userinfo.picture=='' || userinfo.picture==null)">
+					</div>
+				</div>
+				<div class="avatar-setting-v-txt">
+					头像预览
+				</div>
+				<div class="avatar-setting-btn" ng-click='save()'>
+					保存
+				</div>
+			</div>
+		</div>
+		<success-dialog message="{{sucMessage}}"></success-dialog>
+		<illegal-request-dialog messagehd="{{messagehd}}" ></illegal-request-dialog>
+</div>

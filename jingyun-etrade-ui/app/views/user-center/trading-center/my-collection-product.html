@@ -1,0 +1,94 @@
+<div class="my-collection-product-main" >
+	<table class="my-collection-product-table">
+		<thead>
+			<tr>
+				<th class="mcp-product-hd">商品</th>
+				<th class="mcp-date-hd">收藏时间</th>
+				<th class="mcp-price-hd">价格</th>
+				<th class="mcp-action-hd">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="mcp-item" ng-repeat="fg in fgoodsall">
+				<td class="mcp-product">
+					<div class="mcp-product-checkbox fl">
+						<input type="checkbox" ng-change="selectGoods(fg)" ng-model="fg.selected" value="{{fg.id}}" ng-true-value="true" ng-false-value="false">
+					</div>
+					<div class="mcp-product-img fl">
+					    <a href="#/product/detail/{{fg.gid}}/description">
+						    <img class="mcp-img" ng-src="{{fg.thumbpath1}}@90h_90w.jpg">
+						</a>
+					</div>
+					<div class="mcp-product-txt fl">
+					<a href="#/product/detail/{{fg.gid}}/description" title="【{{fg.goodsName}}】{{fg.specifications}}">
+						<p class="mcp-p text-omitted">【{{fg.goodsName}}】{{fg.specifications}}</p>
+					</a>
+					</div>
+				</td>
+				<td class="mcp-date">
+					{{fg.collectTime}} 
+				</td>
+				<td class="mcp-price" ng-show="fg.onSale == '0'">
+					￥{{fg.price}}
+				</td>
+				<td class="mcp-price" ng-show="fg.onSale == '1'">
+					￥{{fg.promotionPrice}}
+				</td>
+				<td class="mcp-action">
+					<div class="my-order-action-btn mcp-add-cart-btn" ng-click="addToCart(fg)">
+						加入购物车
+					</div>
+					<p class="mcp-cancel-collection" ng-click="remove(fg.id)">取消收藏</p>
+				</td>
+			</tr>
+			<!--
+
+			<tr class="mcp-item">
+				<td class="mcp-product">
+					<div class="mcp-product-checkbox fl">
+						<input type="checkbox">
+					</div>
+					<div class="mcp-product-img fl">
+						<img class="mcp-img" src="../images/product-detail/jtsp1.png">
+					</div>
+					<div class="mcp-product-txt fl">
+						<p>东阿阿胶片红标铁盒240g</p>
+					</div>
+				</td>
+				<td class="mcp-date">
+					2015-11-11 14：48：24
+				</td>
+				<td class="mcp-price">
+					￥99.00
+				</td>
+				<td class="mcp-action">
+					<div class="my-order-action-btn mcp-add-cart-btn">
+						加入购物车
+					</div>
+					<p class="mcp-cancel-collection">取消收藏</p>
+				</td>
+			</tr>
+			 -->
+		</tbody>
+		<tfoot>
+			<tr>
+				<td class="mcp-select-all" colspan="4">
+					<div class="mcp-select-all-checkbox fl">
+						<input type="checkbox" ng-click='chkAll(chkall)' ng-model="chkall">
+					全选
+					</div>
+					<div class="my-order-action-btn mcp-csc-btn fl" data-target="#confirm-dialog" data-toggle="modal">
+						删除
+					</div>
+					<div class="ptr-get-more" ng-click='getmorefgoodsall()' ng-show="showmore1">
+						 查看更多&gt;&gt;
+					</div>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+	<div class="clear"></div>
+</div>
+<illegal-request-dialog messagehd="{{messagehd}}" ></illegal-request-dialog>
+<add-cart-success-dialog gid="{{goods.gid}}"></add-cart-success-dialog>
+<confirm-dialog confirm-function='delFavGoods()' message='确定删除？'></confirm-dialog>

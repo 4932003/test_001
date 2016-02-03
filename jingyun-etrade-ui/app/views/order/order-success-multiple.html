@@ -1,0 +1,33 @@
+<div class="clear"></div>
+<div class="bbox2-top-merge">
+	<div class="bbox2-top-merge-left">
+		<p>合并|2笔订单</p>
+	</div>
+	<div class="bbox2-top-merge-right">
+		<p>
+			<span class="red">{{paymoney|number:2}}</span>
+			元
+		</p>
+	</div>
+</div>
+<div class="bbox2-mid-merge" ng-show="displayOrderDetailFlag">
+	<table class="os3">
+		<thead>
+			<th class="os3">类型</th>
+			<th class="os3">交易号</th>
+			<th class="os3">对方</th>
+			<th class="os3">金额</th>
+		</thead>
+		<tbody>
+			<tr class="os3" ng-repeat="payment in payments">
+				<td class="os3">担保交易</td>
+				<td class="os3">{{payment.transno}}</td>
+				<td class="os3">{{payment.mname}}</td>
+				<td class="os3">{{payment.money}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="bbox2-bottom">
+	<input type="button" ng-click="displayOrderDetail()"  class="bbox2-bottom-detail" value="订单详情">
+</div>

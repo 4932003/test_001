@@ -1,0 +1,108 @@
+<div class="verify-email">
+			<div class="safety-setting-total-title">
+			<div class="modify-title">
+			<p>验证邮箱</p>
+			</div>
+			<div class="hd">
+				<div class="hd1 ">
+					<p>验证身份</p>
+				</div>
+				<div class="hd2 ">
+					<p>验证邮箱</p>
+				</div>
+				<div class="hd3 ">
+					<p>完成</p>
+				</div>
+			</div>
+		</div>
+			<div class="bd">
+				<form name='myForm' ng-controller="VerifyEmailController">
+					<input type="hidden"  name='mobile' ng-model="mobile" value="{{mobile}}" required>
+					<div class="bd1 on">
+						<div class="bd1-box1">
+							<p>已验证手机：{{viewMobile}}</p>
+							<input type="button" class="get" value="{{sendSmsBtnValue}}"  ng-disabled="myForm.mobile.$error.required || smsCountDown" ng-click="sendSms()">
+						</div>
+						<div class="bd1-box2">
+							<div class="top-item">
+								<p>请填写手机校验码:</p>
+								<input type="text" class="code" placeholder='请输入手机校验码' name='smsCode' ng-model="smsCode" required>
+							</div>
+							<input type="button" class="commit" value="提交" ng-disabled="myForm.smsCode.$error.required" ng-click="checkSmsCode(smsCode)"></div>
+						<div class="bd1-box3 safety-setting-total-ft">
+							<p>为什么要进行身份验证?</p>
+							<p>1. 为保障您的账户信息安全，在变更账户中的重要信息时需要进行身份验证，感谢您的理解和支持。</p>
+							<p>
+								2. 验证身份遇到问题？请拨打
+								<span class="set">客服电话：400-800-0815</span>
+								，客服将尽快为您处理！
+							</p>
+						</div>
+					</div>
+					<div class="bd2 ">
+						<div class="bd2-box1">
+							<p>新的邮箱：</p>
+							<input type="text" class="box1" placeholder='请输入邮箱'  name='email' ng-model="email" required pattern="^[\w-_]+@([\w]+\.)+[\w]+$" newkey >
+							<p class="red" ng-show="myForm.email.$dirty && myForm.email.$error.pattern" >邮箱格式错误</p>
+							<p class="red" ng-show="myForm.email.$dirty && !myForm.email.$error.pattern && myForm.email.$error.newkey" >该邮箱已被使用</p>
+						</div>
+						<div class="bd2-box2">
+							<div class="top-item">
+								<p>验证码：</p>
+								<input type="text" class="code" placeholder='请输入验证码' ng-model="captchaCode" name='captchaCode' required checkcaptchacode >
+								<div class="num" id='captchaImg' style="background: url({{captcha}}) no-repeat;" ng-click="changeCaptcha()"></div>
+								<p>
+									看不清?
+									<a href class="set" ng-click="changeCaptcha()">换一张</a>
+								</p>
+								<p class="red" ng-show="myForm.captchaCode.$dirty &&  myForm.captchaCode.$error.captchaCode">验证码错误</p>
+							</div>
+							<input type="button" class="commit" value="提交"  ng-disabled="myForm.email.$invalid || myForm.captchaCode.$invalid" ng-click="sendEmailCode(email)">
+						</div>
+						<div class="bd2-box3">
+							<p>为什么要进行邮箱验证?</p>
+							<p>1. 验证邮箱可加强账户安全，您可以使用已验证邮箱快速找回密码或支付密码;</p>
+							<p>2. 已验证邮箱可用于账户余额变动提醒;</p>
+						</div>
+					</div>
+					<div class="bd3 ">
+						<div class="bd3-box1">
+							<p>
+								我们给您的邮箱
+								<span>{{viewEmail}}</span>
+								发送了一封含有验证码的邮件，请查收后输入校验码。
+							</p>
+							<p>
+								如未收到邮件请在几分钟后
+								<a href="" class="set" ng-click="sendEmailCode(email)" ng-disabled="emailCountDown"  >重新获取{{emailCountDown}}</a>
+							</p>
+						</div>
+						<div class="bd3-box2">
+							<div class="top-item">
+								<p>请填写邮箱校验码:</p>
+								<input type="text" class="code" placeholder='请输入邮箱校验码' ng-model="code2" name="code2" required>
+							</div>
+							<input type="button" class="commit" value="提交" ng-click="refreshEmail(email, code2)" ng-disabled="myForm.code2.$error.required">
+						</div>
+					</div>
+					<div class="bd4 safety-setting-total-success">
+						<p>恭喜您，验证邮箱成功！</p>
+						<p class="fl">
+							账户安全等级：
+							<span>{{levelName}}</span>
+						</p>
+						<div class="progress myaccount-progress  fl">
+							<progress-bar level="level"></progress-bar>
+						</div>
+						<div class="clear"></div>
+						<p>
+							返回
+							<a href="/#/user/center/setting/safety" class="set">安全设置</a>
+						</p>
+					</div>
+					<illegal-request-dialog messagehd="{{messagehd}}" ></illegal-request-dialog>
+				</form>
+			</div>
+		</div>
+
+		

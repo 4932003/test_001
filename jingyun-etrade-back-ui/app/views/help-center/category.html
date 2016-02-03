@@ -1,0 +1,43 @@
+<div class='help-center-category' ng-controller='HelpCenterCategoryController'>
+	<div class='clear'></div>
+	<div class='left'>
+		<ul ng-repeat="item in list" >
+			<span class="on" ng-click='getSingle(item)'>{{item.sort}}-->{{item.name}} </span> 
+			<a class="remove" ng-click="remove(item.id)">x</a>
+		</ul>
+	</div>
+	<div class='right'>
+		<form name='myForm'>
+			<div class='box'>
+				<span class='titlle'>{{title}}</span>
+				<span class='add' ng-click='newCategory()'>点击新增</span>
+				<table>
+					<tr>
+						<td>名称:</td>
+						<td><input type="text" ng-model='category.name' name='name'required ng-minleng= "1" ng-maxlength="20"/></td>
+						<td  ng-show="myForm.name.$error.required">
+							<p class='red'>请输入名称</p>
+						</td>
+						<td  ng-show="myForm.name.$darty && myForm.name.$invalid">
+							<p class='red'>请输入名称</p>
+						</td>
+					</tr>
+					<tr>
+						<td>展示顺序:</td>
+						<td><input type="number" ng-model='category.sort' name="sort" pattern="^[1-9][0-9]{0,2}$" required></td>
+						<td  ng-show="myForm.sort.$error.required">
+							<p class='red'>请输入展示顺序</p>
+						</td>
+						<td  ng-show=" myForm.sort.$error.pattern">
+							<p class='red'>请输入1-999间整数</p>
+						</td>
+					</tr>
+				</table>
+				<div class='submitDiv'><input type='button' value='保存' ng-click='submitItem(category, myForm.$valid)' /></div>
+				
+			</div>
+
+		</form>
+	</div>
+	<div class='clear'></div>
+</div>

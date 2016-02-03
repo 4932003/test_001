@@ -1,0 +1,277 @@
+<header-top></header-top>
+<div class="clear"></div>
+
+<div class="logo-sec center-view">
+	<div class="logo-icon top-logo fl" ui-sref="index"></div>
+	<div class="order-d-step fr">
+		<ul class="step-d-step-list">
+			<li class="step-first">
+				<div class="step-done">
+					<div class="step-no"></div>
+					<div class="step-name">我的购物车</div>
+				</div>
+			</li>
+			<li>
+				<div class="step-done">
+					<div class="step-no"></div>
+					<div class="step-name">确认订单信息</div>
+			    </div>
+			</li>
+			<li class="step-last">
+				<div>
+					<div class="step-no"></div>
+					<div class="step-name">提交订单</div>
+				</div>	
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class="clear"></div>
+
+<div class="center-view">
+
+<div class="order-confirm-main" ng-controller="OrderController">
+	
+	<div class="od-receiving-address">
+		<div class="od-main-hd">
+			<div class="od-mh-title">
+				收货地址
+			</div>
+		</div>
+		<div class="od-ra-list">
+			<ul class="od-ra-list-ul">
+				<li class="od-ra-item" ng-repeat="address in addresses" ng-class="{'od-ra-selected': (address.id == purchaseVo.addressid)}" 
+					ng-click="selectAddress(address)">
+					<div>
+						<div class="od-ra-hd">
+							<span class="od-ra-name">{{address.receiver}}</span>
+							<span class="od-ra-tel">{{address.mobile}}</span>
+						</div>
+						<div class="od-ra-detail">
+							{{address.countryName}}-{{address.provinceName}}-{{address.cityName}}-{{address.address}}
+						</div>
+						<div class="od-ra-action">
+							<div class="od-ra-update fl" data-target="#edit-receiving-address-dialog" ng-click='getSingle(address.id)' data-toggle="modal">修改</div>
+							<div class="od-ra-delete fl" ng-click="removeAddress(address)">删除</div>
+						</div>
+					</div>
+					<div class="od-ra-default-note od-ra-set-default" ng-click="setDefaultAddress(address)">
+						设置为默认
+					</div>
+				</li>
+				<!-- 默认地址样式 END -->
+				<li class="od-ra-item">
+					<div class="od-ra-item" >
+						<div class="od-ra-add" data-target="#edit-receiving-address-dialog" data-toggle="modal" ng-click="newAddress()">
+							<div class="big-gray-add-icon od-ra-add-img fl"></div>
+							<div class="fl">新增地址</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="clear"></div>
+
+	<div class="od-order-info">
+		<div class="od-main-hd">
+			<div class="od-mh-title fl">
+				订单信息
+			</div>
+			<div class="od-mh-go-cart fl" ng-click="gobackCart()">
+				返回购物车
+			</div>
+		</div>
+
+		<div class="clear"></div>
+
+		<div class="od-oi-item" ng-repeat="order in transaction.orders">
+			<div class="od-oi-shop">店铺：{{order.mname}}</div>
+			<table class="od-ois-table" id="">
+				<thead>
+					<tr>
+						<th class="od-ois-hd-product">商品名称</th>
+						<th class="od-ois-hd-price">单价（元）</th>
+						<th class="od-ois-hd-amount">数量</th>
+						<th class="od-ois-hd-promo">已优惠</th>
+						<th class="od-ois-hd-delivery-method">配送方式</th>
+						<th class="od-ois-hd-sum">小计(元)</th>	
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="od-ois-grid-main" ng-repeat="goods in order.goods">
+						<td class="od-ois-gm-product">
+							<div class="fl">
+								<a href="#/product/detail/{{goods.gid}}/description"><img class="od-ois-gmp-img" ng-src="{{goods.imgpath}}@110h_110h.jpg"></a>
+							</div>
+							<div class="od-ois-gmp-name fl">
+								<a href="#/product/detail/{{goods.gid}}/description"><p class="od-gmp-p">{{goods.gname}}</p></a>
+							</div>
+						</td>
+						<td class="od-ois-gm-price">{{goods.price}}</td>
+						<td class="od-ois-gm-amount">
+							{{goods.count}}
+						</td>
+						<td class="od-ois-gm-promo">{{goods.price - (goods.pprice?goods.pprice: goods.price) | number:2}}</td>
+						<td class="od-ois-gm-delivery-method">普通快递</td>
+						<td class="od-ois-gm-sum">{{(goods.pprice?goods.pprice: goods.price) * goods.count | number: 2}}</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr class="od-ois-tfoot">
+						<td class="od-ois-message" colspan="3">
+							<div class="od-oism-memo" id="">
+								<div class="od-oism-title fl" >
+									买家留言：
+							    </div>
+							    <div  class="od-oism-txt fl">
+							    	<input class="od-oism-textarea fl" data-maxlength="45" id="" ng-model="order.note"/>
+							    	<p class="od-oism-tip fl">限45个字！</p>
+							    </div>
+							</div>
+						</td>
+						<td class="od-ois-postage">
+							邮费：{{(order.postage && order.postage > 0)? (order.postage|currency:"￥") : "包邮"}}
+						</td>
+						<td class="od-ois-promo" colspan="2">
+							店铺合计（含邮费）：￥{{order.price}}
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+	</div>
+
+	<div class="clear"></div>
+
+	<!--支付方式-->
+	<div class="od-payment-method">
+		<div class="od-main-hd">
+			<div class="od-mh-title">
+				支付方式
+			</div>
+		</div>
+		<ul class="od-pm-list">
+			<li ng-repeat="paytype in paytypes">
+				<div class="od-pm-item">
+					<input name="od-pm-radio" type="radio" ng-model="purchaseVo.paytypeCode" value="{{paytype.code}}" 
+						ng-change="selectPaytype(paytype)" ng-disabled="paytype.disable" ng-checked="$index==0">
+					<span class="od-pm-txt">{{paytype.name}}</span>
+					<span class="od-pm-desc">{{paytype.description}}</span>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<!--支付方式-->
+
+	<div class="clear"></div>
+
+	<div class="od-invoice">
+		<div class="od-main-hd">
+			<div class="od-mh-title">
+				发票信息
+			</div>
+		</div>
+		<div class="od-invoice-detail">
+			<span class="od-id-txt">是否开发票？</span>
+			<input name="od-id-radio" ng-model="invoice.required" value="true" type="radio" data-target="#invoice-info-dialog" data-toggle="modal">&nbsp;&nbsp;是</input>
+			<input name="od-id-radio" ng-model="invoice.required" value="false" type="radio" ng-click="purchaseVo.invoiceType='';purchaseVo.invoiceTitle='';invoice.type='';invoice.title='';">&nbsp;&nbsp;否</input>
+			<span class="od-id-desc">温馨提示：使用优惠券、礼品卡支付的金额不开具发票。</span>
+			<a href="#/helpcenter/knWclPhTSoyyjQ4MuhwL6w/o1ZBQLq4RM2dF1JPVYfQLQ" target="_blank"><span class="od-id-explain">发票说明</span></a>
+		</div>
+	</div>
+
+
+	<div class="od-settle">
+		<div class="od-main-hd">
+			<div class="od-mh-title">
+				优惠卡券
+			</div>
+		</div>
+		<div class="od-settle-voucher">
+			<div class="od-sv-hd">
+				<div class="od-sv-hd-left fl">
+					<input ng-model="useDiscountCoupon" ng-true-value="true" ng-false-value="false" ng-change="checkDiscountCoupon()" name="od-settle-radio" type="checkbox"></input>
+					<span class="od-settle-title">使用抵用券</span>
+					<span class="od-settle-add" data-target="#recharge-voucher-dialog" data-toggle="modal">添加抵用券</span>
+				</div>
+				<div class="od-settle-hd-right fr">
+					<a href="#/helpcenter/V8-7kU7iSDOUSLr118wGiA/zE8FInvWRDuFVEGXchUS2w" target="_blank">抵用券使用规则</a>
+				</div>
+			</div>
+			<div class="clear"></div>
+
+			<div class="od-settle-main" ng-show="useDiscountCoupon">
+				<span class="od-settle-no-note" ng-show="discountcoupons.length == 0">您当前无可用抵用券</span>
+				<ul>
+					<li class="od-settle-item" ng-repeat="dcoupon in discountcoupons">
+						<input class="od-si-input fl" ng-model="purchaseVo.couponID" value="{{dcoupon.couponID}}" name="od-sv-radio" type="radio" ng-change="changeCouponSelection()"></input>
+						<div class="od-settle-value twenty-point-color" ng-if='dcoupon.discountCoupon.value!=null && dcoupon.discountCoupon.value!=0'>{{dcoupon.discountCoupon.value}}元<span class='tip'>(抵扣{{dcoupon.discountCoupon.discount*100}}%)</span></div>
+						<div class="od-settle-value twenty-point-color" ng-if='dcoupon.discountCoupon.value==null || dcoupon.discountCoupon.value==0'>{{(1-dcoupon.discountCoupon.discount)*10}}折<span class='tip'>(上不封顶)</div>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
+
+		<div class="clear"></div>
+
+		<div class="od-shopping-money">
+			<div class="od-sm-hd">
+				<div class="od-sv-hd-left fl">
+					<input ng-model="useCashCoupon" ng-true-value="true" ng-false-value="false" ng-change="checkCashCoupn()" name="od-settle-radio" type="checkbox"></input>
+					<span class="od-settle-title">使用购物金</span>
+					<span class="od-settle-add" data-target="#recharge-shopping-gold-dialog" data-toggle="modal">添加购物金</span>
+				</div>
+				<div class="od-settle-hd-right fr">
+					<a href="#/helpcenter/V8-7kU7iSDOUSLr118wGiA/zE8FInvWRDuFVEGXchUS2w" target="_blank">购物金使用规则</a>
+				</div>
+			</div>
+			<div class="clear"></div>
+
+			<div class="od-settle-main" ng-show="useCashCoupon">
+				<span class="od-settle-no-note" ng-show="cashcoupons.length == 0">您当前无可用购物金</span>
+				<ul>
+					<li class="od-settle-item" ng-repeat="cashcoupon in cashcoupons">
+						<input class="od-si-input fl" ng-model="purchaseVo.couponID" value="{{cashcoupon.couponID}}" name="od-sm-radio" type="radio" ng-change="changeCouponSelection()"></input>
+						<div class="od-settle-value od-settle-value-cash cash-counpon-point-color">{{cashcoupon.cashCoupon.value}}元<span class='tip'>({{cashcoupon.cashCoupon.threshhold}}元起用)</span></div>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="clear"></div>
+	<div class="od-summary-info">
+		<div class="od-real-payment">
+			实付款：<span class="od-rl-sum">￥{{finalmoney|number:2}}</span>
+		</div>
+		<div class="od-get-integral">
+			可获得阿胶积分：{{finalpoint|number:0}}点
+		</div>
+		<div class="od-si-btn">
+			<div class="od-sib-submit fr" ng-click="submit()">
+				提交订单
+			</div>
+			<div class="od-sib-go-cart fr" ng-click="gobackCart()">
+				返回购物车
+			</div>
+		</div>
+	</div>
+<edit-receiving-address-dialog></edit-receiving-address-dialog>
+<recharge-voucher-dialog></recharge-voucher-dialog>
+<recharge-shopping-gold-dialog></recharge-shopping-gold-dialog>
+<invoice-info-dialog></invoice-info-dialog>
+<illegal-request-dialog messagehd="{{messagehd}}" ></illegal-request-dialog>
+<success-dialog message="{{sucMessage}}"></success-dialog>
+<confirm-dialog confirm-function='confirmSubmit()' message='您正在将优惠卡券使用在不同商家的多个订单中，一旦确认订单提交，那么在取消订单或者退款时将不会退换该优惠卡券，确定提交吗？'></confirm-dialog>
+<login-dialog></login-dialog>
+</div>
+
+</div>
+
+<div class="clear"></div>
+<footer></footer>

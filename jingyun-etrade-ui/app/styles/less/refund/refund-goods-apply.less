@@ -1,0 +1,80 @@
+@import "../common";
+
+ul.refund-goods-steps-list{
+	margin-left: 40px;
+}
+
+ul.refund-goods-steps-list > li{
+    width: 280px;
+    text-align: center;
+}
+
+ul.refund-goods-apply-list{
+	margin-top: 60px;
+}
+
+ul.refund-goods-apply-list > li{
+	width:100%;
+    line-height: 30px;
+    margin-bottom: 25px;
+}
+
+.refund-goods-apply-item-txt{
+	width: 33%;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.required-input{
+	color:@price-color;
+}
+
+ul.refund-goods-apply-list > li input,ul.refund-goods-apply-list > li select,ul.refund-goods-apply-list > li textarea{
+	width: 350px;
+    padding-left: 10px;
+}
+
+ul.refund-goods-apply-list > li input,ul.refund-goods-apply-list > li select{
+    height: 30px;
+}
+
+ul.refund-goods-apply-list > li textarea{
+    line-height:25px;
+}
+
+.refund-goods-img-upload{
+	width: 200px;
+    text-align: center;
+    background-color: @light-gray-bg;
+    border: 1px solid @gray-border;
+    cursor: pointer;
+    position: relative;
+}
+.refund-goods-img-upload > input[type='file']{
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;;
+}
+
+.refund-goods-note{
+	font-size: @t5-size;
+    color: @gray-txt-color;
+}
+
+.refund-goods-apply-btn{
+	width: 350px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    background-color: @price-color;
+    color: @white-color;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 34%;
+}

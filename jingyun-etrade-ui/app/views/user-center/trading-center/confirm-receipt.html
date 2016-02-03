@@ -1,0 +1,91 @@
+<header-top></header-top>
+<div class="clear"></div>
+
+<div class="logo-sec center-view">
+	<div class="logo-icon top-logo fl" ui-sref="index"></div>
+</div>
+<div class="confirm-receipt center-view" ng-controller="OrderReceiptController">
+	<!-- <div class="confirm-top-title">我已收到货，同意付款。</div> -->
+	<div  class="confirm-info">
+		<div class="confirm-mid-title">订单信息</div>
+		<table  class="confirm-info-hd">
+			<tbody>
+				<tr class="confirm-infos">
+					<td class="confirm-info-goods">商品</td>
+					<td class="confirm-info-state">状态</td>
+					<td class="confirm-info-price">单价（元）</td>
+					<td class="confirm-info-number">数量</td>
+					<td class="confirm-info-discount">优惠</td>
+					<td class="confirm-info-total">商品总价（元）</td>
+					<td class="confirm-info-freight">运费（元）</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table  class="confirm-info-bd">
+			<tbody class="confirm-info-box">
+				<tr class="confirm-info-item">
+					<td class="confirm-info-items">
+						<table>
+							<tbody>
+								<tr ng-repeat="goods in order.goods">
+									<td class="confirm-info-product">
+										<div class="confirm-info-fl">
+											<a href="#/product/detail/{{goods.gid}}/description"><img class="confirm-info-p-img" ng-src="{{goods.imgpath}}@70h_70w.jpg"></a>
+										</div>
+										<div class="confirm-info-p-name fl">
+											<p class="confirm-p text-omitted">{{goods.gname}}</p>
+										</div>
+									</td>
+									<td class="confirm-info-sta">{{goods.statusName}}</td>
+									<td class="confirm-info-pri">{{goods.price}}</td>
+									<td class="confirm-info-num">{{goods.count}}</td>
+									<td class="confirm-info-dis">{{goods.pprice?goods.price-goods.pprice:0}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+					
+					<td class="confirm-info-tot">{{order.payout}}</td>
+					<td class="confirm-info-frei">{{order.postage}}</td>
+				</tr>
+				
+			</tbody>
+		</table>
+	</div>
+	<div class="confirm-pay-mon">
+		实付款：
+		<span class="ts">{{order.payout}}</span>
+		元
+	</div>
+	<div class="clear"></div>
+	<div class="confirm-rinfo">
+		<ul class="cr">
+			<li class="crl">订单编号：{{order.orderno}}</li>
+			<li class="crl">店铺名称：{{order.mname}}</li>
+			<li class="crl">收货信息：{{order.address}}，{{order.receiver}}, {{order.mobile}}, {{order.zipcode}}</li>
+			<li class="crl">成交时间：{{order.addtime|date:'yyyy-MM-dd HH:mm:ss'}}</li>
+		</ul>
+	</div>
+	<div class="confirm-pay-box">
+		<div class="cp-b1">
+			<p>安全设置检测成功</p>
+			<p>请输入支付密码：</p>
+		</div>
+		<div class="cp-b2">
+			<input type="password" class="cp" ng-model="tradepwd"><span class="error-txt">*</span>
+			<a href="#/user/center/setting/safety" target="_blank" class="cpa">忘记密码？</a>
+		</div>
+		<div class="cp-b3" ng-click="confirmReceipt()">确认收货</div>
+	</div>
+
+	<success-dialog message="{{sucMessage}}"></success-dialog>
+	<illegal-request-dialog messagehd='{{messagehd}}'></illegal-request-dialog>
+</div>
+
+
+<div class="clear"></div>
+<div ui-view="user-center-bottom"></div>
+
+<div class="clear"></div>
+<footer></footer>

@@ -1,0 +1,78 @@
+
+<div class="comment-bd" ng-controller="GoodInfoController">
+
+	<div class="goods-info-shd">
+		<p>商品信息</p>
+		<p>评价状态</p>
+	</div>
+	<div class="clear"></div>
+	<div class="goods-info-sbd">
+
+		<div class="goods-info-box1 gi-box" ng-repeat="goods in commentGoods">
+			<a href="#/product/detail/{{goods.gid}}/description">
+				<img class="gi-img fl" ng-src="{{goods.imgpath}}"/>
+			</a>
+			<div class="gi-text fl">
+			<a href="#/product/detail/{{goods.gid}}/description" title="{{goods.gname}}">
+				<p class="gi-p text-omitted">{{goods.gname}}</p>
+			</a>
+				<p class="gi-p text-omitted">{{goods.addtime}}</p>
+ 
+			</div>
+			<div class="gi-comment" >
+				<p ng-click="queryComment(goods)">查看评价</p>
+			</div>
+			<div class="clear"></div>
+			<!-- ************************ -->
+			<div class="gi-detail" ng-class="{'on':goods.detailDiv}">
+				<div class="gid-point">
+					<p>我的评分:</p>
+					<div class="gid-star">
+						<span class="gid-left-star" ng-class="{'cur':goods.commentdetail.showhide5}"></span>
+						<span class="gid-left-star"ng-class="{'cur':goods.commentdetail.showhide4}"></span>
+						<span class="gid-left-star" ng-class="{'cur':goods.commentdetail.showhide3}"></span>
+						<span class="gid-left-star" ng-class="{'cur':goods.commentdetail.showhide2}"></span>
+						<span class="gid-left-star" ng-class="{'cur':goods.commentdetail.showhide1}"></span>
+						</div>
+					<div class="gid-lev">
+						{{goods.commentdetail.personalGrade}}分 <!-- 惊喜 -->
+					</div>
+				</div>
+				<div class="gid-goods">商品：{{goods.commentdetail.goodsComment}}</div>
+				<div class="gid-serve">服务：{{goods.commentdetail.goodsService}}</div>
+				<div class="gid-pict">
+					<div class="gid-left">
+						<p>晒图片:</p>
+					</div>
+					<div class="gid-right">
+						<div class="gid-pic-hd">
+							<ul class="gid-dot-ul">
+								<!-- {{commentdetail.imgs}} -->
+								<li class="gid-dli" ng-repeat="imgpath in goods.commentdetail.imgs">
+
+									<img class="gs-img" ng-click="getBigPicture(imgpath)" ng-src="{{imgpath.picture}}@72h_72w.jpg"/>
+
+								</li>
+							</ul>
+
+						</div>
+
+
+						<div  ng-show="goods.commentdetail.id==comment_ID">
+								 <ul class="gid-tuul">
+									<li class="gid-tuli cur"> 
+										<img style="width:250px;" ng-src="{{picture}}@217h_250w.jpg"/>
+									</li>
+								</ul>
+						</div>
+	
+					</div>
+
+
+				</div>
+
+			</div>
+			<!-- ************************ -->
+		</div>
+	</div>
+</div>

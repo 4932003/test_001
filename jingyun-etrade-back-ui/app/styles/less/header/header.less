@@ -1,0 +1,50 @@
+@import "../common";
+
+.header{
+	width: 100%;
+    padding-top: 20px;
+    border-bottom: 2px solid @base-color;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.hd-txt{
+	height: 60px;
+    line-height: 60px;
+    font-size: 32px;
+    color: #ff3433;
+    padding-left: 30px;
+}
+
+.header-nav{
+   background-color: @base-color;
+    overflow: hidden;
+    min-width: 1100px;
+    width: 100%; 
+    margin-top: 20px;
+    height: 38px;
+}   
+
+ul.header-nav-list{
+    overflow: hidden;
+}
+
+ul.header-nav-list > li{
+    text-align: center;
+    line-height: 38px;
+    cursor: pointer;
+    width: 124px;
+    height: 38px;
+    position: relative;
+    margin-right: 16px;
+    font-size: @t2-size;
+
+}
+
+ul.header-nav-list>li:hover{
+    background-color:@price-color;
+}
+
+ul.header-nav-list > li a{
+    color:#fff;
+}

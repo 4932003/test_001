@@ -1,0 +1,79 @@
+<div class="center-view" ng-controller="DiscountcounponAddController">
+<ng-form  name='saveForm'>
+
+	<div class="commodity-main">
+		<div class="commodity-main-hd">
+			抵用券管理&gt;生成抵用券
+		</div>
+		<div class="commodity-base-info">
+			<div class="release-commodity-hd">
+				基本信息
+			</div>
+			<div class="release-commodity-info">
+				<ul class="release-commodity-info-list">
+					<li>
+						<div class="release-commodity-info-label fl">面额：</div>
+						<div class="release-commodity-info-txt fl" >
+							<span style="height: 30px;line-height: 30px;">50元</span>
+						</div>
+						<p ng-show="saveForm.value.$error.required" style="color: red" >&nbsp;&nbsp;&nbsp;*必填</p>
+					</li>
+					<li>
+						<div class="release-commodity-info-label fl">折扣：</div>
+						<div class="release-commodity-info-txt fl" >
+							<span style="height: 30px;line-height: 30px;">2折</span>
+						</div>
+					</li>
+					<div class="clear"></div>
+					<li>
+						<div class="release-commodity-info-label fl">有效时间：</div>
+						<div class="release-commodity-info-txt fl">
+							<input class="release-commodity-p-start-day" 
+							onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" id="pro_start" ng-model='counpon.start'>
+							&nbsp;&nbsp;&nbsp;&nbsp;到&nbsp;&nbsp;&nbsp;&nbsp;
+							<input class="release-commodity-p-end-day" 
+							onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" id="pro_end" ng-model='counpon.end'>
+							
+						</div>
+					</li>
+					<div class="clear"></div>
+					
+					<li>
+						<div class="release-commodity-info-label fl">使用门槛：</div>
+						<div class="release-commodity-info-txt fl">
+							<input class="release-commodity-input-length release-commodity-postage fl"   ng-model="counpon.threshhold" pattern="^[+-]?\d+(\.\d+)?$" name="threshhold" required>
+						</div>
+						<p ng-show="saveForm.threshhold.$dirty && saveForm.threshhold.$error. pattern" style="color: red" >&nbsp;使用门槛只能输入数字</p>
+						<p ng-show="saveForm.threshhold.$error.required" style="color: red" >&nbsp;&nbsp;&nbsp;*必填</p>
+							
+					</li>
+					<div class="clear"></div>
+					<li>
+						<div class="release-commodity-info-label fl">数量：</div>
+						<div class="release-commodity-info-txt fl">
+							<input class="release-commodity-input-length release-commodity-postage fl"   ng-model="counpon.amount" pattern="^\d+$" name="amount" required>
+						</div>
+						<p ng-show="saveForm.amount.$error.required" style="color: red" >&nbsp;&nbsp;&nbsp;*必填</p>
+						<p ng-show="saveForm.amount.$dirty && saveForm.amount.$error. pattern" style="color: red" >&nbsp;数量只能输入正整数</p>
+							
+					</li>
+					<div class="clear"></div>
+					
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="release-commodity-footer" >
+		<!--  -->
+			<button class="release-commodity-btn"  ng-click="submit(counpon)"
+			ng-disabled="saveForm.$invalid || submiting"
+			>
+				发布
+			</button>
+		</div>
+	</div>
+
+</ng-form>
+</div>
+

@@ -1,0 +1,52 @@
+<div style="display: none;" class="modal in" id="login-dialog" tabindex="-1" role="dialog" ng-controller="LoginController as lgctrl" data-keyboard="false" data-backdrop="static">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content login-dialog">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <form ng-submit="login(user, true)" name='myForm'>
+          <div class="ldb">
+            <div class="ld-hd">
+              
+              <div class="sms-login on" >
+                <p>管理员登录</p>
+                <div class="bottom"></div>
+              </div>
+            </div>
+            <div class="ld-bd">
+              <div class="account tab-bd cur">
+                <div class="account-user">
+                  <div class="icon1">
+                    <div class="pic1"></div>
+                  </div>
+                  <input class="account-user" type="text" placeholder="用户名" ng-model="user.key" name='userLoginKey' required></div>
+
+                <div class="account-password">
+                  <div class="icon2">
+                    <div class="pic2"></div>
+                  </div>
+                  <input class="account-password" type="password" placeholder="请输入您的密码"  ng-model="user.password" name='userLoginPsw' required></div>
+              </div>
+             
+              
+            </div>
+            <div class="ld-ft">
+              <div class="select-item">
+                <input class="select-checkbox cur" type="checkbox" class="checkbox" name="remember">
+                <p class="remember">记住我</p>
+                <p class="forget">
+                  <!-- <a class="login-a" href >忘记密码</a> -->
+                </p>
+              </div>
+              <input type="submit" class="login-btn" value="登录" ng-disabled="myForm.userLoginKey.$error.required || myForm.userLoginPsw.$error.required">
+              
+            </div>
+          </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>

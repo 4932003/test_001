@@ -1,0 +1,22 @@
+<div class="top-bar" ng-controller='HeaderTopController'>
+  
+    <div class="center-view" >
+      <!-- 未登录-->
+      <div class="top-bar-l fl" ng-if="topUser==null || topUser==undefinde" >
+          <span class="top-login">你好，请<a ui-sref="login">登录</a>&nbsp;<a ui-sref="register">免费注册</a></span>
+          <span class="service-hotline">服务热线：<span>400-800-0815</span></span>
+      </div>
+      <!--已登录 -->
+      <div class="top-bar-l fl" ng-if="topUser!=null && topUser!=undefinde">
+            <span class="top-login">你好&nbsp;<a ui-sref="user-center.myaccount">{{topUser.username}}</a>&nbsp;<a ng-click='logout()' href='#'>安全退出</a></span>
+            <span class="service-hotline">服务热线：<span>400-800-0815</span></span>
+      </div>
+      <ul class="top-bar-menu fr">
+          <li class="top-bar-menu-item"><a ui-sref="user-center.my-collection.my-collection-product">我的收藏</a>|</li>
+          <li class="top-bar-menu-item"><a ui-sref="user-center.my-order">我的订单</a>|</li>
+          <li class="top-bar-menu-item"><a href="#/helpcenter/V8-7kU7iSDOUSLr118wGiA/IXk_adE4TryRecK2X3FRJg">客户服务</a></li>
+          <li class="top-bar-menu-item top-shopping-cart"><a ui-sref="cart">购物车</a>(<span>{{gcount}}</span>件)</li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+</div>

@@ -1,0 +1,48 @@
+<div class="merchant-list" ng-controller="MerchantListController as merchantCtl">
+	<div class="ml-top-title">商家管理&gt商家维护</div>
+	<div class="ml-mid-detail">
+		<ul class="ml">
+			<li class="ml-detail">
+				<p>商家名称：</p>
+				<input type="text" class="ml-t" ng-model="name"></li>
+		</ul>
+		<div class="clear h10"></div>
+		<div class="ml-ser" ng-click="serch()">查询</div>
+	</div>
+	<div class="ml-content">
+		<div class="ml-hd">
+			<div class="mlh-mid">
+				<ul class="mlhm">
+					<li class="mlh-m mlh-m2">商家名称</li>
+					<li class="mlh-m">商家编码</li>
+					<li class="mlh-m">联系电话</li>
+					<li class="mlh-m">邮编</li>
+					<li class="mlh-m">管理员排序</li>
+					<li class="mlh-m">商家等级</li>
+					<li class="mlh-m">操作</li>
+				</ul>
+			</div>
+		</div>
+		<div class="ml-bd">
+			<div class="mlb-mid">
+				<div ng-repeat="m in merchantlist" class = "mlb-line">
+					<ul class="mlbm">
+						<li class="mlb-m mlb-m2">{{m.name}}</li>
+						<li class="mlb-m">{{m.code}}</li>
+						<li class="mlb-m">{{m.tel}}</li>
+						<li class="mlb-m">{{m.zipcode}}</li>
+						<li class="mlb-m">{{m.adminSortNum}}</li>
+						<li class="mlb-m">{{m.level}}</li>
+						<li class="mlb-m">
+							<a href="#" class="aa" ui-sref="station-goods.merchant-edit({mid:'{{m.id}}'})">编辑</a>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							<!-- <a href="#" class="aa" ng-click="up('{{m.gid}}')" ng-show="{{m.state == 0}}">上架</a>
+							<a href="#" class="aa" ng-click="down('{{m.gid}}')" ng-show="{{m.state == 1}}">下架</a> -->
+						</li>
+					</ul>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,53 @@
+<div class="pdesc-info" >
+	<div class="pdesc-property">
+		<p class="pdesc-p-title">产品参数：</p>
+		<ul>
+			<li class="pdesc-p-item">许可证编号：{{goods.approveNo}}</li>
+			<li class="pdesc-p-item">产品标准号：{{goods.standardNo}}</li>
+			<li class="pdesc-p-item">保质期：{{goods.shelfLife}}</li>
+
+			<li class="pdesc-p-item">厂名：{{goods.factoryName}}</li>
+			<li class="pdesc-p-item">厂址：{{goods.factoryAddr}}</li>
+			<li class="pdesc-p-item">联系方式：{{goods.factoryTel}}</li>
+
+			
+			<li title="{{goods.ingredients}}" class="pdesc-p-item text-omitted ">配料表：{{goods.ingredients}}</li>
+			<!-- <li class="pdesc-p-item">成分含量：{{goods.ingredient}}</li> -->
+			<li class="pdesc-p-item">规格 ：{{goods.specifications}}</li>
+
+			<li class="pdesc-p-item">品牌 ：{{goods.brandName}}</li>
+			<li class="pdesc-p-item">食品添加剂：{{goods.foodAdditives}}</li>
+			<li class="pdesc-p-item">包装 ：{{goods.isGiftBox}}</li>
+
+			<li class="pdesc-p-item">注意事项 ：{{goods.note}}</li>
+			<li class="pdesc-p-item">适宜人群：{{goods.commendedUser}}</li>
+			<li class="pdesc-p-item">不适宜人群：{{goods.notCommendedUser}}</li>
+			
+			
+			<!--
+			<li class="pdesc-p-item">产地 ：中国大陆</li>
+			<li class="pdesc-p-item">省份 ：山东省</li>
+			<li class="pdesc-p-item">城市 ：聊城市</li>
+			-->
+		</ul>
+	</div>
+	<div class="clear"></div>
+	<div class="pdesc-production-date">
+		<!-- <p>生产日期：{{goods.productionDate}} </p> -->
+	</div>
+	<div class="pdesc-imgs">
+		<!-- <ul>
+			<li class="pdesc-img-item">
+				<img class="pdesc-img" src="../images/product-detail/jtsp1.jpg"></img>
+			</li>
+			<li class="pdesc-img-item">
+				<img class="pdesc-img" src="../images/product-detail/jtsp2.jpg"></img>
+			</li>
+			<li class="pdesc-img-item">
+				<img class="pdesc-img" src="../images/product-detail/jtsp1.jpg"></img>
+				<img class="pdesc-img" src="../images/product-detail/jtsp1.jpg"></img>
+			</li>
+		</ul> -->
+		<div ng-bind-html="goods.content"></div>
+	</div>
+</div>

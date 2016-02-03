@@ -1,0 +1,47 @@
+@import "../common";
+.h20{
+	height:20px;
+}
+.login-success{
+	height:514px;
+	border: 1px solid @gray-border;
+	text-align: center;
+	padding-top:236px;
+	position: relative;
+}
+.login-success::before{
+	content: "";
+	position: absolute;
+	top:133px;
+	left:47%;
+	width:65px;
+	height:65px;
+	background: url(../images/icons.png) no-repeat -3px -55px;
+}
+.login-success .success{
+	height: 18px;
+	font-size:@t2-size;
+	line-height: 18px;
+	color: #51C37D;
+	text-align: center;
+	font-weight: bold;
+}
+.login-success p{
+	height: 12px;
+	font-size: @t4-size;
+	line-height: 12px;
+	color: #515151;
+	text-align: center;
+	margin-bottom: 83px;
+	margin-top: 18px;
+}
+.login-success input{
+	width: 187px;
+	height: 48px;
+	border: 1px solid #F4CCD5;
+	background-color: #FF4141;
+	text-align: center;
+	line-height: 48px;
+	color: white;
+	font-size: @t4-size;
+}

@@ -1,0 +1,40 @@
+@import "../../common";
+
+.my-comment{
+	width: 900px;
+}
+
+.my-comment .comment-mid{
+	height: 40px;
+	margin-bottom: 19px;
+	border-bottom:2px solid @light-gray-bg;
+}
+.my-comment .comment-mid ul li.cm-item{
+	float: left;
+	width:150px; 
+	height: 40px;
+	padding: 11px 21px 11px 15px;
+	cursor: pointer;
+	text-align: center;
+}
+.my-comment .comment-mid ul li.cm-item-selected{
+	border-bottom:1px solid #FE4040;
+}
+.my-comment .comment-mid ul li.cm-item-selected p{
+	color:#FE4040 !important;
+}
+.my-comment .comment-mid ul li.cm-item p{
+	font-size:@t4-size ;
+	color:#5c5c5c;
+	height: 18px;
+	line-height: 18px;
+}
+.my-comment .comment-mid ul li.cm-item p span.red{
+	width:18px;
+	height:18px;
+	padding-left: 9px;
+	padding-right: 9px;
+	background-color:#FA4041;
+	border-radius: 6px;
+	color: @white-color; 
+}

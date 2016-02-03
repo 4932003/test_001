@@ -1,0 +1,42 @@
+<div class="refund-action-info">
+	<div class="refund-action-hd">
+		我要退款（{{refund.returnGoods?'需要退货':'不需退货'}}）
+	</div>
+	<div class="refund-action-detail">
+		<div class="refund-action-note-info" ng-show="refundSuc(refund)">
+			<div class="rgbh-action-note">
+				<div class="refund-action-action-hd">
+					<div class="small-right-icon fl"></div>
+					<div class="refund-action-action-hd-txt fl">退款成功</div>
+				</div>
+				<div class="clear"></div>
+				<div class="refund-action-note-detail">
+					<div>退款成功时间：{{doneTrace.addtime | date: 'yyyy-MM-dd HH:mm:ss'}}</div>
+					<ul class="refund-action-note-detail-list">
+						<li>退款金额：{{refund.money}}元&nbsp;&nbsp;<a href="#/refund/detail?rid={{refund.id}}&ogid={{goods.id}}">查看退款记录</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="clear"></div>
+			
+		</div>
+		<div class="refund-action-note-info" ng-show="refundCancel(refund)">
+			<div class="rgbh-action-note">
+				<div class="refund-action-action-hd">
+					<div class="small-right-icon fl"></div>
+					<div class="refund-action-action-hd-txt fl">退款关闭</div>
+				</div>
+				<div class="clear"></div>
+				<div class="refund-action-note-detail">
+					<ul class="refund-action-note-detail-list">
+						<li>您已撤销本次退款申请，如有问题仍未解决，您可以从新发起申请。</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="clear"></div>
+			
+		</div>
+	</div>
+</div>

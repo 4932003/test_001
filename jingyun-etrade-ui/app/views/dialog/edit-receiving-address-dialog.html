@@ -1,0 +1,84 @@
+<div style="display: none;" class="modal in edit-receiving-address-dialog" id="edit-receiving-address-dialog" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+  <div class="modal-dialog era-dialog" role="document" ng-controller="MyReceiveAddressController">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        	<span aria-hidden="true">×</span>
+        </button>
+        <div class="modal-title" id="edit-rad-title">编辑收货人信息</div>
+      </div>
+      <div class="modal-body">
+      	<form name='myForm' >
+          <ul class="erad-main">
+            <li>
+              <div class="erad-input-label fl">收货人:</div>
+              <div class="erad-input-txt fl">
+                <input class="erad-receiver fl" name='receiver' ng-model="address.receiver" type="text" ng-change='checkAddress()' required >
+                
+              </div>
+            </li>
+            <div class="clear"></div>
+            <li>
+              <div class="erad-input-label fl">所在地区:</div>
+              <div class="erad-input-txt fl">
+                <select name='country' ng-model='address.country' ng-options="item.countryID as item.countryName  for item in countries"  ng-change='getProvince(address.country);checkAddress()' required></select>
+                <select name='province' ng-model='address.province' ng-options="item.provinceID as item.provinceName  for item in provinces" ng-change='getCity(address.province);checkAddress()' required></select>
+                <select class='city' name='city' ng-model='address.city' ng-options="item.cityID as item.cityName  for item in cities" ng-change='checkAddress()'  required></select>
+                
+              </div>
+            </li>
+            <div class="clear"></div>
+            <li>
+              <div class="erad-input-label fl">详细地址:</div>
+              <div class="erad-input-txt fl">
+                <input class="erad-address" ng-model='address.address' name='address' ng-change='checkAddress()' required>
+                
+              </div>
+            </li>
+            <div class="clear"></div>
+            <li>
+              <div class="erad-input-label fl">邮编:</div>
+              <div class="erad-input-txt fl">
+                <input class="erad-" type="text" name='zipcode' ng-model='address.zipcode' ng-change='checkAddress()' required pattern="[0-9]{6}">
+                
+              </div>
+            </li>
+            <div class="clear"></div>
+            <li>
+              <div class="erad-input-label fl">手机号码:</div>
+              <div class="erad-input-txt fl">
+                <input class="erad-phone" type="text" ng-model='address.mobile' name='mobile' ng-change='checkAddress()' pattern="^((13)|(14)|(15)|(16)|(17)|(18))\d{9}$" required  >
+                </div>
+              <div class="erad-input-label fl">固定电话:</div>
+              <div class="erad-input-txt fl">
+                <input class="erad-phone" type="text" ng-model='address.telephone' name='telephone'  ng-change='checkAddress()'>
+              </div>
+            </li>
+            <div class="clear"></div>
+            <li >
+              <div class="erad-input-label fl"></div>
+              <div class="erad-input-txt worning fl">
+                <p class='worn' ng-if='  myForm.receiver.$error.required'>请输入收件人</p>
+                <p class='worn' ng-if=' myForm.country.$error.required'>请选择国家</p>
+                <p class='worn' ng-if=' myForm.country.$valid &&myForm.province.$error.required'>请选择省份</p>
+                <p class='worn' ng-if=' myForm.province.$valid &&myForm.city.$error.required'>请选择城市</p>
+                <p class='worn' ng-if='  myForm.address.$error.required'>请输入详细地址</p>
+                <p class='worn' ng-if=' myForm.zipcode.$error.required'>请输入邮政编码</p>
+                <p class='worn' ng-if=' myForm.zipcode.$dirty && myForm.zipcode.$error.pattern'>邮政编码格式错误</p>
+                <p class='worn' ng-if=' myForm.mobile.$error.required'>请输入收件人手机号</p>
+                <p class='worn' ng-if=' myForm.mobile.$dirty && myForm.mobile.$error.pattern'>手机号格式错误</p>
+              </div>
+             
+            </li>
+            <div class="clear"></div>
+            <li>
+              <div class="erad-btn" ng-click='submit(address, myForm.$valid)' >
+                保存收货人信息
+              </div>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

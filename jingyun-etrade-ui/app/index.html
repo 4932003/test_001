@@ -1,0 +1,312 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>中华阿胶网</title>
+    <meta name="keywords" content="东阿阿胶,福牌，福牌阿胶， 中华阿胶，中华阿胶网，阿胶膏，东阿，东阿阿胶膏, 百年堂，恭禧堂，崇仁" />
+    <meta name="description" content="东阿阿胶,福牌，福牌阿胶， 中华阿胶，中华阿胶网，阿胶膏，东阿，东阿阿胶膏, 百年堂，恭禧堂，崇仁">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    
+  </head>
+  <body ng-app="jingyunshopApp">
+    <img src="../images/logo300.png" style="display:none;">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div data-loading style="width:100%;height:100%;position:fixed;z-index:30000;">
+        <div class="spinner">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+        </div>
+
+    </div>
+
+    <div ui-view></div>
+
+<right-sidebar></right-sidebar>
+<div class="return-top">
+</div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/js-md5/build/md5.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/api.js"></script>
+        <script src="scripts/directive/directive.js"></script>
+        <script src="scripts/directive/loading.js"></script>
+        <script src="scripts/directive/header.js"></script>
+        <script src="scripts/directive/banner.js"></script>
+        <script src="scripts/directive/footer.js"></script>
+        <script src="scripts/directive/right-sidebar.js"></script>
+        <script src="scripts/directive/guess-like.js"></script>
+        <script src="scripts/directive/dialog.js"></script>
+        <script src="scripts/directive/pay-bank.js"></script>
+        <script src="scripts/directive/pay-form.js"></script>
+        <script src="scripts/directive/myorderitem.js"></script>
+        <script src="scripts/directive/promotion-product.js"></script>
+        <script src="scripts/directive/recommend-product.js"></script>
+        <script src="scripts/directive/refund-pages.js"></script>
+        <script src="scripts/directive/progress-bar.js"></script>
+        <script src="scripts/constants.js"></script>
+        <script src="scripts/router/order/order.js"></script>
+        <script src="scripts/router/refund/refund.js"></script>
+        <script src="scripts/router/goods/goods.js"></script>
+        <script src="scripts/router/usercenter/usercenter.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/order/cart.js"></script>
+        <script src="scripts/controllers/order/myorder.js"></script>
+        <script src="scripts/controllers/order/latest-order.js"></script>
+        <script src="scripts/services/order/cart.js"></script>
+        <script src="scripts/controllers/order/order.js"></script>
+        <script src="scripts/controllers/order/pay.js"></script>
+        <script src="scripts/controllers/order/paysucc.js"></script>
+        <script src="scripts/controllers/refund/refund-request.js"></script>
+        <script src="scripts/controllers/refund/refund-progress.js"></script>
+        <script src="scripts/controllers/refund/refund-detail.js"></script>
+        <script src="scripts/controllers/refund/refund-list.js"></script>
+        <script src="scripts/services/refund/refund.js"></script>
+        <script src="scripts/services/order/order.js"></script>
+        <script src="scripts/services/order/pay.js"></script>
+        <script src="scripts/services/order/orderstatus.js"></script>
+        <script src="scripts/services/order/refundstatus.js"></script>
+        <script src="scripts/services/logistic/postage.js"></script>
+        <script src="scripts/services/resource/upload.js"></script>
+        <script src="scripts/services/user-center/my-assets/coupon.js"></script>
+        <script src="scripts/controllers/order/orderdetail.js"></script>
+        <script src="scripts/controllers/order/order-receipt.js"></script>
+        <script src="scripts/controllers/login/login.js"></script>
+        <!--dxf start-->
+        <script src="scripts/controllers/goods/toSerch.js"></script>
+        <script src="scripts/controllers/goods/goods.js"></script>
+        <script src="scripts/controllers/goods/goodsDetail.js"></script>
+        <script src="scripts/controllers/goods/goodsExpand.js"></script>
+        <script src="scripts/controllers/goods/salesrecords.js"></script>
+         <script src="scripts/controllers/goods/good_comment.js"></script>
+        <script src="scripts/filter/nameFilter.js"></script>
+        <script src="scripts/services/goods/goodsServices.js"></script>
+        <!--dxf end-->
+
+        <!--register-->
+        <script src="scripts/controllers/register/register.js"></script>
+        <script src="scripts/services/register/register.js"></script>
+       <script src="scripts/util/BaseUtil.js"></script>
+      
+        <!--modify-mobile-login-password start-->
+        <script src="scripts/controllers/user-center/user-set/modify-mobile-login-password.js"></script>
+        <script src="scripts/services/user-center/user-set/modify-mobile-login-password.js"></script>
+       <!--modify-mobile-login-password end-->
+        <!--modify-email-login-password start-->
+        <script src="scripts/controllers/user-center/user-set/modify-email-login-password.js"></script>
+        <script src="scripts/services/user-center/user-set/modify-email-login-password.js"></script>
+        <!--modify-email-login-password end-->
+
+          <!--set-pay-password start-->
+        <script src="scripts/controllers/user-center/user-set/set-mobile-pay-password.js"></script>
+        <script src="scripts/services/user-center/user-set/set-mobile-pay-password.js"></script>
+
+        <script src="scripts/controllers/user-center/user-set/set-email-pay-password.js"></script>
+        <script src="scripts/services/user-center/user-set/set-email-pay-password.js"></script>
+        <!--set-pay-password end-->
+
+        <!--modify-pay-password start-->
+        <script src="scripts/controllers/user-center/user-set/modify-mobile-pay-password.js"></script>
+        <script src="scripts/services/user-center/user-set/modify-mobile-pay-password.js"></script>
+
+        <script src="scripts/controllers/user-center/user-set/modify-email-pay-password.js"></script>
+        <script src="scripts/services/user-center/user-set/modify-email-pay-password.js"></script>
+        <!--modify-pay-password end-->
+
+        <!--liug start -->
+        <script src="scripts/services/merchant/merchant.js"></script>
+        <script src="scripts/controllers/myaccount/myaccount.js"></script>
+        <script src="scripts/services/myaccount/myaccount.js"></script>
+        <script src="scripts/controllers/track/track.js"></script>
+        <script src="scripts/services/track/track.js"></script>
+        <script src="scripts/controllers/goodsad/goodsad.js"></script>
+        <script src="scripts/services/goodsad/goodsad.js"></script>
+        <script src="scripts/controllers/track/footertrack.js"></script>
+        <script src="scripts/controllers/track/righttrack.js"></script>
+        <script src="scripts/controllers/track/track404.js"></script>
+        <!--liug  end -->
+        <!-- qxs safety setting start-->
+        <script src="scripts/controllers/user-center/user-set/safety-setting.js"></script>
+        <script src="scripts/services/user-center/user-set/safety-setting.js"></script>
+        <!-- qxs safety setting end-->
+         <!-- qxs verify mobile start-->
+        <script src="scripts/controllers/user-center/user-set/verify-mobile.js"></script>
+        <script src="scripts/services/user-center/user-set/verify-mobile.js"></script>
+        <!-- qxs verify mobile end-->
+        <!-- qxs verify email start-->
+        <script src="scripts/controllers/user-center/user-set/verify-email.js"></script>
+        <script src="scripts/services/user-center/user-set/verify-email.js"></script>
+        <!-- qxs verify email end-->
+         <!-- qxs modify email start-->
+        <script src="scripts/controllers/user-center/user-set/modify-email.js"></script>
+        <script src="scripts/services/user-center/user-set/modify-email.js"></script>
+        <!-- qxs modify email end-->
+         <!-- qxs area start-->
+        <script src="scripts/services/user-center/user-set/area.js"></script>
+        <!-- qxs area end-->
+         <!-- qxs recieve address start-->
+        <script src="scripts/controllers/user-center/user-set/my-receive-address.js"></script>
+        <script src="scripts/services/user-center/user-set/my-receive-address.js"></script>
+        <!-- qxs recieve address end-->
+
+         <!-- qxs 头像上传 start-->
+        <script src="scripts/controllers/user-center/user-set/avatar-setting.js"></script>
+        <script src="scripts/services/user-center/user-set/avatar-setting.js"></script>
+        <!-- qxs 头像上传 end-->
+        <!-- qxs 购物金、抵用券 start-->
+        <script src="scripts/controllers/user-center/my-assets/my-coupon.js"></script>
+        <script src="scripts/controllers/user-center/my-assets/activeCoupon.js"></script>
+
+        <script src="scripts/controllers/user-center/my-assets/MyShoppingGoldController.js"></script>
+        <script src="scripts/controllers/user-center/my-assets/cashCouponExpiredController.js"></script>
+        <script src="scripts/controllers/user-center/my-assets/cashCouponUnusedController.js"></script>
+        <script src="scripts/controllers/user-center/my-assets/cashCouponUsedController.js"></script>
+
+        <script src="scripts/controllers/user-center/my-assets/MyVoucherController.js"></script>
+        <script src="scripts/controllers/user-center/my-assets/discountCouponExpiredController.js"></script>
+        <script src="scripts/controllers/user-center/my-assets/discountCouponUnusedController.js"></script>
+        <script src="scripts/controllers/user-center/my-assets/discountCouponUsedController.js"></script>
+
+        <script src="scripts/services/user-center/my-assets/cashCouponService.js"></script>
+        <script src="scripts/services/user-center/my-assets/discountCouponService.js"></script>
+        <!-- qxs 购物金、抵用券 end-->
+        <!--qxs message start-->
+        <script src="scripts/controllers/user-center/trade-center/my-message.js"></script>
+        <script src="scripts/services/user-center/trade-center/my-message.js"></script>
+        <!--qxs message end-->
+        <!--qxs header-top start-->
+        <script src="scripts/controllers/header/header-top.js"></script>
+        <script src="scripts/controllers/right-sidebar.js"></script>
+        <script src="scripts/services/header/header-top.js"></script>
+        <!--qxs header-top end-->
+        <!--qxs myaccount start-->
+        <script src="scripts/controllers/user-center/myaccount.js"></script>
+        <script src="scripts/services/user-center/myaccount.js"></script>
+        <!--qxs myaccount end-->
+        <!-- qxs 用户通用service-->
+        <script src="scripts/services/common/user/UserService.js"></script>
+        <!--qxs 短信邮箱服务类 -->
+        <script src="scripts/services/common/message/sms/SmsService.js"></script>
+        <script src="scripts/services/common/message/email/EmailService.js"></script>
+        <!-- 帮助中心 start-->
+        <script src="scripts/services/help-center/help-center-left.js"></script>
+        <script src="scripts/controllers/help-center/help-center.js"></script>
+        <script src="scripts/controllers/help-center/help-center-content.js"></script>
+        <script src="scripts/services/help-center/help-center.js"></script>
+        <script src="scripts/controllers/footer/footer.js"></script>
+        <!-- 帮助中心 end-->
+        <!-- qxs 积分service-->
+        <script src="scripts/services/user-center/my-assets/point.js"></script>
+        <!-- 弹出框-->
+        <script src="scripts/controllers/dialog/dialog.js"></script>
+        <script src="scripts/services/common/message/dialog/DialogService.js"></script>
+        <!--modify mobile start-->
+        <script src="scripts/controllers/user-center/user-set/modify-mobile.js"></script>
+        <script src="scripts/services/user-center/user-set/modify-mobile.js"></script>
+        <!--modify mobile end-->
+
+        <!-- userinfo start-->
+         <script src="scripts/controllers/user-center/user-set/user-info.js"></script>
+        <script src="scripts/services/user-center/user-set/user-info.js"></script>
+        <!-- userinfo end-->
+        <!-- forget password start -->
+         <script src="scripts/controllers/forget-password/mailbox-password.js"></script>
+        <script src="scripts/services/forget-password/mailbox-password.js"></script>
+        <script src="scripts/controllers/forget-password/mobilebox-password.js"></script>
+        <script src="scripts/services/forget-password/mobilebox-password.js"></script>
+        <!-- forget password end -->
+
+
+         <script src="scripts/controllers/user-center/trade-center/fill-evaluation.js"></script>
+        <script src="scripts/services/user-center/trade-center/fill-evaluation.js"></script>
+
+
+        <script src="scripts/controllers/user-center/trade-center/goods-info-evaluation.js"></script>
+        <script src="scripts/services/user-center/trade-center/goods-info-evaluation.js"></script>
+
+
+        <script src="scripts/controllers/user-center/trade-center/my-comment.js"></script>
+        <script src="scripts/services/user-center/trade-center/my-comment.js"></script>
+
+
+        <script src="scripts/controllers/header/header-nav.js"></script>
+         <script src="scripts/services/header/header-nav.js"></script>
+         <!--information-->
+        <script src="scripts/controllers/ejiao-culture/ejiao-culture.js"></script>
+        <script src="scripts/services/ejiao-culture/ejiao-culture.js"></script>
+
+        <script src="scripts/controllers/ejiao-culture/information-main.js"></script>
+        <script src="scripts/services/ejiao-culture/information-main.js"></script>
+
+        <script src="scripts/controllers/ejiao-culture/story-detail.js"></script>
+        <script src="scripts/services/ejiao-culture/story-detail.js"></script>
+
+        <script src="scripts/controllers/brand-news/brand-news.js"></script>
+        <script src="scripts/services/brand-news/brand-news.js"></script>
+
+        <script src="scripts/controllers/header/header-nav.js"></script>
+        <script src="scripts/services/header/header-nav.js"></script>
+        
+        <!-- js start 
+        <script type="text/javascript" src="scripts/js/myaccount/collection.js"></script>
+         <script type="text/javascript" src="scripts/js/myaccount/footprints.js"></script>
+        <script type="text/javascript" src="scripts/js/user-center-bottom/like.js"></script>
+        -->
+        <script type="text/javascript" src="scripts/js/fill-evaluation/star.js"></script>
+        <script type="text/javascript" src="scripts/js/product-detail/gallery.js"></script>
+
+        <script type="text/javascript" src="scripts/js/common.js"></script>
+        <script type="text/javascript" src="scripts/js/mall.js"></script>
+        <script type="text/javascript" src="scripts/js/my-comment/evaluated.js"></script>
+        <script type="text/javascript" src="scripts/js/load.js"></script>
+        <!-- index-banner start -->
+        <script type="text/javascript" src="scripts/js/breath.js"></script>
+         <!-- index-banner over -->
+
+        <!-- endbuild -->
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<div class="refund-steps">
+	<ul class="refund-goods-steps-list">
+		<li class="step-first">
+			<div class="step-done">
+				<div class="step-no"></div>
+				<div class="step-name">买家申请退货</div>
+			</div>
+		</li>
+		<li>
+			<div ng-class="{'step-done': stepReturnRequestSuccess(refund) || stepReturnAccepted(refund) || stepLogisticSubmit(refund) || refundDone(refund) }">
+				<div class="step-no"></div>
+				<div class="step-name">商家处理退货申请</div>
+		    </div>
+		</li>
+		<li>
+			<div ng-class="{'step-done': stepReturnAccepted(refund) || stepLogisticSubmit(refund) || refundDone(refund) }">
+				<div class="step-no"></div>
+				<div class="step-name">买家退货给商家</div>
+		    </div>
+		</li>
+		<li class="step-last">
+			<div ng-class="{'step-done': stepLogisticSubmit(refund) || refundDone(refund) }">
+				<div class="step-no"></div>
+				<div class="step-name">商家确认收货，退款成功</div>
+			</div>	
+		</li>
+	</ul>
+</div>
